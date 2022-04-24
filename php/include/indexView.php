@@ -15,38 +15,29 @@
                 str_contains(strtolower($modelNumber->nodeValue),strtolower($searchValue))){
                 $flag+=1;
                 echo '
-                <div class="container my-5 w-50">
+                <div class="container my-5 w-50 main rounded-3 py-md-5 py-4 border border-3 border-dark">
                     <h2><small class="text-muted">Variant:</small> '.$variantName->nodeValue.'</h2>
-                    <h3>Model Number: '.$modelNumber->nodeValue.'</h3>
-                    <table class="table table-striped table-bordered table-hover table-dark">
-                        <thead>
-                            <tr>
-                                <th scope="col">Compute Options</th>
-                                <th scope="col">Memory Options</th>
-                                <th scope="col">Storage Options</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr scope="row">';
-                            echo'<td scope="col">';
-                            foreach($computeOptions->getelementsByTagName("cpu") as $cpu){ 
-                                echo $cpu->firstElementChild->nodeValue.' ('.$cpu->firstElementChild->nextElementSibling->nodeValue.' Cores)<br>';
-                            }
-                            echo'</td>';
-                            echo'<td scope="col">';
-                            foreach($memoryOptions->getelementsByTagName("memory") as $memory){ 
-                                echo $memory->nodeValue.'<br>';
-                            }
-                            echo'</td>';
-                            echo'<td scope="col">';
-                            foreach($storageOptions->getelementsByTagName("storage") as $storage){ 
-                                echo $storage->nodeValue.'<br>';
-                            }
-                            echo'</td>';
-                            echo '</tr>
-                        </tbody>
-                    </table>
-                </div>';
+                    <h3>Model Number: '.$modelNumber->nodeValue.'</h3>';
+                    $cpuList = array();
+                    $memoryList = array();
+                    $storageList = array();
+                    $bg="dark";
+                    $text="white";
+                echo '<div class="container d-inline-flex justify-content-center gap-1 text-center">';
+                foreach($computeOptions->getelementsByTagName("cpu") as $cpu){ 
+                    array_push($cpuList,$cpu->firstElementChild->nodeValue.' ('.$cpu->firstElementChild->nextElementSibling->nodeValue.' Cores)<br>');
+                }
+                include("indexCard_CPU.php");
+                foreach($memoryOptions->getelementsByTagName("memory") as $memory){ 
+                    array_push($memoryList,$memory->nodeValue);
+                }
+                include("indexCard_memory.php");
+                foreach($storageOptions->getelementsByTagName("storage") as $storage){ 
+                    array_push($storageList,$storage->nodeValue);
+                }
+                include("indexCard_storage.php");
+                echo '</div>';
+                echo '</div>';
             }
         }
         switch($flag){
@@ -69,38 +60,29 @@
             $storageOptions = $specifications->firstElementChild->nextElementSibling->nextElementSibling;
 
             echo '
-            <div class="container my-5 w-50">
-                <h2><small class="text-muted">Variant:</small> '.$variantName->nodeValue.'</h2>
-                <h3>Model Number: '.$modelNumber->nodeValue.'</h3>
-                <table class="table table-striped table-bordered table-hover table-dark">
-                    <thead>
-                        <tr>
-                            <th scope="col">Compute Options</th>
-                            <th scope="col">Memory Options</th>
-                            <th scope="col">Storage Options</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr scope="row">';
-                        echo'<td scope="col">';
-                        foreach($computeOptions->getelementsByTagName("cpu") as $cpu){ 
-                            echo $cpu->firstElementChild->nodeValue.' ('.$cpu->firstElementChild->nextElementSibling->nodeValue.' Cores)<br>';
-                        }
-                        echo'</td>';
-                        echo'<td scope="col">';
-                        foreach($memoryOptions->getelementsByTagName("memory") as $memory){ 
-                            echo $memory->nodeValue.'<br>';
-                        }
-                        echo'</td>';
-                        echo'<td scope="col">';
-                        foreach($storageOptions->getelementsByTagName("storage") as $storage){ 
-                            echo $storage->nodeValue.'<br>';
-                        }
-                        echo'</td>';
-                        echo '</tr>
-                    </tbody>
-                </table>
-            </div>';
+                <div class="container my-5 w-50 main rounded-3 py-md-5 py-4 border border-3 border-dark">
+                    <h2><small class="text-muted">Variant:</small> '.$variantName->nodeValue.'</h2>
+                    <h3>Model Number: '.$modelNumber->nodeValue.'</h3>';
+                    $cpuList = array();
+                    $memoryList = array();
+                    $storageList = array();
+                    $bg="dark";
+                    $text="white";
+                echo '<div class="container d-inline-flex justify-content-center gap-1 text-center">';
+                foreach($computeOptions->getelementsByTagName("cpu") as $cpu){ 
+                    array_push($cpuList,$cpu->firstElementChild->nodeValue.' ('.$cpu->firstElementChild->nextElementSibling->nodeValue.' Cores)<br>');
+                }
+                include("indexCard_CPU.php");
+                foreach($memoryOptions->getelementsByTagName("memory") as $memory){ 
+                    array_push($memoryList,$memory->nodeValue);
+                }
+                include("indexCard_memory.php");
+                foreach($storageOptions->getelementsByTagName("storage") as $storage){ 
+                    array_push($storageList,$storage->nodeValue);
+                }
+                include("indexCard_storage.php");
+                echo '</div>';
+                echo '</div>';
         }
     }
 ?>

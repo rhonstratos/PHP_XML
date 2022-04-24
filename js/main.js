@@ -27,6 +27,7 @@ function addCpu() {
 	input1.name = "cpuName[]";
 	input1.id = "cpuName";
 	input1.className = "form-control text-center";
+	input1.required = true;
 	input1.placeholder = "Name";
 
 	var input2 = document.createElement("input");
@@ -34,6 +35,7 @@ function addCpu() {
 	input2.name = "cpuCores[]";
 	input2.id = "cpuCores";
 	input2.className = "form-control text-center";
+	input2.required = true;
 	input2.placeholder = "Core Count";
 
 	var button = document.createElement("button");
@@ -100,7 +102,7 @@ function addMemory() {
 	var button = document.createElement("button");
 	button.className = "btn btn-success";
 	button.type = "button";
-	button.onclick = addStorage;
+	button.onclick = addMemory;
 	button.innerHTML = "+";
 
 	div2.appendChild(span);
@@ -175,12 +177,14 @@ function callToast(){
 	var option = {
 		animation: true,
 		autohide: true,
-		delay: 5000
-	}
-	var toastElList = [].slice.call(document.querySelectorAll('.toast'))
-	var toastList = toastElList.map(function (toastEl) {
-	return new bootstrap.Toast(toastEl, option)
-	})
+		delay: 3000
+	};
+	var toastElList = [].slice.call(
+		document.querySelectorAll('.toast')
+	);
+	var toastList = toastElList.map((toastEl) => {
+		return new bootstrap.Toast(toastEl, option)
+	});
 
-	toastList.forEach(toast => toast.show()); // This show them
+	toastList.forEach(toast => toast.show());
 }

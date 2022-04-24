@@ -51,18 +51,18 @@
     <?php 
         include("./include/navbar.php");
     ?>
-    <div class="container-fluid bg-primary py-5 mx-auto">
+    <div class="container-fluid main py-5 mx-auto">
         <div class="container text-center text-light p-5">
             <h1 class="display-1">Update MacBook</h1>
             <form class="form w-75 mx-auto my-5 bg-dark rounded-3 p-5" action="./processes/updateProcess.php" method="POST">
                 <div class="d-flex flex-column">
                     <div class="d-flex flex-row">
                         <div class="form-group form-floating me-4 w-100">
-                            <input type="text" name="modelNumber" id="modelNumber" class="form-control form-control-lg text-center" readonly="readonly" placeholder="Model Number" value="<?php echo $modelNumber; ?>"></input>
+                            <input type="text" name="modelNumber" id="modelNumber" required="required" class="form-control form-control-lg text-center" readonly="readonly" placeholder="Model Number" value="<?php echo $modelNumber; ?>"></input>
                             <label for="modelNumber" class="text-dark">Model Number</label>
                         </div>
                         <div class="form-group form-floating w-100">
-                            <input type="text" name="variantName" id="variantName" class="form-control form-control-lg text-center" placeholder="Variant Name" value="<?php echo $variantName ;?>"></input>
+                            <input type="text" name="variantName" id="variantName" required="required" class="form-control form-control-lg text-center" placeholder="Variant Name" value="<?php echo $variantName ;?>"></input>
                             <label for="variantName" class="text-dark">Variant Name</label>
                         </div>
                     </div>
@@ -76,7 +76,7 @@
                         <?php storage($storage); ?>
                     </div>
                 </div>
-                <div class="form-group mt-5 mb-0">
+                <div class="form-group mt-5 mb-0 d-grid gap-2 col-6 mx-auto">
                     <button type="submit" class="btn btn-success" name="update">Submit</button>
                 </div>
             </form>

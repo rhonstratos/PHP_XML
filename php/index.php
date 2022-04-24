@@ -5,7 +5,7 @@
     <?php include("./include/headers.php")?>
     <title>Activity 2 | MacBooks</title>
 </head>
-<body class="pt-5 mt-5 bg-primary" <?php 
+<body class="pt-5 mt-5 main" <?php 
     if(isset($_GET['registered'])&&!empty($_GET['registered']))
     echo "onLoad=\"callToast()\"";
 ?>>
@@ -14,7 +14,7 @@
         include("./include/prompts/PromptRegistration.php");
     ?>
     <div class="container-fluid py-5 mx-auto">
-        <div class="container text-center text-light">
+        <div class="container-fluid text-center text-white">
             <h1 class="display-1">MacBooks</h1>
             <?php
                 include("./include/indexView.php");

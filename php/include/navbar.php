@@ -1,4 +1,5 @@
-<nav class="navbar navbar-expand-lg fixed-top navbar-light bg-light">
+
+<nav class="navbar navbar-expand-lg fixed-top navbar-light bg-light border-bottom border-3 border-secondary">
     <div class="container-fluid">
         <a href="./"><img src="../assets/wdance.gif" alt="Woggy" class="navbar-brand"></a>
         <div></div>

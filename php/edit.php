@@ -16,7 +16,7 @@
         if (isset($_GET['delete']))
             include("./include/prompts/PromptDeletion.php");
     ?>
-    <div class="container-fluid bg-primary py-5 mx-auto px-lg-5">
+    <div class="container-fluid main py-5 mx-auto px-lg-5">
         <div class="container-lg-fluid text-center text-light mx-auto px-lg-5">
             <table class="table table-light table-striped text-center mx-sm-auto">
                 <thead>

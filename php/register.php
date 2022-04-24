@@ -7,7 +7,7 @@
 </head>
 <body class="bg-light pt-5 mt-5">
     <?php include("./include/navbar.php");?>
-    <div class="container-fluid bg-primary py-5 mx-auto">
+    <div class="container-fluid main py-5 mx-auto">
         <div class="container text-center text-light p-5">
             <h1 class="display-1">Register New MacBook</h1>
             <form class="form w-75 mx-auto my-5 bg-dark rounded-3 p-5" action="./processes/registerProcess.php" method="POST">
@@ -26,8 +26,8 @@
                         <div class="d-flex flex-row mt-3 w-100">
                             <div class="form-group w-100 input-group input-group-lg">
                                 <span class="input-group-text">Processor</span>
-                                <input type="text" name="cpuName[]" id="cpuName" class="form-control text-center" placeholder="Name" value="<?php ?>"></input>
-                                <input type="number" name="cpuCores[]" id="cpuCores" class="form-control text-center" placeholder="Cores Count" value="<?php ?>"></input>                            
+                                <input type="text" name="cpuName[]" required="required" id="cpuName" class="form-control text-center" placeholder="Name" value="<?php ?>"></input>
+                                <input type="number" name="cpuCores[]" required="required" id="cpuCores" class="form-control text-center" placeholder="Cores Count" value="<?php ?>"></input>                            
                                 <button class="btn btn-success" type="button" onclick="addCpu();">+</button>
                             </div>
                         </div>
@@ -36,8 +36,8 @@
                         <div class="d-flex flex-row mt-3 w-100">
                             <div class="form-group w-100 input-group input-group-lg">
                                 <span class="input-group-text">Memory</span>
-                                <input type="number" name="memoryCapacity[]" id="memoryCapacity" class="form-control text-center" placeholder="Capacity" value="<?php ?>"></input>
-                                <select class="form-select text-center" name="memoryUnit[]" id="memoryUnit">
+                                <input type="number" name="memoryCapacity[]" required="required" id="memoryCapacity" class="form-control text-center" placeholder="Capacity" value="<?php ?>"></input>
+                                <select class="form-select text-center" required="required" name="memoryUnit[]" id="memoryUnit">
                                     <option value="TB">TB</option>
                                     <option value="GB">GB</option>
                                 </select>
@@ -49,8 +49,8 @@
                         <div class="d-flex flex-row mt-3 w-100">
                             <div class="form-group w-100 input-group input-group-lg">
                                 <span class="input-group-text">Storage</span>
-                                <input type="number" name="storageCapacity[]" id="storageCapacity" class="form-control text-center" placeholder="Capacity" value="<?php ?>"></input>
-                                <select class="form-select text-center" name="storageUnit[]" id="storageUnit">
+                                <input type="number" name="storageCapacity[]" required="required" id="storageCapacity" class="form-control text-center" placeholder="Capacity" value="<?php ?>"></input>
+                                <select class="form-select text-center" required="required" name="storageUnit[]" id="storageUnit">
                                     <option value="TB">TB</option>
                                     <option value="GB">GB</option>
                                 </select>                            
@@ -59,7 +59,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="form-group mt-5 mb-0">
+                <div class="form-group mt-5 mb-0 d-grid gap-2 col-6 mx-auto">
                     <button type="submit" class="btn btn-success" name="register">Submit</button>
                 </div>
             </form>
