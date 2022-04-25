@@ -49,9 +49,9 @@
     <div class="container-fluid py-5 mx-auto">
         <div class="container text-center text-white">
             <h1 class="display-1">Delete MacBook</h1>
-            <div class="container my-5 w-50">
-                <h2><small class="text-muted">Variant:</small><?php echo $variantName;?></h2>
-                <h3><?php echo $modelNumber;?></h3>
+            <div class="container mt-5 w-50">
+                <h2>Variant: <?php echo $variantName;?></h2>
+                <h4>Model Number: <?php echo $modelNumber;?></h4>
                 <div class="container d-inline-flex justify-content-center gap-1 text-center mt-3">
                     <?php
                         $bg="dark";
@@ -61,9 +61,9 @@
                         include("./include/indexCard_Storage.php");
                     ?>
                 </div>
+                <a href="./processes/deleteProcess.php?modelNumber=<?php echo $targetId;?>" 
+                class="btn btn-primary rounded-3 mt-3 mb-0 d-grid gap-2 col-2 mx-auto" type="button">Confirm</a>
             </div>
-            <a href="./processes/deleteProcess.php?modelNumber=<?php echo $targetId;?>" 
-            class="btn btn-primary rounded-3 mt-5 mb-0 d-grid gap-2 col-1 mx-auto" type="button">Confirm</a>
         </div>
     </div>
 </body>
