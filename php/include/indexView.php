@@ -17,13 +17,13 @@
                 echo '
                 <div class="container my-5 w-50 main rounded-3 py-md-5 py-4 border border-3 border-dark">
                     <h2><small class="text-muted">Variant:</small> '.$variantName->nodeValue.'</h2>
-                    <h3>Model Number: '.$modelNumber->nodeValue.'</h3>';
+                    <h3><small class="text-muted">Model Number:</small> '.$modelNumber->nodeValue.'</h3>';
                     $cpuList = array();
                     $memoryList = array();
                     $storageList = array();
                     $bg="dark";
                     $text="white";
-                echo '<div class="container d-inline-flex justify-content-center gap-1 text-center">';
+                echo '<div class="container d-inline-flex justify-content-center gap-1 text-center mt-3">';
                 foreach($computeOptions->getelementsByTagName("cpu") as $cpu){ 
                     array_push($cpuList,$cpu->firstElementChild->nodeValue.' ('.$cpu->firstElementChild->nextElementSibling->nodeValue.' Cores)<br>');
                 }
@@ -60,15 +60,15 @@
             $storageOptions = $specifications->firstElementChild->nextElementSibling->nextElementSibling;
 
             echo '
-                <div class="container my-5 w-50 main rounded-3 py-md-5 py-4 border border-3 border-dark">
+                <div class="container my-5 w-50 main rounded-3 py-md-4 py-3 border border-3 border-dark">
                     <h2><small class="text-muted">Variant:</small> '.$variantName->nodeValue.'</h2>
-                    <h3>Model Number: '.$modelNumber->nodeValue.'</h3>';
+                    <h3><small class="text-muted">Model Number:</small> '.$modelNumber->nodeValue.'</h3>';
                     $cpuList = array();
                     $memoryList = array();
                     $storageList = array();
                     $bg="dark";
                     $text="white";
-                echo '<div class="container d-inline-flex justify-content-center gap-1 text-center">';
+                echo '<div class="container d-inline-flex justify-content-center gap-1 text-center mt-3">';
                 foreach($computeOptions->getelementsByTagName("cpu") as $cpu){ 
                     array_push($cpuList,$cpu->firstElementChild->nodeValue.' ('.$cpu->firstElementChild->nextElementSibling->nodeValue.' Cores)<br>');
                 }

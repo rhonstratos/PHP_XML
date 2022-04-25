@@ -1,7 +1,7 @@
 
-<nav class="navbar navbar-expand-lg fixed-top navbar-light bg-light border-bottom border-3 border-secondary">
+<nav class="navbar navbar-expand-lg fixed-top navbar-light bg-light">
     <div class="container-fluid">
-        <a href="./"><img src="../assets/wdance.gif" alt="Woggy" class="navbar-brand"></a>
+        <a href="./"><img src="../assets/nav.png" alt="Woggy" class="navbar-brand ms-5" width="60" height="70"></a>
         <div></div>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>

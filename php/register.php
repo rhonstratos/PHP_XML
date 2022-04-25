@@ -5,10 +5,10 @@
     <?php include("./include/headers.php")?>
     <title>MacBooks | Register</title>
 </head>
-<body class="bg-light pt-5 mt-5">
+<body class="bg-<?php echo $bg; ?> mt-3">
     <?php include("./include/navbar.php");?>
-    <div class="container-fluid main py-5 mx-auto">
-        <div class="container text-center text-light p-5">
+    <div class="container-fluid py-5 mx-auto">
+        <div class="container text-center text-<?php echo $text ?> p-5">
             <h1 class="display-1">Register New MacBook</h1>
             <form class="form w-75 mx-auto my-5 bg-dark rounded-3 p-5" action="./processes/registerProcess.php" method="POST">
                 <div class="d-flex flex-column">

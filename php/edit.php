@@ -5,7 +5,7 @@
     <?php include("./include/headers.php")?>
     <title>MacBooks | Edit</title>
 </head>
-<body class="bg-light pt-5 mt-5"<?php 
+<body class="bg-<?php echo $bg; ?> pt-5 mt-5 "<?php 
     if(isset($_GET['update'])||isset($_GET['delete']))
     echo "onLoad=\"callToast()\"";
 ?>>
@@ -16,8 +16,8 @@
         if (isset($_GET['delete']))
             include("./include/prompts/PromptDeletion.php");
     ?>
-    <div class="container-fluid main py-5 mx-auto px-lg-5">
-        <div class="container-lg-fluid text-center text-light mx-auto px-lg-5">
+    <div class="container-fluidpy-5 mx-auto px-lg-5">
+        <div class="container-lg-fluid text-center text-<?php echo $text ?> mx-auto px-lg-5">
             <table class="table table-light table-striped text-center mx-sm-auto">
                 <thead>
                     <tr class="table-dark">

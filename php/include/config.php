@@ -7,6 +7,8 @@
         $xmldoc->load($path, LIBXML_NOBLANKS);
         $xmldoc->save($path);
         $xmldoc->load($path);
+        $text = "black";
+        $bg = "white";
     }
     catch(Exception $e){
         echo "Error: ".$e->getMessage();
