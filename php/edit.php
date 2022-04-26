@@ -6,7 +6,7 @@
     <title>MacBooks | Edit</title>
 </head>
 <body class="bg-<?php echo $bg; ?> pt-5 mt-5 "<?php 
-    if(isset($_GET['update'])||isset($_GET['delete']))
+    if(isset($_GET['update'])||isset($_GET['delete'])||isset($_GET['duplicate']))
     echo "onLoad=\"callToast()\"";
 ?>>
     <?php 
@@ -15,6 +15,8 @@
             include("./include/prompts/PromptUpdate.php");
         if (isset($_GET['delete']))
             include("./include/prompts/PromptDeletion.php");
+        if (isset($_GET['duplicate']))
+            include("./include/prompts/PromptDuplicate.php");
     ?>
     <div class="container-fluidpy-5 mx-auto px-lg-5">
         <div class="container-lg-fluid text-center text-<?php echo $text ?> mx-auto px-lg-5">

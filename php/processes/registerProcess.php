@@ -1,12 +1,13 @@
 <?php
-    if(isset($_POST['register'])){
+    if(isset($_POST['confirm'])){
         #include("./debug.php");
         include("config.php");
         include("../include/duplicateCheck.php");
         $duplicate = new Duplicate();
         if($duplicate->check($_POST['modelNumber'],$_POST['variantName'])){
             #TODO: mage webapge prompt
-            echo "Duplicate";
+            #echo "Duplicate";
+            header("Location: /register.php?duplicate=true");
         }
         else{   
             try{

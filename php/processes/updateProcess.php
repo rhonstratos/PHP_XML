@@ -1,5 +1,5 @@
 <?php
-    if(isset($_POST['update'])){
+    if(isset($_POST['confirm'])){
 
         #include("./debug.php");
         include("config.php");
@@ -7,7 +7,8 @@
         $duplicateCheck = new Duplicate();
         if($duplicateCheck->check($_POST['variantName'])){
             #TODO: mage webapge prompt
-            echo "Duplicate";
+            #echo "Duplicate";
+            header("Location: /edit.php?duplicate=true");
         }
         else{    
             
