@@ -8,7 +8,7 @@
         if($duplicateCheck->check($_POST['variantName'])){
             #TODO: mage webapge prompt
             #echo "Duplicate";
-            header("Location: /edit.php?duplicate=true");
+            header("Location: ../edit.php?duplicate=true");
         }
         else{    
             

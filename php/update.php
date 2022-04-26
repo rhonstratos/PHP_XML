@@ -54,7 +54,7 @@
     <div class="container-fluid py-5 mx-auto">
         <div class="container text-center text-<?php echo $text ?> p-5">
             <h1 class="display-1">Update MacBook</h1>
-            <form class="form w-75 mx-auto my-5 bg-dark rounded-3 p-5" action="./processes/updateProcess.php" method="POST">
+            <form class="form w-75 mx-auto m-5 bg-dark rounded-3 p-4" action="./processes/updateProcess.php" method="POST">
                 <?php include("./include/modal_confirm.php"); ?>
                 <div class="d-flex flex-column">
                     <div class="d-flex flex-row">
@@ -77,7 +77,7 @@
                         <?php storage($storage); ?>
                     </div>
                 </div>
-                <div class="form-group mt-5 mb-0 d-grid gap-2 col-6 mx-auto">
+                <div class="form-group mt-4 mb-0 d-grid gap-2 col-6 mx-auto">
                     <button type="button" class="btn btn-success fs-5 btn-lg" name="register"
                     data-bs-toggle="modal" data-bs-target="#myModal">Submit</button>
                 </div>

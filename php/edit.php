@@ -18,8 +18,8 @@
         if (isset($_GET['duplicate']))
             include("./include/prompts/PromptDuplicate.php");
     ?>
-    <div class="container-fluidpy-5 mx-auto px-lg-5">
-        <div class="container-lg-fluid text-center text-<?php echo $text ?> mx-auto px-lg-5">
+    <div class="container-fluid mx-auto p-lg-5 p-4">
+        <div class="container-lg-fluid text-center text-<?php echo $text ?> mx-auto border border-dark rounded-3">
             <table class="table table-light table-striped text-center mx-sm-auto">
                 <thead>
                     <tr class="table-dark">
