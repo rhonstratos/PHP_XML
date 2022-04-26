@@ -5,9 +5,6 @@
     $imgsrc = "../assets/woggy_stopAngry.png";
     $alt = "...";
 ?>
-<div aria-live="polite" aria-atomic="true" class="position-relative">
-  <div class="toast-container position-fixed bottom-0 end-0 p-3" id="toast">
-
     <div class="toast bg-<?php echo $bg; ?> text-white" role="alert" aria-live="assertive" aria-atomic="true">
       <div class="toast-header">
         <img src="<?php echo $imgsrc; ?>" class="rounded-3 me-2" alt="<?php echo $alt; ?>">
@@ -18,6 +15,3 @@
         <?php echo $message; ?>
       </div>
     </div>
-
-  </div>
-</div>

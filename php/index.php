@@ -9,10 +9,15 @@
     if(isset($_GET['registered'])&&!empty($_GET['registered']))
     echo "onLoad=\"callToast()\"";
 ?>>
-    <?php 
-        include("./include/navbar.php");
-        include("./include/prompts/PromptRegistration.php");
-    ?>
+    <?php include("./include/navbar.php"); ?>
+    <div aria-live="polite" aria-atomic="true" class="position-relative">
+        <div class="toast-container position-fixed bottom-0 end-0 p-3" id="toast">
+        <?php
+            if (isset($_GET['registered']))
+            include("./include/prompts/PromptRegistration.php");
+        ?>
+        </div>
+    </div>
     <div class="container-fluid py-5 mx-auto">
         <div class="container-fluid text-center text-<?php echo $text ?>">
             <h1 class="display-1">MacBooks</h1>

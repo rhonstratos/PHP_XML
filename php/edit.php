@@ -7,17 +7,21 @@
 </head>
 <body class="bg-<?php echo $bg; ?> pt-5 mt-5 "<?php 
     if(isset($_GET['update'])||isset($_GET['delete'])||isset($_GET['duplicate']))
-    echo "onLoad=\"callToast()\"";
+    echo 'onLoad=callToast()';
 ?>>
-    <?php 
-        include("./include/navbar.php");
-        if (isset($_GET['update']))
-            include("./include/prompts/PromptUpdate.php");
-        if (isset($_GET['delete']))
-            include("./include/prompts/PromptDeletion.php");
-        if (isset($_GET['duplicate']))
-            include("./include/prompts/PromptDuplicate.php");
-    ?>
+    <?php include("./include/navbar.php"); ?>
+    <div aria-live="polite" aria-atomic="true" class="position-relative">
+        <div class="toast-container position-fixed bottom-0 end-0 p-3" id="toast">
+        <?php
+            if (isset($_GET['update']))
+                include("./include/prompts/PromptUpdate.php");
+            if (isset($_GET['delete']))
+                include("./include/prompts/PromptDeletion.php");
+            if (isset($_GET['duplicate']))
+                include("./include/prompts/PromptDuplicate.php");
+        ?>
+        </div>
+    </div>
     <div class="container-fluid mx-auto p-lg-5 p-4">
         <div class="container-lg-fluid text-center text-<?php echo $text ?> mx-auto border border-dark rounded-3">
             <table class="table table-light table-striped text-center mx-sm-auto">
