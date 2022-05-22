@@ -3,13 +3,11 @@
         include("config.php");
         $flag=0;
         foreach($xmldoc->getelementsByTagName("macBook") as $macBooks) {
-            $modelNumber = $macBooks->firstElementChild->firstChild->nextSibling;
-            $variantName = $modelNumber->parentNode->firstElementChild->nextElementSibling->firstElementChild;
-            $specifications = $macBooks->firstElementChild->nextElementSibling;
-            
-            $computeOptions = $specifications->firstElementChild;
-            $memoryOptions = $specifications->firstElementChild->nextElementSibling;
-            $storageOptions = $specifications->firstElementChild->nextElementSibling->nextElementSibling;
+            $modelNumber = $macBooks->getelementsByTagName("modelNumber")[0];
+            $variantName = $macBooks->getelementsByTagName("variantName")[0];
+            $computeOptions = $macBooks->getelementsByTagName("computeOptions")[0];
+            $memoryOptions = $macBooks->getelementsByTagName("memoryOptions")[0];
+            $storageOptions = $macBooks->getelementsByTagName("storageOptions")[0];
             
             if( str_contains(strtolower($variantName->nodeValue),strtolower($searchValue))||
                 str_contains(strtolower($modelNumber->nodeValue),strtolower($searchValue))){
@@ -25,7 +23,7 @@
                     $text="white";
                 echo '<div class="container d-inline-flex justify-content-center gap-1 text-center mt-3">';
                 foreach($computeOptions->getelementsByTagName("cpu") as $cpu){ 
-                    array_push($cpuList,$cpu->firstElementChild->nodeValue.' ('.$cpu->firstElementChild->nextElementSibling->nodeValue.' Cores)<br>');
+                    array_push($cpuList,$cpu->getelementsByTagName("name")[0]->nodeValue.' ('.$cpu->getelementsByTagName("cores")[0]->nodeValue.' Cores)<br>');
                 }
                 include("indexCard_CPU.php");
                 foreach($memoryOptions->getelementsByTagName("memory") as $memory){ 
@@ -51,13 +49,15 @@
     }
     function plain(){
         include("config.php");
+
+        echo $xmldoc->nodeName;
+
         foreach($xmldoc->getelementsByTagName("macBook") as $macBooks) {
-            $modelNumber = $macBooks->firstElementChild->firstChild->nextSibling;
-            $variantName = $modelNumber->parentNode->firstElementChild->nextElementSibling->firstElementChild;
-            $specifications = $macBooks->firstElementChild->nextElementSibling;
-            $computeOptions = $specifications->firstElementChild;
-            $memoryOptions = $specifications->firstElementChild->nextElementSibling;
-            $storageOptions = $specifications->firstElementChild->nextElementSibling->nextElementSibling;
+            $modelNumber = $macBooks->getelementsByTagName("modelNumber")[0];
+            $variantName = $macBooks->getelementsByTagName("variantName")[0];
+            $computeOptions = $macBooks->getelementsByTagName("computeOptions")[0];
+            $memoryOptions = $macBooks->getelementsByTagName("memoryOptions")[0];
+            $storageOptions = $macBooks->getelementsByTagName("storageOptions")[0];
 
             echo '
                 <div class="container my-5 w-50 main rounded-3 py-md-4 py-3 border border-3 border-dark">
@@ -70,7 +70,7 @@
                     $text="white";
                 echo '<div class="container d-inline-flex justify-content-center gap-1 text-center mt-3">';
                 foreach($computeOptions->getelementsByTagName("cpu") as $cpu){ 
-                    array_push($cpuList,$cpu->firstElementChild->nodeValue.' ('.$cpu->firstElementChild->nextElementSibling->nodeValue.' Cores)<br>');
+                    array_push($cpuList,$cpu->getelementsByTagName("name")[0]->nodeValue.' ('.$cpu->getelementsByTagName("cores")[0]->nodeValue.' Cores)<br>');
                 }
                 include("indexCard_CPU.php");
                 foreach($memoryOptions->getelementsByTagName("memory") as $memory){ 

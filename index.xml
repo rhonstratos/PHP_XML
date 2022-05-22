@@ -1,31 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <?xml-stylesheet href="./style/index.css" 
                     type="text/css"?>
-<!-- 
-    Element Tree
-    
-    macBooks
-    /macBook
-
-    //info
-    ///modelNumber
-    ///variant
-    ////variantName
-
-    //specifications
-
-    ///computeOptions
-    ////cpu
-    /////cpu
-    //////name
-    //////cores
-
-    ///memoryOptions
-    /////memory
-    
-    ///storageOptions
-    ////storage
--->
 <macBooks>
   <macBook alter="false">
     <info>
