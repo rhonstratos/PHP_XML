@@ -35,8 +35,8 @@
                 <tbody>
                     <?php
                         foreach($xmldoc->getelementsByTagName("macBook") as $macBooks) {
-                            $modelNumber = $macBooks->firstElementChild->firstChild->nextSibling;
-                            $variantName = $modelNumber->parentNode->firstElementChild->nextElementSibling->firstElementChild;
+                            $modelNumber = $macBooks->getelementsByTagName("modelNumber")[0];
+                            $variantName = $macBooks->getelementsByTagName("variantName")[0];
                             
                             echo '<tr scope="row">';
                                 echo '<td>';
