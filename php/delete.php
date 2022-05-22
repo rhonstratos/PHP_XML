@@ -2,16 +2,17 @@
     include("./include/config.php");
 
     $targetId=$_GET['modelNumber'];
-    foreach($xmldoc->firstElementChild->getelementsByTagName("macBook") as $macBook)
-        if($macBook->firstElementChild->firstElementChild->nodeValue == $targetId){
+    foreach($xmldoc->getelementsByTagName("macBook") as $macBook)
+        if($macBook->getelementsByTagName("modelNumber")[0]->nodeValue == $targetId){
             $node=$macBook;
             break;
         }
 
-    $modelNumber = $node->firstElementChild->firstElementChild->nodeValue;
-    $variantName = $node->firstElementChild->firstElementChild->nextElementSibling->firstElementChild->nodeValue;
-    $specifications = $node->firstElementChild->nextElementSibling;
-    $computeOptions = $specifications->firstElementChild;
+    $modelNumber = $macBook->getelementsByTagName("modelNumber")[0]->nodeValue;
+    $variantName = $macBook->getelementsByTagName("variantName")[0]->nodeValue;
+    $computeOptions = $macBook->getelementsByTagName("computeOptions")[0];
+    $memoryOptions = $macBook->getelementsByTagName("memoryOptions")[0];
+    $storageOptions = $macBook->getelementsByTagName("storageOptions")[0];
     
     $cpuNames=array();
     $cpuCores=array();
@@ -20,14 +21,12 @@
     $cpuList=array();
     
     foreach ($computeOptions->getElementsByTagName("cpu") as $cpu){
-        array_push($cpuNames,$cpu->firstElementChild->nodeValue);
-        array_push($cpuCores,$cpu->firstElementChild->nextElementSibling->nodeValue);
+        array_push($cpuNames,$cpu->getElementsByTagName("name")[0]->nodeValue);
+        array_push($cpuCores,$cpu->getElementsByTagName("cores")[0]->nodeValue);
     }
-    $memoryOptions = $specifications->firstElementChild->nextElementSibling;
     foreach($memoryOptions->getElementsByTagName("memory") as $memoryNode){
         array_push($memoryList,$memoryNode->nodeValue);
     }
-    $storageOptions = $specifications->firstElementChild->nextElementSibling->nextElementSibling;
     foreach($storageOptions->getElementsByTagName("storage") as $storageNode){
         array_push($storageList,$storageNode->nodeValue);
     }
