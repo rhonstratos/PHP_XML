@@ -3,33 +3,33 @@
     include("./include/config.php");
     include("./include/updateFroms.php");
 
-    foreach($xmldoc->firstElementChild->getElementsByTagName("macBook") as $macBook){
-        if($macBook->firstElementChild->firstElementChild->nodeValue == $_GET['modelNumber']){
+    foreach($xmldoc->getElementsByTagName("macBook") as $macBook){
+        if($macBook->getElementsByTagName("modelNumber")->nodeValue == $_GET['modelNumber']){
             #echo $macBook->firstElementChild->firstElementChild->nodeValue;
             $oldNode = $macBook;
             break;
         }
     }
     if(isset($oldNode) && !empty($oldNode)){
-        $modelNumber = $oldNode->firstElementChild->firstElementChild->nodeValue;
-        $variantName = $oldNode->firstElementChild->firstElementChild->nextElementSibling->firstElementChild->nodeValue;
-        $specifications = $oldNode->firstElementChild->nextElementSibling;
-        $computeOptions = $specifications->firstElementChild;
-        
+        $modelNumber = $oldNode->getElementsByTagName("modelNumber")->nodeValue;
+        $variantName = $oldNode->getElementsByTagName("variantName")->nodeValue;
+        $computeOptions = $oldNode->getElementsByTagName("computeOptions");
+        $memoryOptions = $oldNode->getElementsByTagName("memoryOptions");
+        $storageOptions = $oldNode->getElementsByTagName("storeOptions");
         $cpuNames=array();
         $cpuCores=array();
         $memory=array();
         $storage=array();
         
         foreach ($computeOptions->getElementsByTagName("cpu") as $cpu){
-            array_push($cpuNames,$cpu->firstElementChild->nodeValue);
-            array_push($cpuCores,$cpu->firstElementChild->nextElementSibling->nodeValue);
+            array_push($cpuNames,$cpu->getElementsByTagName("name")->nodeValue);
+            array_push($cpuCores,$cpu->getElementsByTagName("cores")->nodeValue);
         }
-        $memoryOptions = $specifications->firstElementChild->nextElementSibling;
+        
         foreach($memoryOptions->getElementsByTagName("memory") as $memoryNode){
             array_push($memory,$memoryNode->nodeValue);
         }
-        $storageOptions = $specifications->firstElementChild->nextElementSibling->nextElementSibling;
+        
         foreach($storageOptions->getElementsByTagName("storage") as $storageNode){
             array_push($storage,$storageNode->nodeValue);
         }
