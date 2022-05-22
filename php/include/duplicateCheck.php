@@ -9,9 +9,9 @@
             $xmldoc->save($path);
             $xmldoc->load($path);
             $flag = 0;
-            foreach($xmldoc->firstElementChild->getelementsByTagName("macBook") as $macBook){
-                $modelNumber = $macBook->firstElementChild->firstChild->nextSibling;
-                $variantName = $modelNumber->parentNode->firstElementChild->nextElementSibling->firstElementChild;
+            foreach($xmldoc->getelementsByTagName("macBook") as $macBook){
+                $modelNumber = $xmldoc->getelementsByTagName("modelNumber")[0];
+                $variantName = $xmldoc->getelementsByTagName("variantName")[0];
 
                 if(!is_null($modelNumberKey))
                     if (strtolower($modelNumber->nodeValue) ==
