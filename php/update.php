@@ -4,33 +4,29 @@
     include("./include/updateFroms.php");
 
     foreach($xmldoc->getElementsByTagName("macBook") as $macBook){
-        if($macBook->getElementsByTagName("modelNumber")->nodeValue == $_GET['modelNumber']){
+        if($macBook->getElementsByTagName("modelNumber")[0]->nodeValue == $_GET['modelNumber']){
             #echo $macBook->firstElementChild->firstElementChild->nodeValue;
             $oldNode = $macBook;
             break;
         }
     }
     if(isset($oldNode) && !empty($oldNode)){
-        $modelNumber = $oldNode->getElementsByTagName("modelNumber")->nodeValue;
-        $variantName = $oldNode->getElementsByTagName("variantName")->nodeValue;
-        $computeOptions = $oldNode->getElementsByTagName("computeOptions");
-        $memoryOptions = $oldNode->getElementsByTagName("memoryOptions");
-        $storageOptions = $oldNode->getElementsByTagName("storeOptions");
+        $modelNumber = $oldNode->getElementsByTagName("modelNumber")[0]->nodeValue;
+        $variantName = $oldNode->getElementsByTagName("variantName")[0]->nodeValue;
         $cpuNames=array();
         $cpuCores=array();
         $memory=array();
         $storage=array();
-        
-        foreach ($computeOptions->getElementsByTagName("cpu") as $cpu){
-            array_push($cpuNames,$cpu->getElementsByTagName("name")->nodeValue);
-            array_push($cpuCores,$cpu->getElementsByTagName("cores")->nodeValue);
+        foreach ($oldNode->getElementsByTagName("cpu") as $cpu){
+            array_push($cpuNames,$cpu->getElementsByTagName("name")[0]->nodeValue);
+            array_push($cpuCores,$cpu->getElementsByTagName("cores")[0]->nodeValue);
         }
         
-        foreach($memoryOptions->getElementsByTagName("memory") as $memoryNode){
+        foreach($oldNode->getElementsByTagName("memory") as $memoryNode){
             array_push($memory,$memoryNode->nodeValue);
         }
         
-        foreach($storageOptions->getElementsByTagName("storage") as $storageNode){
+        foreach($oldNode->getElementsByTagName("storage") as $storageNode){
             array_push($storage,$storageNode->nodeValue);
         }
         #print_r($cpuNames);
