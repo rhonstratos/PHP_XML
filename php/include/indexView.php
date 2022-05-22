@@ -50,8 +50,6 @@
     function plain(){
         include("config.php");
 
-        echo $xmldoc->nodeName;
-
         foreach($xmldoc->getelementsByTagName("macBook") as $macBooks) {
             $modelNumber = $macBooks->getelementsByTagName("modelNumber")[0];
             $variantName = $macBooks->getelementsByTagName("variantName")[0];

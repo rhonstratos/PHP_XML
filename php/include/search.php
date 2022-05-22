@@ -1,3 +1,3 @@
 <?php
-    if (isset($_POST['searchRequest']) && !empty($_POST['searchRequest'])) echo $_POST['searchRequest'];
+    if (isset($_POST['search']) && !empty($_POST['search'])) echo $_POST['search'];
 ?>
