@@ -5,7 +5,7 @@
             echo'<div class="form-group w-100 input-group input-group-lg">';
             echo'<span class="input-group-text">Processor</span>';
             echo'<input type="text" name="cpuName[]" id="cpuName" required="required" class="form-control text-center" placeholder="Name" value="'.$cpuNamesArray[$x].'"></input>';
-            echo'<input type="number" name="cpuCores[]" id="cpuCores" required="required" class="form-control text-center" placeholder="Cores Count" value="'.$cpuCoresArray[$x].'"></input>  ';
+            echo'<input type="number" name="cpuCores[]" id="cpuCores" required="required" class="form-control text-center" placeholder="Core Count" value="'.$cpuCoresArray[$x].'"></input>  ';
             echo'<button class="btn btn-success" type="button" onclick="addCpu();">+</button>';
             echo'</div>';
             echo'</div>';

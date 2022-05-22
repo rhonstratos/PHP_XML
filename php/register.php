@@ -28,7 +28,7 @@
                             <div class="form-group w-100 input-group input-group-lg">
                                 <span class="input-group-text">Processor</span>
                                 <input type="text" name="cpuName[]" required="required" id="cpuName" class="form-control text-center" placeholder="Name" value="<?php ?>"></input>
-                                <input type="number" name="cpuCores[]" required="required" id="cpuCores" class="form-control text-center" placeholder="Cores Count" value="<?php ?>"></input>                            
+                                <input type="number" name="cpuCores[]" required="required" id="cpuCores" class="form-control text-center" placeholder="Core Count" value="<?php ?>"></input>                            
                                 <button class="btn btn-success" type="button" onclick="addCpu();">+</button>
                             </div>
                         </div>
