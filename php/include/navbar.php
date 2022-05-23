@@ -11,6 +11,7 @@
                 <li class="nav-item me-2"><a href="./" class="nav-link active">Home</a></li>
                 <li class="nav-item me-2"><a href="./register.php" class="nav-link active">Register</a></li>
                 <li class="nav-item"><a href="./edit.php" class="nav-link active">Edit</a></li>
+                <li class="nav-item"><a href="./info.php" class="nav-link active">Info</a></li>
                 <li>
                     <form action="./" method="post" class="d-flex fs-4 ms-lg-5">
                         <div class="form-group w-100 input-group input-group-lg">
