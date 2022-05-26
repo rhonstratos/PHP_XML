@@ -1,45 +1,105 @@
 @charset "UTF-8";
 @font-face {
-    font-family: "SF Display Regular";
-    src: url("SF-UI-Display-Regular.otf") format("opentype");
+	font-family: "SF Display Regular";
+	src: url("SF-UI-Display-Regular.otf") format("opentype");
 }
-
-.master{
-    height: 2000px;
+.h1index {
+	letter-spacing: 3px;
 }
-.card{
-    border: 1px solid black;
-    border-radius: 5px;
+.search {
+	border-radius: 50px !important;
+}
+.search-button {
+	background: transparent;
+	border: none;
+	outline: none;
+	margin-left: -45px;
+}
+.cardIndex{
+    border-radius: 10px !important;
+}
+.search-button img {
+	width: 20px;
+	height: 20px;
+	object-fit: cover;
+}
+.indexBody {
+	border-top-left-radius: 50px;
+	border-top-right-radius: 50px;
+	background-color: rgb(49 49 50) !important;
+}
+.master {
+	height: 2000px;
+}
+.card {
+	border: 1px solid black;
+	border-radius: 5px;
 }
 .main {
-    background-color: #a2aaad;
+	background-color: #a2aaad;
 }
-.main-bg{
-    background: linear-gradient(270deg, #d0001f, #c2011d, #b4021b, #a60418, #980516, #8a0614, #7c0712, #6e090f, #600a0d, #520b0b);
-    background-size: 2000% 2000%;
-    -webkit-animation: AnimationName 6s ease infinite;
-    -moz-animation: AnimationName 6s ease infinite;
-    -o-animation: AnimationName 6s ease infinite;
-    animation: AnimationName 6s ease infinite;
+.main-bg {
+	background: linear-gradient(
+		270deg,
+		#d0001f,
+		#c2011d,
+		#b4021b,
+		#a60418,
+		#980516,
+		#8a0614,
+		#7c0712,
+		#6e090f,
+		#600a0d,
+		#520b0b
+	);
+	background-size: 2000% 2000%;
+	-webkit-animation: AnimationName 6s ease infinite;
+	-moz-animation: AnimationName 6s ease infinite;
+	-o-animation: AnimationName 6s ease infinite;
+	animation: AnimationName 6s ease infinite;
 }
 
 @-webkit-keyframes AnimationName {
-    0%{background-position:0% 48%}
-    50%{background-position:100% 53%}
-    100%{background-position:0% 48%}
+	0% {
+		background-position: 0% 48%;
+	}
+	50% {
+		background-position: 100% 53%;
+	}
+	100% {
+		background-position: 0% 48%;
+	}
 }
 @-moz-keyframes AnimationName {
-    0%{background-position:0% 48%}
-    50%{background-position:100% 53%}
-    100%{background-position:0% 48%}
+	0% {
+		background-position: 0% 48%;
+	}
+	50% {
+		background-position: 100% 53%;
+	}
+	100% {
+		background-position: 0% 48%;
+	}
 }
 @-o-keyframes AnimationName {
-    0%{background-position:0% 48%}
-    50%{background-position:100% 53%}
-    100%{background-position:0% 48%}
+	0% {
+		background-position: 0% 48%;
+	}
+	50% {
+		background-position: 100% 53%;
+	}
+	100% {
+		background-position: 0% 48%;
+	}
 }
 @keyframes AnimationName {
-    0%{background-position:0% 48%}
-    50%{background-position:100% 53%}
-    100%{background-position:0% 48%}
+	0% {
+		background-position: 0% 48%;
+	}
+	50% {
+		background-position: 100% 53%;
+	}
+	100% {
+		background-position: 0% 48%;
+	}
 }
