@@ -5,7 +5,7 @@
     <?php include("./include/headers.php")?>
     <title>Activity 2 | MacBooks</title>
 </head>
-<body class="pt-3 mt-5 bg-<?php echo $bg; ?>" <?php 
+<body class="bg-<?php echo $bg; ?>" <?php 
     if(isset($_GET['registered'])&&!empty($_GET['registered']))
     echo "onLoad=\"callToast()\"";
 ?>>
