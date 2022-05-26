@@ -1,19 +1,19 @@
 
 function addCpu() {
 	/*
-        <div class="d-flex flex-row mt-3 w-100">
-            <div class="form-group w-100 input-group input-group-lg">
-                <span class="input-group-text">Processor</span>
-                <input type="text" name="cpuName" id="cpuName" class="form-control text-center" placeholder="Name"></input>
-                <input type="number" name="cpuCores" id="cpuCores" class="form-control text-center" placeholder="Core Count"></input>                            
-                <button class="btn btn-success" type="button" onclick="addCpu();">+</button>
-            </div>
-        </div>
-    */
-	
-		
-    var cpu = document.getElementById("child-cpu");
-    var div1 = document.createElement("div");
+		<div class="d-flex flex-row mt-3 w-100">
+			<div class="form-group w-100 input-group input-group-lg">
+				<span class="input-group-text">Processor</span>
+				<input type="text" name="cpuName" id="cpuName" class="form-control text-center" placeholder="Name"></input>
+				<input type="number" name="cpuCores" id="cpuCores" class="form-control text-center" placeholder="Core Count"></input>                            
+				<button class="btn btn-success" type="button" onclick="addCpu();">+</button>
+			</div>
+		</div>
+	*/
+
+
+	var cpu = document.getElementById("child-cpu");
+	var div1 = document.createElement("div");
 	div1.className = "d-flex flex-row mt-3 w-100";
 	var div2 = document.createElement("div");
 	div2.className = "form-group w-100 input-group input-group-lg";
@@ -50,25 +50,25 @@ function addCpu() {
 	div2.appendChild(button);
 	div1.appendChild(div2);
 	cpu.appendChild(div1);
-	
+
 }
 function addMemory() {
-    /*
-        <div class="d-flex flex-row mt-3 w-100">
-            <div class="form-group w-100 input-group input-group-lg">
-                <span class="input-group-text">Memory</span>
-                <input type="number" name="memoryCapacity" id="memoryCapacity" class="form-control text-center" placeholder="Capacity"></input>
-                <select class="form-select text-center" name="memoryUnit" id="memoryUnit">
-                    <option value="TB">TB</option>
-                    <option value="GB">GB</option>
-                </select>
-                <button class="btn btn-success" type="button" onclick="addMemory();">+</button>
-            </div>
-        </div>
-    */
-    
-    var memory = document.getElementById("child-memory");
-    var div1 = document.createElement("div");
+	/*
+		<div class="d-flex flex-row mt-3 w-100">
+			<div class="form-group w-100 input-group input-group-lg">
+				<span class="input-group-text">Memory</span>
+				<input type="number" name="memoryCapacity" id="memoryCapacity" class="form-control text-center" placeholder="Capacity"></input>
+				<select class="form-select text-center" name="memoryUnit" id="memoryUnit">
+					<option value="TB">TB</option>
+					<option value="GB">GB</option>
+				</select>
+				<button class="btn btn-success" type="button" onclick="addMemory();">+</button>
+			</div>
+		</div>
+	*/
+
+	var memory = document.getElementById("child-memory");
+	var div1 = document.createElement("div");
 	div1.className = "d-flex flex-row mt-3 w-100";
 	var div2 = document.createElement("div");
 	div2.className = "form-group w-100 input-group input-group-lg";
@@ -89,12 +89,12 @@ function addMemory() {
 	select.id = "memoryUnit";
 	select.name = "memoryUnit[]";
 	var option1 = document.createElement("option");
-    option1.value="TB";
-    option1.innerHTML="TB";
+	option1.value = "TB";
+	option1.innerHTML = "TB";
 
 	var option2 = document.createElement("option");
-    option2.value="GB";
-    option2.innerHTML="GB";
+	option2.value = "GB";
+	option2.innerHTML = "GB";
 
 	select.appendChild(option1);
 	select.appendChild(option2);
@@ -107,28 +107,28 @@ function addMemory() {
 
 	div2.appendChild(span);
 	div2.appendChild(input1);
-    div2.appendChild(select);
+	div2.appendChild(select);
 	div2.appendChild(button);
 	div1.appendChild(div2);
 	memory.appendChild(div1);
 }
 function addStorage() {
 	/*
-        <div class="d-flex flex-row mt-3 w-100">
-            <div class="form-group w-100 input-group input-group-lg">
-                <span class="input-group-text">Storage</span>
-                <input type="number" name="storageCapacity" id="storageCapacity" class="form-control text-center" placeholder="Capacity"></input>
-                <select class="form-select text-center" name="storageUnit" id="storageUnit">
-                    <option value="TB">TB</option>
-                    <option value="GB">GB</option>
-                </select>                            
-                <button class="btn btn-success" type="button" onclick="addStorage();">+</button>
-            </div>
-        </div>
-    */
-	
-    var storage = document.getElementById("child-storage");
-    var div1 = document.createElement("div");
+		<div class="d-flex flex-row mt-3 w-100">
+			<div class="form-group w-100 input-group input-group-lg">
+				<span class="input-group-text">Storage</span>
+				<input type="number" name="storageCapacity" id="storageCapacity" class="form-control text-center" placeholder="Capacity"></input>
+				<select class="form-select text-center" name="storageUnit" id="storageUnit">
+					<option value="TB">TB</option>
+					<option value="GB">GB</option>
+				</select>                            
+				<button class="btn btn-success" type="button" onclick="addStorage();">+</button>
+			</div>
+		</div>
+	*/
+
+	var storage = document.getElementById("child-storage");
+	var div1 = document.createElement("div");
 	div1.className = "d-flex flex-row mt-3 w-100";
 	var div2 = document.createElement("div");
 	div2.className = "form-group w-100 input-group input-group-lg";
@@ -149,12 +149,12 @@ function addStorage() {
 	select.id = "storageUnit";
 	select.name = "storageUnit[]";
 	var option1 = document.createElement("option");
-    option1.value="TB";
-    option1.innerHTML="TB";
+	option1.value = "TB";
+	option1.innerHTML = "TB";
 
 	var option2 = document.createElement("option");
-    option2.value="GB";
-    option2.innerHTML="GB";
+	option2.value = "GB";
+	option2.innerHTML = "GB";
 
 	select.appendChild(option1);
 	select.appendChild(option2);
@@ -167,13 +167,12 @@ function addStorage() {
 
 	div2.appendChild(span);
 	div2.appendChild(input1);
-    div2.appendChild(select);
+	div2.appendChild(select);
 	div2.appendChild(button);
 	div1.appendChild(div2);
 	storage.appendChild(div1);
 }
- 
-function callToast(){
+function callToast() {
 	var option = {
 		animation: true,
 		autohide: true,
@@ -188,3 +187,5 @@ function callToast(){
 
 	toastList.forEach(toast => toast.show());
 }
+
+export { addCpu, addMemory, addStorage, callToast }
