@@ -15,21 +15,27 @@
 	outline: none;
 	margin-left: -45px;
 }
-.cardIndex{
-    border-radius: 10px !important;
+.cardIndex {
+	border-radius: 10px !important;
+}
+.cardIndex > img {
+	max-width: 400px !important;
 }
 .search-button img {
 	width: 20px;
 	height: 20px;
 	object-fit: cover;
 }
-.indexBody {
-	border-top-left-radius: 50px;
-	border-top-right-radius: 50px;
-	background-color: rgb(49 49 50) !important;
+html,
+body {
+	max-height: 100%;
+	height: 100%;
 }
-.master {
-	height: 2000px;
+.indexBody {
+	height: 100% !important;
+	background-color: rgb(49 49 50) !important;
+	border-top-left-radius: 50px !important;
+	border-top-right-radius: 50px !important;
 }
 .card {
 	border: 1px solid black;

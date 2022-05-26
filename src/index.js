@@ -1,2 +1,2 @@
 import 'bootstrap';
-import './scss/app';//test
+import './scss/app';
