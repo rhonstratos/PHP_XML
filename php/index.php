@@ -22,7 +22,7 @@
         </div>
     </div>
     <!-- main body -->
-    <div class="row mx-0 indexBody">
+    <div class="row mx-0 indexBody" style="height: fit-content !important;">
         <div class="container-fluid p-lg-5 p-4 text-white">
             <div class="d-flex justify-content-between mb-4">
                 <h1 class="fw-bold h1index">Browse for MacBooks</h1>

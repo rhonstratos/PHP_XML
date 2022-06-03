@@ -1,17 +1,5 @@
 
 function addCpu() {
-	/*
-		<div class="d-flex flex-row mt-3 w-100">
-			<div class="form-group w-100 input-group input-group-lg">
-				<span class="input-group-text">Processor</span>
-				<input type="text" name="cpuName" id="cpuName" class="form-control text-center" placeholder="Name"></input>
-				<input type="number" name="cpuCores" id="cpuCores" class="form-control text-center" placeholder="Core Count"></input>                            
-				<button class="btn btn-success" type="button" onclick="addCpu();">+</button>
-			</div>
-		</div>
-	*/
-
-
 	var cpu = document.getElementById("child-cpu");
 	var div1 = document.createElement("div");
 	div1.className = "d-flex flex-row mt-3 w-100";
@@ -53,20 +41,6 @@ function addCpu() {
 
 }
 function addMemory() {
-	/*
-		<div class="d-flex flex-row mt-3 w-100">
-			<div class="form-group w-100 input-group input-group-lg">
-				<span class="input-group-text">Memory</span>
-				<input type="number" name="memoryCapacity" id="memoryCapacity" class="form-control text-center" placeholder="Capacity"></input>
-				<select class="form-select text-center" name="memoryUnit" id="memoryUnit">
-					<option value="TB">TB</option>
-					<option value="GB">GB</option>
-				</select>
-				<button class="btn btn-success" type="button" onclick="addMemory();">+</button>
-			</div>
-		</div>
-	*/
-
 	var memory = document.getElementById("child-memory");
 	var div1 = document.createElement("div");
 	div1.className = "d-flex flex-row mt-3 w-100";
@@ -113,20 +87,6 @@ function addMemory() {
 	memory.appendChild(div1);
 }
 function addStorage() {
-	/*
-		<div class="d-flex flex-row mt-3 w-100">
-			<div class="form-group w-100 input-group input-group-lg">
-				<span class="input-group-text">Storage</span>
-				<input type="number" name="storageCapacity" id="storageCapacity" class="form-control text-center" placeholder="Capacity"></input>
-				<select class="form-select text-center" name="storageUnit" id="storageUnit">
-					<option value="TB">TB</option>
-					<option value="GB">GB</option>
-				</select>                            
-				<button class="btn btn-success" type="button" onclick="addStorage();">+</button>
-			</div>
-		</div>
-	*/
-
 	var storage = document.getElementById("child-storage");
 	var div1 = document.createElement("div");
 	div1.className = "d-flex flex-row mt-3 w-100";
