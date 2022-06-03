@@ -3,6 +3,16 @@
 	font-family: "SF Display Regular";
 	src: url("SF-UI-Display-Regular.otf") format("opentype");
 }
+.fit{
+	width: fit-content;
+	height: fit-content;
+}
+.rounded-25{
+	border-radius: 25px !important;
+}
+.rounded-50{
+	border-radius: 50px !important;
+}
 .h1index {
 	letter-spacing: 3px;
 }

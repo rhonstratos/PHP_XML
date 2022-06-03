@@ -1,5 +1,6 @@
-import 'bootstrap'
-import '../scss/app';
+import '../scss/app'
+import 'bootstrap';
+import '@popperjs/core'
 import { addCpu, addMemory, addStorage, callToast } from './main';
 
 window.addCpu = addCpu

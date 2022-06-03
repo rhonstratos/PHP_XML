@@ -8,9 +8,9 @@
 </head>
 
 <body class="indexBodyBG" <?php
-                if (isset($_GET['registered']) && !empty($_GET['registered']))
-                    echo "onLoad=\"callToast()\"";
-                ?>>
+                            if (isset($_GET['registered']) && !empty($_GET['registered']))
+                                echo "onLoad=\"callToast()\"";
+                            ?>>
     <!-- navbar -->
     <?php include("./include/navbar.php"); ?>
     <div aria-live="polite" aria-atomic="true" class="position-relative">
@@ -32,6 +32,9 @@
                 </form>
             </div>
             <div class="d-flex justify-content-evenly flex-wrap text-black gap-5">
+                <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                    Launch static backdrop modal
+                </button>
                 <?php
                 include("include/indexView.php");
                 if (isset($_POST["search"]) && !empty($_POST["search"]))
@@ -42,6 +45,7 @@
             </div>
         </div>
     </div>
+    <?php require_once "modals/registerModal.php"; ?>
 </body>
 
 </html>
