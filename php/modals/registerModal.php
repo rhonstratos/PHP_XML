@@ -12,7 +12,7 @@
                         <span>Variant Name:</span>
                         <input type="text" name="registerVariantName" id="registerVariantName" class="form-control input-secondary rounded-10 border-none">
                     </div>
-                    <div>
+                    <div class="overflow-auto" style="max-height: 250px !important;">
                         <h3>Specifications</h3>
                         <span>Processor Options:</span>
                         <div id="RegisterProcessor" class="container-register">
@@ -51,9 +51,8 @@
                 </div>
             </div>
             <div class="align-self-end">
-                <button class="mt-3 btn btn-primary fit align-self-end">Save</button>
-                <button class="mt-3 btn btn-primary fit align-self-end">Save</button>
-                <button class="mt-3 btn btn-primary fit align-self-end">Save</button>
+                <button type="button" class="mt-3 btn btn-secondary fit align-self-end rounded-10 border-none" data-bs-dismiss="modal" aria-label="Close">Discard</button>
+                <button type="button" class="mt-3 btn btn-primary fit align-self-end rounded-10 border-none">Save</button>
             </div>
         </div>
     </div>
