@@ -3,14 +3,36 @@
 	font-family: "SF Display Regular";
 	src: url("SF-UI-Display-Regular.otf") format("opentype");
 }
-.fit{
+.input-secondary {
+	background-color: #dfdfdf !important;
+}
+.fit {
 	width: fit-content;
 	height: fit-content;
 }
-.rounded-25{
+.container-register{
+	display: flex;
+    flex-direction: column;
+    row-gap: 5px;
+}
+.border-none {
+	border: none !important;
+}
+.rounded-10 {
+	border-radius: 10px !important;
+}
+.rounded-10-start {
+	/* top-left | top-right | bottom-right | bottom-left */
+	border-radius: 10px 0 0 10px !important;
+}
+.rounded-10-end {
+	/* top-left | top-right | bottom-right | bottom-left */
+	border-radius: 0 10px 10px 0 !important;
+}
+.rounded-25 {
 	border-radius: 25px !important;
 }
-.rounded-50{
+.rounded-50 {
 	border-radius: 50px !important;
 }
 .h1index {

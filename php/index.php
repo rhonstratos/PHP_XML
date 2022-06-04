@@ -23,6 +23,9 @@
     </div>
     <!-- main body -->
     <div class="row mx-0 indexBody" style="height: fit-content !important;">
+        <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+            Launch static backdrop modal
+        </button>
         <div class="container-fluid p-lg-5 p-4 text-white">
             <div class="d-flex justify-content-between mb-4">
                 <h1 class="fw-bold h1index">Browse for MacBooks</h1>
@@ -32,9 +35,6 @@
                 </form>
             </div>
             <div class="d-flex justify-content-evenly flex-wrap text-black gap-5">
-                <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
-                    Launch static backdrop modal
-                </button>
                 <?php
                 include("include/indexView.php");
                 if (isset($_POST["search"]) && !empty($_POST["search"]))
