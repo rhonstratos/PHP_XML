@@ -6,7 +6,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- webpack5 compile-->
-    <script src="./dist/main.js" defer></script>
+    <script src="../dist/app/index.js" defer module></script>
+    <script src="../dist/main/index.js" defer module></script>
     <!-- Favicon -->
     <link rel="shortcut icon" href="./assets/favicon.ico" type="image/x-icon">
     <link rel="icon" href="./assets/favicon.ico" type="image/x-icon">
@@ -20,7 +21,7 @@
         <h3>If you still wish to proceed, click <a href="./php">here.</a></h3>
         <div class="container mt-5">
             <h2>Your PHP info:</h2>
-            <?php phpinfo();?>
+            <?php phpinfo(); ?>
         </div>
     </div>
 </body>

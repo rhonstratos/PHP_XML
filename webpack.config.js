@@ -1,9 +1,13 @@
 const path = require("path");
+const ENTRY = {
+    app:"./src/js/app.js",
+    main:"./src/js/index.js"
+};
 module.exports = {
     watch:true,
-    entry: "./src/js/app.js",
+    entry: ENTRY,
     output: {
-        filename: "main.js",
+        filename: "[name]/index.js",
         path: path.resolve(__dirname, "dist"),
     },
     module: {
