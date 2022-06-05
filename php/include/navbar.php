@@ -8,7 +8,7 @@
         </button>
         <div class="collapse navbar-collapse justify-content-end" id="navbarSupportedContent">
             <ul class="navbar-nav mb-2 mb-lg-0">
-                <li class="nav-item"><a class="nav-link active fs-5" aria-current="page" href=""  data-bs-toggle="modal" data-bs-target="#exampleModal">Register</a></li>
+                <li class="nav-item"><a class="nav-link active fs-5" aria-current="page" href="" data-bs-toggle="modal" data-bs-target="#registerMODAL">Register</a></li>
                 <li class="nav-item"><a class="nav-link active fs-5" aria-current="page" href="#">Update</a></li>
                 <li class="nav-item"><a class="nav-link active fs-5" aria-current="page" href="#">Delete</a></li>
             </ul>

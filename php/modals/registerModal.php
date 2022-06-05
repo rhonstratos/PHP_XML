@@ -1,5 +1,5 @@
 <!-- Modal -->
-<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+<div class="modal fade" id="registerMODAL" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered w-75" style="max-width: 75% !important;">
         <div class="modal-content container-fluid bg-white rounded-25 p-4">
             <h2>Register a MacBook</h2>
