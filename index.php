@@ -16,10 +16,10 @@
 <body>
     <div class="text-center mt-5">
         <h1>Current PHP version: <?php echo phpversion(); ?></h1>
-        <h3>You must have PHP 8.0 or above to continue. Please update your PHP.</h3>
+        <h3>You must have PHP 8.0 or above to <a href="./php">continue.</a><br>Please update your PHP if you do not meet with the requirements.</h3>
         <h3>If you still wish to proceed, click <a href="./php">here.</a></h3>
         <div class="container mt-5">
-            <h2>My PHP info:</h2>
+            <h2>Your PHP info:</h2>
             <?php phpinfo();?>
         </div>
     </div>
