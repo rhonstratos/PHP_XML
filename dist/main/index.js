@@ -16,7 +16,7 @@
   \*************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _register__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./register */ \"./src/js/register.js\");\n\r\nwindow.newCPU = _register__WEBPACK_IMPORTED_MODULE_0__.newProcessor\r\nwindow.newMemory = _register__WEBPACK_IMPORTED_MODULE_0__.newMemory\r\nwindow.newStorage =  _register__WEBPACK_IMPORTED_MODULE_0__.newStorage\n\n//# sourceURL=webpack:///./src/js/index.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _register__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./register */ \"./src/js/register.js\");\n\r\nwindow.newCPU = _register__WEBPACK_IMPORTED_MODULE_0__.newProcessor\r\nwindow.newMemory = _register__WEBPACK_IMPORTED_MODULE_0__.newMemory\r\nwindow.newStorage = _register__WEBPACK_IMPORTED_MODULE_0__.newStorage\r\n\r\nwindow.$(\"#RegisterIMG\").on(\"change\",(event)=>{\r\n    $('#RegisterIMG-label').html(`\r\n        <img src=\"${URL.createObjectURL(event.target.files[0])}\" alt=\"...\" style=\"object-fit: cover;\" class=\"w-100 h-100\">\r\n    `)\r\n})\n\n//# sourceURL=webpack:///./src/js/index.js?");
 
 /***/ }),
 
