@@ -26,8 +26,8 @@
         <div class="container-fluid p-lg-5 p-4 text-white">
             <div class="d-flex justify-content-between mb-4">
                 <h1 class="fw-bold h1index">Browse for MacBooks</h1>
-                <form action="./" method="post" class="flex-row d-flex">
-                    <input class="form-control form-control-lg search" type="text" name="search" placeholder="Search" id="" <?php if (isset($_POST["search"]) && !empty($_POST["search"])) echo 'value="' . $_POST["search"] . '"'; ?>>
+                <form action="./" method="get" class="flex-row d-flex">
+                    <input class="form-control form-control-lg search" type="text" name="search" placeholder="Search" id="" <?php if (isset($_GET["search"]) && !empty($_GET["search"])) echo 'value="' . $_GET["search"] . '"'; ?>>
                     <button type="submit" class="search-button"><img src="../assets/search.png" alt="..." width="20"></button>
                 </form>
             </div>
@@ -35,8 +35,8 @@
                 <?php
                 use Config\Index as Index;
                 $index = new Index();
-                if (isset($_POST["search"]) && !empty($_POST["search"]))
-                    $index->search($_POST["search"]);
+                if (isset($_GET["search"]) && !empty($_GET["search"]))
+                    $index->search($_GET["search"]);
                 else
                     $index->plain();
                 ?>
