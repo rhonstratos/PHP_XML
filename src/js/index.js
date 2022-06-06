@@ -13,6 +13,7 @@ window.$("#RegisterIMG").on("change", (event) => {
 import { callToast } from "./main";
 window.callToast = callToast
 
-import { setURL, viewCard } from './ajax.class'
+import { register, setURL, viewCard } from './ajax.class'
 window.setURL = setURL
 window.viewCard = viewCard
+window.register = register

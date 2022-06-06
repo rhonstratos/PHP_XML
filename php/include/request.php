@@ -107,7 +107,7 @@ class Register extends XMLHandler
         $this->loadXML();
         $this->xml = $this->getXML();
     }
-    public function register($modelNumber, $variantName, $processor, $memory, $storage)
+    public function register($modelNumber, $variantName,$processor,$memory,$storage)
     {
         $dupe = new DuplicateChecker();
         $node = $this->xml;
@@ -129,8 +129,8 @@ class Register extends XMLHandler
             $computeOptions = $node->createElement("computeOptions");
             $memoryOptions = $node->createElement("memoryOptions");
             $storageOptions = $node->createElement("storageOptions");
-            foreach ($processor as $key) {
-                $split = explode("|", $key);
+            foreach ($processor as $value) {
+                $split = explode("|", $value);
                 $name = $node->createElement("name", $split[0]);
                 $cores = $node->createElement("cores", $split[1]);
                 $cpu = $node->createElement("cpu");
@@ -138,19 +138,19 @@ class Register extends XMLHandler
                 $cpu->appendChild($cores);
                 $computeOptions->appendChild($cpu);
             }
-            foreach ($memory as $key) {
+            foreach ($memory as $value) {
                 $memoryOptions->appendChild(
                     $node->createElement(
                         "memory",
-                        $key
+                        $value
                     )
                 );
             }
-            foreach ($storage as $key) {
+            foreach ($storage as $value) {
                 $storageOptions->appendChild(
                     $node->createElement(
                         "storage",
-                        $key
+                        $value
                     )
                 );
             }
@@ -164,7 +164,7 @@ class Register extends XMLHandler
             $childNode->appendChild($info);
             $childNode->appendChild($specifications);
 
-            $childNode->parentNode->appendChild($childNode);
+            $this->xml->getElementsByTagName("macBooks")[0]->appendChild($childNode);
             $this->saveXML();
             return "Success";
         }
@@ -173,10 +173,19 @@ class Register extends XMLHandler
 
 if (isset($_GET['register'])) {
     $reg = new Register();
-    $modelNumber = $_GET['registerModelNumber'];
-    $variantName = $_GET['registerVariantName'];
-    $processor = $_GET['processor'];
-    $memory = $_GET['memoryCapacity'];
-    $storage = $_GET['storageCapacity'];
-    echo $reg->register($modelNumber, $variantName, $processor, $memory, $storage);
+    $modelNumber = $_POST['registerModelNumber'];
+    $variantName = $_POST['registerVariantName'];
+    $processor = array();
+    foreach($_POST['processor'] as $key => $value) {
+        array_push($processor,$value);
+    }
+    $memory = array();
+    foreach($_POST['memoryCapacity'] as $key => $value) {
+        array_push($processor,$value);
+    }
+    $storage = array();
+    foreach($_POST['storageCapacity'] as $key => $value) {
+        array_push($processor,$value);
+    }
+    echo $reg->register($modelNumber, $variantName,$processor,$memory,$storage);
 }
