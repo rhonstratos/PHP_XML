@@ -3,7 +3,6 @@
 namespace Handlers;
 
 use DOMDocument;
-use Exception;
 
 class XMLHandler
 {
@@ -107,15 +106,15 @@ class Register extends XMLHandler
         $this->loadXML();
         $this->xml = $this->getXML();
     }
-    public function register($modelNumber, $variantName, $processor, $memory, $storage, /*$file*/)
+    public function register($modelNumber, $variantName, $processor, $memory, $storage, $file)
     {
         $dupe = new DuplicateChecker();
         $node = $this->xml;
-        #$file_name = $file['name'];
-        #$file_size = $file['size'];
-        #$file_type = $file['type'];
-        #$tmp_name = $file['tmp_name'];
-        #$error = $file['error'];
+        $file_name = $file['name'];
+        $file_size = $file['size'];
+        $file_type = $file['type'];
+        $tmp_name = $file['tmp_name'];
+        $error = $file['error'];
         if ($dupe->checkBoth($variantName, $modelNumber)) {
             return "Item has a duplicate Model number or Variant name";
         } else {
@@ -167,12 +166,12 @@ class Register extends XMLHandler
 
             $info->appendChild($modelNumber);
             $info->appendChild($variant);
-            #$info->appendChild($node->createElement("img", $file_name));
+            $info->appendChild($node->createElement("img", $file_name));
 
             $childNode->appendChild($info);
             $childNode->appendChild($specifications);
 
-            #move_uploaded_file($tmp_name, "../../assets/$file_name");
+            move_uploaded_file($tmp_name, "../../assets/$file_name");
 
             $this->xml->getElementsByTagName("macBooks")[0]->appendChild($childNode);
             $this->saveXML();
@@ -180,6 +179,7 @@ class Register extends XMLHandler
         }
     }
 }
+
 if (isset($_POST['registerModelNumber']) && isset($_POST['registerVariantName'])) {
     echo json_encode($_POST);
     print_r($_POST);
@@ -190,9 +190,6 @@ if (isset($_POST['registerModelNumber']) && isset($_POST['registerVariantName'])
     $processor = $_POST['processor'];
     $memory = $_POST['memoryCapacity'];
     $storage = $_POST['storageCapacity'];
-    #$file = $_FILES['RegisterIMG'];
-try{$reg->register($modelNumber, $variantName, $processor, $memory, $storage, /*$_FILES['RegisterIMG']*/);}
-    catch(Exception $e){
-        echo $e->getMessage();
-    }
+    $file = $_FILES['RegisterIMG'];
+    echo $reg->register($modelNumber, $variantName, $processor, $memory, $storage, $file);
 }
