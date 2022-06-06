@@ -1,6 +1,10 @@
 <?php
+
 namespace Handlers;
+
 use DOMDocument;
+use Duplicate;
+
 class XMLHandler
 {
     private $xml, $path;
@@ -20,7 +24,7 @@ class XMLHandler
     }
     public function loadXML()
     {
-        return $this->xml->load($this->path,LIBXML_NOBLANKS);
+        return $this->xml->load($this->path, LIBXML_NOBLANKS);
     }
     public function saveXML()
     {
@@ -28,7 +32,7 @@ class XMLHandler
     }
 }
 
-class IndexView extends XMLHandler
+class DuplicateChecker extends XMLHandler
 {
     private $xml;
     public function __construct()
@@ -38,13 +42,57 @@ class IndexView extends XMLHandler
         $this->loadXML();
         $this->xml = $this->getXML();
     }
-    public function handleRequest($request)
+    public function checkVariant($variantNameKey)
     {
-        $node = $this->xml->getelementsByTagName("macBook");
-        foreach ($node as $targetNode) {
-            $modelNumber = $targetNode->getelementsByTagName("modelNumber")[0]->nodeValue;
-            $variantName = $targetNode->getelementsByTagName("variantName")[0]->nodeValue;
-            return "$modelNumber + $variantName";
+        $flag = 0;
+        foreach ($this->xml->getelementsByTagName("macBook") as $macBook) {
+            $variantName = $macBook->getelementsByTagName("variantName")[0]->nodeValue;
+            if (
+                strtolower($variantName) ==
+                strtolower($variantNameKey)
+            ) {
+                $flag += 1;
+                break;
+            }
+        }
+        switch ($flag) {
+            case 0:
+                return false;
+                break;
+            default:
+                return true;
+                break;
+        }
+    }
+    public function checkBoth($variantNameKey, $modelNumberKey)
+    {
+        $flag = 0;
+        foreach ($this->xml->getelementsByTagName("macBook") as $macBook) {
+            $modelNumber = $macBook->getelementsByTagName("modelNumber")[0]->nodeValue;
+            $variantName = $macBook->getelementsByTagName("variantName")[0]->nodeValue;
+
+            if (
+                strtolower($modelNumber) ==
+                strtolower($modelNumberKey)
+            ) {
+                $flag += 1;
+                break;
+            }
+            if (
+                strtolower($variantName) ==
+                strtolower($variantNameKey)
+            ) {
+                $flag += 1;
+                break;
+            }
+        }
+        switch ($flag) {
+            case 0:
+                return false;
+                break;
+            default:
+                return true;
+                break;
         }
     }
 }
@@ -59,22 +107,76 @@ class Register extends XMLHandler
         $this->loadXML();
         $this->xml = $this->getXML();
     }
-    public function handleRequest($request)
+    public function register($modelNumber, $variantName, $processor, $memory, $storage)
     {
-        $node = $this->xml->getelementsByTagName("macBook");
-        foreach ($node as $targetNode) {
-            $modelNumber = $targetNode->getelementsByTagName("modelNumber")[0]->nodeValue;
-            $variantName = $targetNode->getelementsByTagName("variantName")[0]->nodeValue;
-            return "$modelNumber + $variantName + register";
+        $dupe = new DuplicateChecker();
+        $node = $this->xml;
+        if ($dupe->checkBoth($variantName, $modelNumber)) {
+            return "Item has a duplicate Model number or Variant name";
+        } else {
+            $childNode = $node->createElement("macBook");
+            $info = $node->createElement("info");
+            $modelNumber = $node->createElement(
+                "modelNumber",
+                $modelNumber
+            );
+            $variant = $node->createElement("variant");
+            $variant->appendChild($node->createElement(
+                "variantName",
+                $variantName
+            ));
+            $specifications = $node->createElement("specifications");
+            $computeOptions = $node->createElement("computeOptions");
+            $memoryOptions = $node->createElement("memoryOptions");
+            $storageOptions = $node->createElement("storageOptions");
+            foreach ($processor as $key) {
+                $split = explode("|", $key);
+                $name = $node->createElement("name", $split[0]);
+                $cores = $node->createElement("cores", $split[1]);
+                $cpu = $node->createElement("cpu");
+                $cpu->appendChild($name);
+                $cpu->appendChild($cores);
+                $computeOptions->appendChild($cpu);
+            }
+            foreach ($memory as $key) {
+                $memoryOptions->appendChild(
+                    $node->createElement(
+                        "memory",
+                        $key
+                    )
+                );
+            }
+            foreach ($storage as $key) {
+                $storageOptions->appendChild(
+                    $node->createElement(
+                        "storage",
+                        $key
+                    )
+                );
+            }
+            $specifications->appendChild($computeOptions);
+            $specifications->appendChild($memoryOptions);
+            $specifications->appendChild($storageOptions);
+
+            $info->appendChild($modelNumber);
+            $info->appendChild($variant);
+
+            $childNode->appendChild($info);
+            $childNode->appendChild($specifications);
+
+            $childNode->parentNode->appendChild($childNode);
+            $this->saveXML();
+            return "Success";
         }
     }
 }
 
-if(isset($_GET['request'])){
-    $cards = new IndexView();
-    echo $cards->handleRequest($_GET['request']);
-}
-if(isset($_GET['register'])){
-    $cards = new Register();
-    echo $cards->handleRequest($_GET['register']);
+if (isset($_GET['register'])) {
+    $reg = new Register();
+    $modelNumber = $_GET['registerModelNumber'];
+    $variantName = $_GET['registerVariantName'];
+    $processor = $_GET['processor'];
+    $memory = $_GET['memoryCapacity'];
+    $storage = $_GET['storageCapacity'];
+    echo $reg->register($modelNumber, $variantName, $processor, $memory, $storage);
 }

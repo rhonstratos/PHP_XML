@@ -34,7 +34,7 @@
             <div class="d-flex justify-content-evenly flex-wrap text-black gap-5">
                 <?php
 
-                use Config\Index as Index;
+                use Config\Index;
 
                 $index = new Index();
                 if (isset($_GET["search"]) && !empty($_GET["search"]))

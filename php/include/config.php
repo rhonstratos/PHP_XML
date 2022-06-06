@@ -5,6 +5,7 @@ namespace Config;
 require "request.php";
 
 use Handlers\XMLHandler;
+use DOMDocument;
 
 class Index extends XMLHandler
 {

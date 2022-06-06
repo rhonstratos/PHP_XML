@@ -14,7 +14,11 @@
                 $macBook = $xml->createElement("macBook");
                 $info = $xml->createElement("info");
                 $modelNumber = $xml->createElement(
-                    "modelNumber",$_POST['modelNumber']);
+                    "modelNumber",$_POST['modelNumber']); 
+                    #modelNumber
+                    #variantName
+                    #cpuName
+                    #
 
                 $variant = $xml->createElement("variant");
                 $variant->appendChild($xml->createElement(
