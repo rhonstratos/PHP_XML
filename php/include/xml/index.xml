@@ -2,7 +2,7 @@
 <?xml-stylesheet href="./style/index.css" 
                     type="text/css"?>
 <macBooks>
-  <macBook alter="false">
+  <macBook>
     <info>
       <modelNumber>A2338 (EMC 3578)</modelNumber>
       <variant>
@@ -29,7 +29,7 @@
       </storageOptions>
     </specifications>
   </macBook>
-  <macBook alter="true">
+  <macBook>
     <info>
       <modelNumber>A2289 (EMC 3456)</modelNumber>
       <variant>
@@ -60,7 +60,7 @@
       </storageOptions>
     </specifications>
   </macBook>
-  <macBook alter="false">
+  <macBook>
     <info>
       <modelNumber>A2251 (EMC 3348)</modelNumber>
       <variant>
@@ -91,7 +91,7 @@
       </storageOptions>
     </specifications>
   </macBook>
-  <macBook alter="true">
+  <macBook>
     <info>
       <modelNumber>A2141 (EMC 3347)</modelNumber>
       <variant>
@@ -124,7 +124,7 @@
       </storageOptions>
     </specifications>
   </macBook>
-  <macBook alter="false">
+  <macBook>
     <info>
       <modelNumber>A1706 (EMC 3071)</modelNumber>
       <variant>
@@ -154,7 +154,7 @@
       </storageOptions>
     </specifications>
   </macBook>
-  <macBook alter="true">
+  <macBook>
     <info>
       <modelNumber>A1708 (EMC 2978)</modelNumber>
       <variant>
@@ -180,7 +180,7 @@
       </storageOptions>
     </specifications>
   </macBook>
-  <macBook alter="false">
+  <macBook>
     <info>
       <modelNumber>A1502 (EMC 2835)</modelNumber>
       <variant>
@@ -205,7 +205,7 @@
       </storageOptions>
     </specifications>
   </macBook>
-  <macBook alter="true">
+  <macBook>
     <info>
       <modelNumber>A1398 (EMC 2910)</modelNumber>
       <variant>
@@ -229,7 +229,7 @@
       </storageOptions>
     </specifications>
   </macBook>
-  <macBook alter="false">
+  <macBook>
     <info>
       <modelNumber>A1502 (EMC 2875)</modelNumber>
       <variant>
@@ -255,7 +255,7 @@
       </storageOptions>
     </specifications>
   </macBook>
-  <macBook alter="true">
+  <macBook>
     <info>
       <modelNumber>A1425 (EMC 2672)</modelNumber>
       <variant>
@@ -406,6 +406,29 @@
       <storageOptions>
         <storage>256GB SSD</storage>
         <storage>256GB SSD</storage>
+      </storageOptions>
+    </specifications>
+  </macBook>
+  <macBook>
+    <info>
+      <modelNumber>dcccc</modelNumber>
+      <variant>
+        <variantName>aw213123</variantName>
+      </variant>
+      <img>woggy_boi.gif</img>
+    </info>
+    <specifications>
+      <computeOptions>
+        <cpu>
+          <name>Apple M1 Pro</name>
+          <cores>10</cores>
+        </cpu>
+      </computeOptions>
+      <memoryOptions>
+        <memory>16 GB</memory>
+      </memoryOptions>
+      <storageOptions>
+        <storage>512GB SSD</storage>
       </storageOptions>
     </specifications>
   </macBook>
