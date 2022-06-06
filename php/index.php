@@ -1,4 +1,4 @@
-<?php include("./include/config.php"); ?>
+<?php require_once ("./include/config.php"); ?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -12,7 +12,7 @@
                                 echo "onLoad=\"callToast()\"";
                             ?>>
     <!-- navbar -->
-    <?php include("./include/navbar.php"); ?>
+    <?php require_once ("./include/navbar.php"); ?>
     <div aria-live="polite" aria-atomic="true" class="position-relative">
         <div class="toast-container position-fixed bottom-0 end-0 p-3" id="toast">
             <?php
@@ -33,11 +33,12 @@
             </div>
             <div class="d-flex justify-content-evenly flex-wrap text-black gap-5">
                 <?php
-                include("include/indexView.php");
+                use Config\Index as Index;
+                $index = new Index();
                 if (isset($_POST["search"]) && !empty($_POST["search"]))
-                    search($_POST["search"]);
+                    $index->search($_POST["search"]);
                 else
-                    plain();
+                    $index->plain();
                 ?>
             </div>
         </div>

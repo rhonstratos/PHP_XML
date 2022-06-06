@@ -1,5 +1,6 @@
 <?php
-
+namespace Handlers;
+use DOMDocument;
 class XMLHandler
 {
     private $xml, $path;
@@ -19,7 +20,7 @@ class XMLHandler
     }
     public function loadXML()
     {
-        return $this->xml->load($this->path);
+        return $this->xml->load($this->path,LIBXML_NOBLANKS);
     }
     public function saveXML()
     {
