@@ -17,12 +17,20 @@ import { setURL, viewCard } from './ajax.class'
 window.setURL = setURL
 window.viewCard = viewCard
 
+
 $("#REGISTERFORM").on("submit", (event) => {
-    event.preventDefault();
-    let form = $("#REGISTERFORM").serialize()
-    const req = $.post("./include/request.php",
-        form)
-        .done((data) => {
-            console.log(data)
-        })
+    event.preventDefault()
+    const dat = new FormData(this)
+    //const form = $("#REGISTERFORM").serialize()
+    const req = $.ajax({
+        url: './include/request.php',
+        type: 'POST',
+        data: dat,
+        cache: false,
+        contentType: false,
+        processData: false
+    })
+    .done((data) => {
+        console.log(data)
+    })
 })
