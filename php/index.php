@@ -45,7 +45,7 @@
             </div>
         </div>
     </div>
-    <?php require_once "modals/registerModal.php"; ?>
+    <?php require_once "include/modals/registerModal.php"; ?>
 </body>
 
 </html>
