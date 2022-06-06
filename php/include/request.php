@@ -34,7 +34,7 @@ class IndexView extends XMLHandler
     public function __construct()
     {
         $this->setXML();
-        $this->setPath("./xml/index.xml");
+        $this->setPath("../xml/index.xml");
         $this->loadXML();
         $this->xml = $this->getXML();
     }
@@ -55,7 +55,7 @@ class Register extends XMLHandler
     public function __construct()
     {
         $this->setXML();
-        $this->setPath("./xml/index.xml");
+        $this->setPath("../xml/index.xml");
         $this->loadXML();
         $this->xml = $this->getXML();
     }
