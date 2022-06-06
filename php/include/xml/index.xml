@@ -8,6 +8,7 @@
       <variant>
         <variantName>Pro 13" (M1) 2020</variantName>
       </variant>
+      <img>macBook.png</img>
     </info>
     <specifications>
       <computeOptions>
@@ -34,6 +35,7 @@
       <variant>
         <variantName>Pro 13" 2020</variantName>
       </variant>
+      <img>macBook.png</img>
     </info>
     <specifications>
       <computeOptions>
@@ -64,6 +66,7 @@
       <variant>
         <variantName>Pro 13" 2020</variantName>
       </variant>
+      <img>macBook.png</img>
     </info>
     <specifications>
       <computeOptions>
@@ -94,6 +97,7 @@
       <variant>
         <variantName>Pro 16" 2019</variantName>
       </variant>
+      <img>macBook.png</img>
     </info>
     <specifications>
       <computeOptions>
@@ -126,6 +130,7 @@
       <variant>
         <variantName>Pro 13"</variantName>
       </variant>
+      <img>macBook.png</img>
     </info>
     <specifications>
       <computeOptions>
@@ -155,6 +160,7 @@
       <variant>
         <variantName>Pro 13" 2016</variantName>
       </variant>
+      <img>macBook.png</img>
     </info>
     <specifications>
       <computeOptions>
@@ -180,6 +186,7 @@
       <variant>
         <variantName>Pro 13" 2015</variantName>
       </variant>
+      <img>macBook.png</img>
     </info>
     <specifications>
       <computeOptions>
@@ -204,6 +211,7 @@
       <variant>
         <variantName>Pro 15" 2015</variantName>
       </variant>
+      <img>macBook.png</img>
     </info>
     <specifications>
       <computeOptions>
@@ -227,6 +235,7 @@
       <variant>
         <variantName>Pro 13" 2014</variantName>
       </variant>
+      <img>macBook.png</img>
     </info>
     <specifications>
       <computeOptions>
@@ -252,6 +261,7 @@
       <variant>
         <variantName>Pro 13" 2013</variantName>
       </variant>
+      <img>macBook.png</img>
     </info>
     <specifications>
       <computeOptions>
@@ -276,6 +286,7 @@
       <variant>
         <variantName>Calc13123123</variantName>
       </variant>
+      <img>macBook.png</img>
     </info>
     <specifications>
       <computeOptions>
@@ -302,7 +313,7 @@
       <variant>
         <variantName>awda</variantName>
       </variant>
-      <img/>
+      <img>woggy_cheer.png</img>
     </info>
     <specifications>
       <computeOptions>
@@ -331,6 +342,29 @@
       <computeOptions>
         <cpu>
           <name>Apple M1 Max</name>
+          <cores>10</cores>
+        </cpu>
+      </computeOptions>
+      <memoryOptions>
+        <memory>16 GB</memory>
+      </memoryOptions>
+      <storageOptions>
+        <storage>1TB SSD</storage>
+      </storageOptions>
+    </specifications>
+  </macBook>
+  <macBook>
+    <info>
+      <modelNumber>awdasd23123</modelNumber>
+      <variant>
+        <variantName>asdawasdawd</variantName>
+      </variant>
+      <img>woggy_boi.gif</img>
+    </info>
+    <specifications>
+      <computeOptions>
+        <cpu>
+          <name>Apple M1 Pro</name>
           <cores>10</cores>
         </cpu>
       </computeOptions>

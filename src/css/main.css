@@ -3,6 +3,10 @@
 	font-family: "SF Display Regular";
 	src: url("SF-UI-Display-Regular.otf") format("opentype");
 }
+img.cards-index{
+	min-width: 400px;
+	min-height: 250px;
+}
 .input-secondary {
 	background-color: #dfdfdf !important;
 }
@@ -49,6 +53,7 @@
 }
 .cardIndex {
 	border-radius: 10px !important;
+	height: fit-content !important;
 }
 .cardIndex > img {
 	max-width: 400px !important;

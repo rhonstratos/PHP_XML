@@ -50,6 +50,7 @@ class Index extends XMLHandler
         foreach ($this->xml->getelementsByTagName("macBook") as $macBooks) {
             $modelNumber = $macBooks->getelementsByTagName("modelNumber")[0]->nodeValue;
             $variantName = $macBooks->getelementsByTagName("variantName")[0]->nodeValue;
+            $img = $macBooks->getelementsByTagName("img")[0]->nodeValue;
             require('cards/indexCard.php');
         }
     }
