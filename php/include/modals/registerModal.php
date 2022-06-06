@@ -84,7 +84,7 @@
                 </div>
                 <div class="align-self-end">
                     <button type="button" class="mt-3 btn btn-secondary fit align-self-end rounded-10 border-none" data-bs-dismiss="modal" aria-label="Close">Discard</button>
-                    <button type="submit" class="mt-3 btn btn-primary fit align-self-end rounded-10 border-none" onclick="">Save</button>
+                    <button type="submit" class="mt-3 btn btn-primary fit align-self-end rounded-10 border-none">Save</button>
                 </div>
             </div>
         </div>

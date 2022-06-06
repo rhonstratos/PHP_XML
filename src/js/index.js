@@ -13,7 +13,16 @@ window.$("#RegisterIMG").on("change", (event) => {
 import { callToast } from "./main";
 window.callToast = callToast
 
-import { register, setURL, viewCard } from './ajax.class'
+import { setURL, viewCard } from './ajax.class'
 window.setURL = setURL
 window.viewCard = viewCard
-window.register = register
+
+$("#REGISTERFORM").on("submit", (event) => {
+    event.preventDefault();
+    let form = $("#REGISTERFORM").serialize()
+    const req = $.post("./include/request.php",
+        form)
+        .done((data) => {
+            console.log(data)
+        })
+})

@@ -3,7 +3,6 @@
 namespace Handlers;
 
 use DOMDocument;
-use Duplicate;
 
 class XMLHandler
 {
@@ -107,7 +106,7 @@ class Register extends XMLHandler
         $this->loadXML();
         $this->xml = $this->getXML();
     }
-    public function register($modelNumber, $variantName,$processor,$memory,$storage)
+    public function register($modelNumber, $variantName, $processor, $memory, $storage)
     {
         $dupe = new DuplicateChecker();
         $node = $this->xml;
@@ -130,7 +129,9 @@ class Register extends XMLHandler
             $memoryOptions = $node->createElement("memoryOptions");
             $storageOptions = $node->createElement("storageOptions");
             foreach ($processor as $value) {
+                #echo $value;
                 $split = explode("|", $value);
+                print_r($split);
                 $name = $node->createElement("name", $split[0]);
                 $cores = $node->createElement("cores", $split[1]);
                 $cpu = $node->createElement("cpu");
@@ -171,21 +172,16 @@ class Register extends XMLHandler
     }
 }
 
-if (isset($_GET['register'])) {
+if (isset($_POST['registerModelNumber']) && isset($_POST['registerVariantName'])) {
+    echo json_encode($_POST);
+    print_r($_POST);
+    print_r($_GET);
     $reg = new Register();
     $modelNumber = $_POST['registerModelNumber'];
     $variantName = $_POST['registerVariantName'];
-    $processor = array();
-    foreach($_POST['processor'] as $key => $value) {
-        array_push($processor,$value);
-    }
-    $memory = array();
-    foreach($_POST['memoryCapacity'] as $key => $value) {
-        array_push($processor,$value);
-    }
-    $storage = array();
-    foreach($_POST['storageCapacity'] as $key => $value) {
-        array_push($processor,$value);
-    }
-    echo $reg->register($modelNumber, $variantName,$processor,$memory,$storage);
+    $processor = $_POST['processor'];
+    $memory = $_POST['memoryCapacity'];
+    $storage = $_POST['storageCapacity'];
+    #$_FILES['RegisterIMG'];
+    echo $reg->register($modelNumber, $variantName, $processor, $memory, $storage);
 }
