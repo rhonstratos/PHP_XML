@@ -376,4 +376,37 @@
       </storageOptions>
     </specifications>
   </macBook>
+  <macBook>
+    <info>
+      <modelNumber>test1</modelNumber>
+      <variant>
+        <variantName>tesla model segss</variantName>
+      </variant>
+      <img>woggy_gold.gif</img>
+    </info>
+    <specifications>
+      <computeOptions>
+        <cpu>
+          <name>Apple M1 Pro</name>
+          <cores>10</cores>
+        </cpu>
+        <cpu>
+          <name>Apple M1</name>
+          <cores>8</cores>
+        </cpu>
+        <cpu>
+          <name>Intel Core i5</name>
+          <cores>2</cores>
+        </cpu>
+      </computeOptions>
+      <memoryOptions>
+        <memory>8 GB</memory>
+        <memory>4 GB</memory>
+      </memoryOptions>
+      <storageOptions>
+        <storage>256GB SSD</storage>
+        <storage>256GB SSD</storage>
+      </storageOptions>
+    </specifications>
+  </macBook>
 </macBooks>

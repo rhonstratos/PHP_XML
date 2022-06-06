@@ -39,6 +39,7 @@ $("#REGISTERFORM").on("submit", (event) => {
         type: 'post'
     })
     .done((data) => {
-        console.log(data)
+        //console.log(data)
+        location.reload()
     })
 })
