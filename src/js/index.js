@@ -4,7 +4,7 @@
 import '../scss/app'
 import { newMemory, newProcessor, newStorage, replaceIMG } from './register'
 import { callToast } from "./main";
-import { viewCard, register, viewEdit } from './ajax.class'
+import { viewCard, register, viewEdit, update } from './ajax.class'
 
 window.newCPU = newProcessor
 window.newMemory = newMemory
@@ -15,3 +15,4 @@ window.viewEdit = viewEdit
 window.replaceIMG = replaceIMG
 //$("#RegisterIMG").on("change", replaceIMG)
 $("#REGISTERFORM").on("submit", register)
+$("#UPDATEFORM").on("submit", update)

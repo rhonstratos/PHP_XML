@@ -155,7 +155,7 @@ class Search extends XMLHandler
     }
 }
 
-class Register extends XMLHandler
+class FormPOSTHander extends XMLHandler
 {
     private $xml;
     public function __construct()
@@ -237,13 +237,16 @@ class Register extends XMLHandler
             return "Success";
         }
     }
+    public function update($modelNumber, $variantName, $processor, $memory, $storage, $file){
+
+    }
 }
 
 if (isset($_POST['registerModelNumber']) && isset($_POST['registerVariantName'])) {
     #echo json_encode($_POST);
     #print_r($_POST);
     #print_r($_GET);
-    $reg = new Register();
+    $reg = new FormPOSTHander();
     $modelNumber = $_POST['registerModelNumber'];
     $variantName = $_POST['registerVariantName'];
     $processor = $_POST['processor'];
@@ -251,6 +254,20 @@ if (isset($_POST['registerModelNumber']) && isset($_POST['registerVariantName'])
     $storage = $_POST['storageCapacity'];
     $file = $_FILES['RegisterIMG'];
     echo $reg->register($modelNumber, $variantName, $processor, $memory, $storage, $file);
+}
+
+if (isset($_POST['editModelNumber']) && isset($_POST['editVariantName'])) {
+    #echo json_encode($_POST);
+    #print_r($_POST);
+    #print_r($_GET);
+    $updt = new FormPOSTHander();
+    $modelNumber = $_POST['registerModelNumber'];
+    $variantName = $_POST['registerVariantName'];
+    $processor = $_POST['processor'];
+    $memory = $_POST['memoryCapacity'];
+    $storage = $_POST['storageCapacity'];
+    $file = $_FILES['RegisterIMG'];
+    echo $updt->update($modelNumber, $variantName, $processor, $memory, $storage, $file);
 }
 
 if (isset($_GET['requestNode'])) {

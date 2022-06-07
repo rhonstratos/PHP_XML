@@ -20,7 +20,7 @@ function viewEdit(modelNumber) {
         `)
         macBook.cpu.forEach(e => {
             $('#EditProcessor')
-            .append(`
+                .append(`
             <div class="input-group">
                 <select class="form-control input-secondary border-none text-center" required="required" name="processor[]" id="processor">
                     <option value="${e.name}|${e.cores}" disabled selected>${e.name} (${e.cores} Cores)</option>
@@ -40,7 +40,7 @@ function viewEdit(modelNumber) {
         })
         macBook.memory.forEach(e => {
             $('#EditMemory')
-            .append(`
+                .append(`
             <div class="input-group">
                 <select class="form-control input-secondary border-none text-center" required="required" name="memoryCapacity[]" id="memoryCapacity">
                     <option value="${e.value}" disabled selected>${e.value}</option>
@@ -56,7 +56,7 @@ function viewEdit(modelNumber) {
         })
         macBook.storage.forEach(e => {
             $('#EditStorage')
-            .append(`
+                .append(`
             <div class="input-group">
                 <select class="form-control input-secondary border-none text-center" required="required" name="storageCapacity[]" id="storageCapacity">
                     <option value="${e.value}" disabled selected>${e.value}</option>
@@ -133,4 +133,22 @@ function register(event) {
         location.reload()
     })
 }
-export { viewCard, viewEdit, register }
+function update(event) {
+    event.preventDefault();
+    const file_data = $('#EditIMG').prop('files')[0];
+    const form = new FormData(document.getElementById("UPDATEFORM"))
+    form.append('file', file_data)
+    $.ajax({
+        url: './include/request.php', // <-- point to server-side PHP script 
+        dataType: 'text',  // <-- what to expect back from the PHP script, if anything
+        cache: false,
+        contentType: false,
+        processData: false,
+        data: form,
+        type: 'post'
+    }).done((data) => {
+        //console.log(data)
+        location.reload()
+    })
+}
+export { viewCard, viewEdit, register, update }
