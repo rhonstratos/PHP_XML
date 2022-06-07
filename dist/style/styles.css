@@ -14,9 +14,12 @@
     font-weight: normal;
     font-style: normal;
 }
+body.bg-main{
+	background-color: rgb(49 49 50) !important;
+}
 img.cards-index{
-	min-width: 400px;
-	min-height: 250px;
+	min-width: 270px !important;
+	min-height: 250px !important;
 }
 .input-secondary {
 	background-color: #dfdfdf !important;

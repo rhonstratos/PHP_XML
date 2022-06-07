@@ -7,7 +7,7 @@
     <title>Activity 2 | MacBooks</title>
 </head>
 
-<body class="indexBodyBG" <?php
+<body class="bg-main" <?php
                             if (isset($_GET['registered']) && !empty($_GET['registered']))
                                 echo "onLoad=\"callToast()\"";
                             ?>>
@@ -22,6 +22,9 @@
         </div>
     </div>
     <!-- main body -->
+    <div class="bg-white">
+
+    
     <div class="row mx-0 indexBody" style="height: fit-content !important;">
         <div class="container-fluid p-lg-5 p-4 text-white">
             <div class="d-flex justify-content-between mb-4">
@@ -45,6 +48,7 @@
             </div>
         </div>
     </div>
+</div>
     <?php require_once "include/modals/registerModal.php"; ?>
 </body>
 
