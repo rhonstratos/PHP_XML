@@ -12,5 +12,6 @@ window.newStorage = newStorage
 window.callToast = callToast
 window.viewCard = viewCard
 window.viewEdit = viewEdit
-$("#RegisterIMG").on("change", replaceIMG)
+window.replaceIMG = replaceIMG
+//$("#RegisterIMG").on("change", replaceIMG)
 $("#REGISTERFORM").on("submit", register)

@@ -106,7 +106,7 @@ class Search extends XMLHandler
         $this->loadXML();
         $this->xml = $this->getXML();
     }
-    public function viewCard($modelNumber)
+    public function getNode($modelNumber)
     {
 
         $node = $this->xml->getElementsByTagName('macBook');
@@ -253,7 +253,7 @@ if (isset($_POST['registerModelNumber']) && isset($_POST['registerVariantName'])
     echo $reg->register($modelNumber, $variantName, $processor, $memory, $storage, $file);
 }
 
-if (isset($_GET['viewCard'])) {
+if (isset($_GET['requestNode'])) {
     $find = new Search();
-    echo $find->viewCard($_GET['modelNumber']);
+    echo $find->getNode($_GET['modelNumber']);
 }

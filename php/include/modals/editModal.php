@@ -30,7 +30,7 @@
                                         <option value="Intel Core i7|6">Intel Core i7 (6 Cores)</option>
                                         <option value="Intel Core i9|8">Intel Core i9 (8 Cores)</option>
                                     </select>
-                                    <button class="btn btn-success rounded-10-end" type="button" onclick="newCPU()">+</button>
+                                    <button class="btn btn-success rounded-10-end" type="button" onclick="newCPU('EditProcessor')">+</button>
                                 </div>
                             </div>
                             <span>Memory Options:</span>
@@ -44,7 +44,7 @@
                                         <option value="32 GB">32 GB</option>
                                         <option value="64 GB">64 GB</option>
                                     </select>
-                                    <button class="btn btn-success rounded-10-end" type="button" onclick="newMemory();">+</button>
+                                    <button class="btn btn-success rounded-10-end" type="button" onclick="newMemory('EditMemory');">+</button>
                                 </div>
                             </div>
                             <span>Storage Options:</span>
@@ -59,7 +59,7 @@
                                         <option value="4TB SSD">4TB SSD</option>
                                         <option value="8TB SSD">8TB SSD</option>
                                     </select>
-                                    <button class="btn btn-success rounded-10-end" type="button" onclick="newStorage();">+</button>
+                                    <button class="btn btn-success rounded-10-end" type="button" onclick="newStorage('EditStorage');">+</button>
                                 </div>
                             </div>
                         </div>
@@ -72,7 +72,7 @@
                                 </div>
                             </div>
                         </label>
-                        <input type="file" accept="image/*" name="EditIMG" id="EditIMG" class="form-control" hidden>
+                        <input onchange="replaceIMG('EditIMG')" type="file" accept="image/*" name="EditIMG" id="EditIMG" class="form-control" hidden>
                     </div>
                 </div>
                 <div class="align-self-end">

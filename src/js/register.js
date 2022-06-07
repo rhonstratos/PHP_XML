@@ -1,6 +1,5 @@
-//import $ from 'jquery'
-function newProcessor() {
-    const node = $("#RegisterProcessor")
+function newProcessor(id) {
+    const node = $(`#${id}`)
     node.append(`
     <div class="input-group">
         <select class="form-control input-secondary border-none text-center" required="required" name="processor[]" id="processor">
@@ -18,8 +17,8 @@ function newProcessor() {
         <button class="btn btn-success rounded-10-end" type="button" onclick="newCPU()">+</button>
     </div>`)
 }
-function newMemory() {
-    const node = $("#RegisterMemory")
+function newMemory(id) {
+    const node = $(`#${id}`)
     node.append(`
     <div class="input-group">
         <select class="form-control input-secondary border-none text-center" required="required" name="memoryCapacity[]" id="memoryCapacity">
@@ -33,8 +32,8 @@ function newMemory() {
         <button class="btn btn-success rounded-10-end" type="button" onclick="newMemory();">+</button>
     </div>`)
 }
-function newStorage() {
-    const node = $("#RegisterStorage")
+function newStorage(id) {
+    const node = $(`#${id}`)
     node.append(`
     <div class="input-group">
         <select class="form-control input-secondary border-none text-center" required="required" name="storageCapacity[]" id="storageCapacity">
@@ -49,8 +48,8 @@ function newStorage() {
         <button class="btn btn-success rounded-10-end" type="button" onclick="newStorage();">+</button>
     </div>`)
 }
-function replaceIMG() {
-    $('#RegisterIMG-label').html(`
+function replaceIMG(id) {
+    $(`#${id}-label`).html(`
         <img src="${URL.createObjectURL(event.target.files[0])}" alt="..." style="object-fit: cover;" class="w-100 h-100">
     `)
 }
