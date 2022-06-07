@@ -11,25 +11,25 @@
                     <h3>Model Information</h3>
                     <div class="mb-3">
                         <span>Model Number:</span>
-                        <input type="text" name="registerModelNumber" id="registerModelNumber" class="form-control input-secondary rounded-10 border-none">
+                        <input readonly="readonly" type="text" name="viewModelNumber" id="viewModelNumber" class="form-control input-secondary rounded-10 border-none">
                         <span>Variant Name:</span>
-                        <input type="text" name="registerVariantName" id="registerVariantName" class="form-control input-secondary rounded-10 border-none">
+                        <input readonly="readonly" type="text" name="viewVariantName" id="viewVariantName" class="form-control input-secondary rounded-10 border-none">
                     </div>
                     <h3>Specifications</h3>
                     <div class="overflow-auto" style="max-height: 250px !important;">
                         <span>Processor Options:</span>
-                        <div id="RegisterProcessor" class="container-register">
+                        <div id="ViewProcessor" class="container-register">
                         </div>
                         <span>Memory Options:</span>
-                        <div id="RegisterMemory" class="container-register">
+                        <div id="ViewMemory" class="container-register">
                         </div>
                         <span>Storage Options:</span>
-                        <div id="RegisterStorage" class="container-register">
+                        <div id="ViewStorage" class="container-register">
                         </div>
                     </div>
                 </div>
                 <div class="col-6">
-                    <h3>Add Image</h3>
+                    <h3>MacBook Image</h3>
                     <label for="RegisterIMG" class="text-center rounded-10 d-flex flex-column input-secondary w-100 h-100" style="max-height:300px;">
                         <div class="justify-content-center align-items-center align-self-center row h-100">
                             <div class="row align-self-center justify-content-center align-items-center h-100" id="RegisterIMG-label" style="max-height: 250px !important;">

@@ -5,9 +5,33 @@ function viewCard(modelNumber) {
     params += `&modelNumber=${modelNumber}`
     const _url = `./include/request.php${params}`
     $.get(_url, (data, status) => {
-        
-    }).done((data)=>{
-        
+    }).done((data) => {
+        const json = JSON.parse(data)
+        const macBook = json.macBook
+        $("#viewModelNumber").val(macBook.modelNumber)
+        $("#viewVariantName").val(macBook.variantName)
+        macBook.cpu.forEach(e => {
+            /* 
+            console.log(element.name)
+            console.log(element.cores) 
+            */
+           $('#ViewProcessor')
+           .append(`
+           <input value="${e.name} (${e.cores} Cores)" readonly="readonly" class="text-center form-control input-secondary rounded-10 border-none">
+           `)
+        });
+        macBook.memory.forEach(e =>{
+            $('#ViewMemory')
+            .append(`
+           <input value="${e.value}" readonly="readonly" class="text-center form-control input-secondary rounded-10 border-none">
+           `)
+        })
+        macBook.storage.forEach(e =>{
+            $('#ViewStorage')
+            .append(`
+           <input value="${e.value}" readonly="readonly" class="text-center form-control input-secondary rounded-10 border-none">
+           `)
+        })
     })
 }
 function register(event) {
@@ -24,9 +48,9 @@ function register(event) {
         data: form,
         type: 'post'
     })
-    .done((data) => {
-        //console.log(data)
-        location.reload()
-    })
+        .done((data) => {
+            //console.log(data)
+            location.reload()
+        })
 }
 export { viewCard, register }
