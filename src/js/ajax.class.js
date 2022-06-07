@@ -130,6 +130,7 @@ function register(event) {
         type: 'post'
     }).done((data) => {
         //console.log(data)
+        alert(data)
         location.reload()
     })
 }
@@ -148,6 +149,7 @@ function update(event) {
         type: 'post'
     }).done((data) => {
         //console.log(data)
+        alert(data)
         location.reload()
     })
 }

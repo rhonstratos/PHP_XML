@@ -112,10 +112,10 @@ class Search extends XMLHandler
         $node = $this->xml->getElementsByTagName('macBook');
         $get_modelNumber = '';
         $get_variantName = '';
-        $get_img='';
-        $cpu = Array();
-        $memory = Array();
-        $storage = Array();
+        $get_img = '';
+        $cpu = array();
+        $memory = array();
+        $storage = array();
         foreach ($node as $targetNode) {
             if ($targetNode->getElementsByTagName('modelNumber')[0]->nodeValue == $modelNumber) {
                 $get_modelNumber = $targetNode->getElementsByTagName('modelNumber')[0]->nodeValue;
@@ -124,31 +124,31 @@ class Search extends XMLHandler
                 $get_memory = $targetNode->getElementsByTagName('memory');
                 $get_storage = $targetNode->getElementsByTagName('storage');
                 $get_img = $targetNode->getElementsByTagName('img')[0]->nodeValue;
-                foreach($get_cpu as $targetCpu){
+                foreach ($get_cpu as $targetCpu) {
                     $name = $targetCpu->getElementsByTagName('name')[0]->nodeValue;
                     $cores = $targetCpu->getElementsByTagName('cores')[0]->nodeValue;
-                    array_push($cpu,Array("name"=>"$name", "cores"=>"$cores"));
+                    array_push($cpu, array("name" => "$name", "cores" => "$cores"));
                 }
-                foreach($get_memory as $targetMemory){
+                foreach ($get_memory as $targetMemory) {
                     $mem = $targetMemory->nodeValue;
-                    array_push($memory,Array("value"=>"$mem"));
+                    array_push($memory, array("value" => "$mem"));
                 }
-                foreach($get_storage as $targetStorage){
+                foreach ($get_storage as $targetStorage) {
                     $stg = $targetStorage->nodeValue;
-                    array_push($storage,Array("value"=>"$stg"));
+                    array_push($storage, array("value" => "$stg"));
                 }
                 break;
             }
         }
         #echo "Card Loaded: $modelNumber";
-        $packJSON = Array(
-            "macBook"=> Array(
-                "modelNumber"=>"$get_modelNumber",
-                "variantName"=>"$get_variantName",
-                "img"=>$get_img,
-                "cpu"=>$cpu,
-                "memory"=>$memory,
-                "storage"=>$storage
+        $packJSON = array(
+            "macBook" => array(
+                "modelNumber" => "$get_modelNumber",
+                "variantName" => "$get_variantName",
+                "img" => $get_img,
+                "cpu" => $cpu,
+                "memory" => $memory,
+                "storage" => $storage
             )
         );
         return json_encode($packJSON);
@@ -237,8 +237,21 @@ class FormPOSTHander extends XMLHandler
             return "Success";
         }
     }
-    public function update($modelNumber, $variantName, $processor, $memory, $storage, $file){
-
+    public function update($modelNumber, $variantName, $processor, $memory, $storage, $file)
+    {
+        $this->saveXML();
+        $dupe = new DuplicateChecker();
+        $node = $this->xml;
+        $file_name = $file['name'];
+        #$file_size = $file['size'];
+        #$file_type = $file['type'];
+        $tmp_name = $file['tmp_name'];
+        #$error = $file['error'];
+        if ($dupe->checkBoth($variantName, $modelNumber)) {
+            return "Item has a duplicate Model number or Variant name";
+        } else {
+        }
+        return "Success";
     }
 }
 
