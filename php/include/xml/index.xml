@@ -462,4 +462,27 @@
       </storageOptions>
     </specifications>
   </macBook>
+  <macBook>
+    <info>
+      <modelNumber>dawd2312</modelNumber>
+      <variant>
+        <variantName>adawe123</variantName>
+      </variant>
+      <img>woggy_blind.png</img>
+    </info>
+    <specifications>
+      <computeOptions>
+        <cpu>
+          <name>Apple M1 Pro</name>
+          <cores>10</cores>
+        </cpu>
+      </computeOptions>
+      <memoryOptions>
+        <memory>4 GB</memory>
+      </memoryOptions>
+      <storageOptions>
+        <storage>512GB SSD</storage>
+      </storageOptions>
+    </specifications>
+  </macBook>
 </macBooks>

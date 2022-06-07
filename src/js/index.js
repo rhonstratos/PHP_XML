@@ -11,8 +11,5 @@ window.newMemory = newMemory
 window.newStorage = newStorage
 window.callToast = callToast
 window.viewCard = viewCard
-$(document).on('ready', () => {
-    //$('#viewCardMODAL').modal('show')
-    $("#RegisterIMG").on("change", replaceIMG)
-    $("#REGISTERFORM").on("submit", register)
-})
+$("#RegisterIMG").on("change", replaceIMG)
+$("#REGISTERFORM").on("submit", register)

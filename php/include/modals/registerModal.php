@@ -9,9 +9,9 @@
                         <h3>Model Information</h3>
                         <div class="mb-3">
                             <span>Model Number:</span>
-                            <input type="text" name="registerModelNumber" id="registerModelNumber" class="form-control input-secondary rounded-10 border-none">
+                            <input type="text" name="registerModelNumber" id="registerModelNumber" class="text-center form-control input-secondary rounded-10 border-none">
                             <span>Variant Name:</span>
-                            <input type="text" name="registerVariantName" id="registerVariantName" class="form-control input-secondary rounded-10 border-none">
+                            <input type="text" name="registerVariantName" id="registerVariantName" class="text-center form-control input-secondary rounded-10 border-none">
                         </div>
                         <h3>Specifications</h3>
                         <div class="overflow-auto" style="max-height: 250px !important;">
