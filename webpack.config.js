@@ -1,24 +1,27 @@
 const path = require("path");
+const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const ENTRY = {
-    app:"./src/js/app.js",
-    main:"./src/js/index.js"
+    app: "./src/js/app.js",
+    main: "./src/js/index.js"
 };
 module.exports = {
-    watch:true,
+    //watch:true,
     entry: ENTRY,
     output: {
-        filename: "[name]/index.js",
+        filename: "js/[name].js",
         path: path.resolve(__dirname, "dist"),
     },
+    plugins: [
+        new MiniCssExtractPlugin({
+            filename: "style/styles.css"
+        })
+    ],
     module: {
         rules: [
             {
                 test: /\.(sa|sc|c)ss$/,
                 use: [
-                    {
-                        loader: 'style-loader',
-                        options: { injectType: "singletonStyleTag" }
-                    },
+                    MiniCssExtractPlugin.loader,
                     { loader: 'css-loader' },
                     {
                         loader: 'postcss-loader',
@@ -35,6 +38,24 @@ module.exports = {
                     { loader: 'sass-loader' }
                 ]
             },
+            {
+                test: /\.(woff|woff2|eot|ttf|otf)$/,
+                use: [{
+                    loader: 'file-loader',
+                    options: {
+                        outputPath: 'fonts'
+                    }
+                }]
+            },
+            {
+                test: /\.(png|svg|jpg|gif)$/,
+                use: [{
+                    loader: 'file-loader',
+                    options: {
+                        outputPath: 'images'
+                    }
+                }],
+            }
         ]
     },
     resolve: {
