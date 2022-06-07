@@ -10,6 +10,13 @@ function viewCard(modelNumber) {
         const macBook = json.macBook
         $("#viewModelNumber").val(macBook.modelNumber)
         $("#viewVariantName").val(macBook.variantName)
+        $('#ViewProcessor').html('')
+        $('#ViewMemory').html('')
+        $('#ViewStorage').html('')
+        $('#ViewIMG-label').html('')
+        $('#ViewIMG-label').append(`
+        <img src="../assets/${macBook.img}" alt="..." style="object-fit: cover;" class="w-100 h-100">
+        `)
         macBook.cpu.forEach(e => {
             /* 
             console.log(element.name)

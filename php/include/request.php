@@ -112,6 +112,7 @@ class Search extends XMLHandler
         $node = $this->xml->getElementsByTagName('macBook');
         $get_modelNumber = '';
         $get_variantName = '';
+        $get_img='';
         $cpu = Array();
         $memory = Array();
         $storage = Array();
@@ -122,6 +123,7 @@ class Search extends XMLHandler
                 $get_cpu = $targetNode->getElementsByTagName('cpu');
                 $get_memory = $targetNode->getElementsByTagName('memory');
                 $get_storage = $targetNode->getElementsByTagName('storage');
+                $get_img = $targetNode->getElementsByTagName('img')[0]->nodeValue;
                 foreach($get_cpu as $targetCpu){
                     $name = $targetCpu->getElementsByTagName('name')[0]->nodeValue;
                     $cores = $targetCpu->getElementsByTagName('cores')[0]->nodeValue;
@@ -143,6 +145,7 @@ class Search extends XMLHandler
             "macBook"=> Array(
                 "modelNumber"=>"$get_modelNumber",
                 "variantName"=>"$get_variantName",
+                "img"=>$get_img,
                 "cpu"=>$cpu,
                 "memory"=>$memory,
                 "storage"=>$storage
