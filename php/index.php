@@ -49,7 +49,10 @@
         </div>
     </div>
 </div>
-    <?php require_once "include/modals/registerModal.php"; ?>
+    <?php 
+        require_once "include/modals/registerModal.php";
+        require_once "include/modals/viewCardModal.php";
+    ?>
 </body>
 
 </html>

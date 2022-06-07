@@ -20,6 +20,8 @@ body.bg-main{
 img.cards-index{
 	min-width: 270px !important;
 	min-height: 250px !important;
+	max-width: 400px !important;
+	max-height: 250px !important;
 }
 .input-secondary {
 	background-color: #dfdfdf !important;
