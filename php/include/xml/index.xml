@@ -1,0 +1,517 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet href="./style/index.css" 
+                    type="text/css"?>
+<macBooks>
+  <macBook>
+    <info>
+      <modelNumber>A2338 (EMC 3578)</modelNumber>
+      <variant>
+        <variantName>Pro 13" (M1) 2020</variantName>
+      </variant>
+      <img>macBook.png</img>
+    </info>
+    <specifications>
+      <computeOptions>
+        <cpu>
+          <name>Apple M1</name>
+          <cores>8</cores>
+        </cpu>
+      </computeOptions>
+      <memoryOptions>
+        <memory>8 GB</memory>
+        <memory>16 GB</memory>
+      </memoryOptions>
+      <storageOptions>
+        <storage>256GB SSD</storage>
+        <storage>512GB SSD</storage>
+        <storage>1TB SSD</storage>
+        <storage>2TB SSD</storage>
+      </storageOptions>
+    </specifications>
+  </macBook>
+  <macBook>
+    <info>
+      <modelNumber>A2289 (EMC 3456)</modelNumber>
+      <variant>
+        <variantName>Pro 13" 2020</variantName>
+      </variant>
+      <img>macBook.png</img>
+    </info>
+    <specifications>
+      <computeOptions>
+        <cpu>
+          <name>Intel Core i5</name>
+          <cores>4</cores>
+        </cpu>
+        <cpu>
+          <name>Intel Core i7</name>
+          <cores>4</cores>
+        </cpu>
+      </computeOptions>
+      <memoryOptions>
+        <memory>8 GB</memory>
+        <memory>16 GB</memory>
+      </memoryOptions>
+      <storageOptions>
+        <storage>256GB SSD</storage>
+        <storage>512GB SSD</storage>
+        <storage>1TB SSD</storage>
+        <storage>2TB SSD</storage>
+      </storageOptions>
+    </specifications>
+  </macBook>
+  <macBook>
+    <info>
+      <modelNumber>A2251 (EMC 3348)</modelNumber>
+      <variant>
+        <variantName>Pro 13" 2020</variantName>
+      </variant>
+      <img>macBook.png</img>
+    </info>
+    <specifications>
+      <computeOptions>
+        <cpu>
+          <name>Intel Core i5</name>
+          <cores>4</cores>
+        </cpu>
+        <cpu>
+          <name>Intel Core i7</name>
+          <cores>4</cores>
+        </cpu>
+      </computeOptions>
+      <memoryOptions>
+        <memory>16 GB</memory>
+        <memory>32 GB</memory>
+      </memoryOptions>
+      <storageOptions>
+        <storage>512GB SSD</storage>
+        <storage>1TB SSD</storage>
+        <storage>2TB SSD</storage>
+        <storage>4TB SSD</storage>
+      </storageOptions>
+    </specifications>
+  </macBook>
+  <macBook>
+    <info>
+      <modelNumber>A2141 (EMC 3347)</modelNumber>
+      <variant>
+        <variantName>Pro 16" 2019</variantName>
+      </variant>
+      <img>macBook.png</img>
+    </info>
+    <specifications>
+      <computeOptions>
+        <cpu>
+          <name>Intel Core i7</name>
+          <cores>6</cores>
+        </cpu>
+        <cpu>
+          <name>Intel Core i9</name>
+          <cores>8</cores>
+        </cpu>
+      </computeOptions>
+      <memoryOptions>
+        <memory>16 GB</memory>
+        <memory>32 GB</memory>
+        <memory>64 GB</memory>
+      </memoryOptions>
+      <storageOptions>
+        <storage>512GB SSD</storage>
+        <storage>1TB SSD</storage>
+        <storage>2TB SSD</storage>
+        <storage>4TB SSD</storage>
+        <storage>8TB SSD</storage>
+      </storageOptions>
+    </specifications>
+  </macBook>
+  <macBook>
+    <info>
+      <modelNumber>A1706 (EMC 3071)</modelNumber>
+      <variant>
+        <variantName>Pro 13"</variantName>
+      </variant>
+      <img>macBook.png</img>
+    </info>
+    <specifications>
+      <computeOptions>
+        <cpu>
+          <name>Intel Core i5</name>
+          <cores>2</cores>
+        </cpu>
+        <cpu>
+          <name>Intel Core i7</name>
+          <cores>2</cores>
+        </cpu>
+      </computeOptions>
+      <memoryOptions>
+        <memory>8 GB</memory>
+        <memory>16 GB</memory>
+      </memoryOptions>
+      <storageOptions>
+        <storage>256GB SSD</storage>
+        <storage>512GB SSD</storage>
+        <storage>1TB SSD</storage>
+      </storageOptions>
+    </specifications>
+  </macBook>
+  <macBook>
+    <info>
+      <modelNumber>A1708 (EMC 2978)</modelNumber>
+      <variant>
+        <variantName>Pro 13" 2016</variantName>
+      </variant>
+      <img>macBook.png</img>
+    </info>
+    <specifications>
+      <computeOptions>
+        <cpu>
+          <name>Intel Core i5</name>
+          <cores>2</cores>
+        </cpu>
+      </computeOptions>
+      <memoryOptions>
+        <memory>8 GB</memory>
+        <memory>16 GB</memory>
+      </memoryOptions>
+      <storageOptions>
+        <storage>256GB SSD</storage>
+        <storage>512GB SSD</storage>
+        <storage>1TB SSD</storage>
+      </storageOptions>
+    </specifications>
+  </macBook>
+  <macBook>
+    <info>
+      <modelNumber>A1502 (EMC 2835)</modelNumber>
+      <variant>
+        <variantName>Pro 13" 2015</variantName>
+      </variant>
+      <img>macBook.png</img>
+    </info>
+    <specifications>
+      <computeOptions>
+        <cpu>
+          <name>Intel Core i5</name>
+          <cores>2</cores>
+        </cpu>
+      </computeOptions>
+      <memoryOptions>
+        <memory>8 GB</memory>
+        <memory>16 GB</memory>
+      </memoryOptions>
+      <storageOptions>
+        <storage>256GB SSD</storage>
+        <storage>512GB SSD</storage>
+      </storageOptions>
+    </specifications>
+  </macBook>
+  <macBook>
+    <info>
+      <modelNumber>A1398 (EMC 2910)</modelNumber>
+      <variant>
+        <variantName>Pro 15" 2015</variantName>
+      </variant>
+      <img>macBook.png</img>
+    </info>
+    <specifications>
+      <computeOptions>
+        <cpu>
+          <name>Intel Core i7</name>
+          <cores>4</cores>
+        </cpu>
+      </computeOptions>
+      <memoryOptions>
+        <memory>16 GB</memory>
+      </memoryOptions>
+      <storageOptions>
+        <storage>512GB SSD</storage>
+        <storage>1TB SSD</storage>
+      </storageOptions>
+    </specifications>
+  </macBook>
+  <macBook>
+    <info>
+      <modelNumber>A1502 (EMC 2875)</modelNumber>
+      <variant>
+        <variantName>Pro 13" 2014</variantName>
+      </variant>
+      <img>macBook.png</img>
+    </info>
+    <specifications>
+      <computeOptions>
+        <cpu>
+          <name>Intel Core i5</name>
+          <cores>2</cores>
+        </cpu>
+      </computeOptions>
+      <memoryOptions>
+        <memory>8 GB</memory>
+        <memory>16 GB</memory>
+      </memoryOptions>
+      <storageOptions>
+        <storage>256GB SSD</storage>
+        <storage>512GB SSD</storage>
+        <storage>1TB SSD</storage>
+      </storageOptions>
+    </specifications>
+  </macBook>
+  <macBook>
+    <info>
+      <modelNumber>A1425 (EMC 2672)</modelNumber>
+      <variant>
+        <variantName>Pro 13" 2013</variantName>
+      </variant>
+      <img>macBook.png</img>
+    </info>
+    <specifications>
+      <computeOptions>
+        <cpu>
+          <name>Intel Core i5</name>
+          <cores>2</cores>
+        </cpu>
+      </computeOptions>
+      <memoryOptions>
+        <memory>8 GB</memory>
+      </memoryOptions>
+      <storageOptions>
+        <storage>256GB SSD</storage>
+        <storage>512GB SSD</storage>
+        <storage>1TB SSD</storage>
+      </storageOptions>
+    </specifications>
+  </macBook>
+  <macBook>
+    <info>
+      <modelNumber>101</modelNumber>
+      <variant>
+        <variantName>Calc13123123</variantName>
+      </variant>
+      <img>macBook.png</img>
+    </info>
+    <specifications>
+      <computeOptions>
+        <cpu>
+          <name>ryzen 3</name>
+          <cores>4</cores>
+        </cpu>
+      </computeOptions>
+      <memoryOptions>
+        <memory>4 GB</memory>
+      </memoryOptions>
+      <storageOptions>
+        <storage>255 GB</storage>
+        <storage>500 GB</storage>
+        <storage>1 TB</storage>
+        <storage>2 TB</storage>
+        <storage>4 TB</storage>
+      </storageOptions>
+    </specifications>
+  </macBook>
+  <macBook>
+    <info>
+      <modelNumber>2131da</modelNumber>
+      <variant>
+        <variantName>awda</variantName>
+      </variant>
+      <img>woggy_cheer.png</img>
+    </info>
+    <specifications>
+      <computeOptions>
+        <cpu>
+          <name>Apple M1 Max</name>
+          <cores>10</cores>
+        </cpu>
+      </computeOptions>
+      <memoryOptions>
+        <memory>16 GB</memory>
+      </memoryOptions>
+      <storageOptions>
+        <storage>1TB SSD</storage>
+      </storageOptions>
+    </specifications>
+  </macBook>
+  <macBook>
+    <info>
+      <modelNumber>dae</modelNumber>
+      <variant>
+        <variantName>adawdasc</variantName>
+      </variant>
+      <img>woggy_cheer.png</img>
+    </info>
+    <specifications>
+      <computeOptions>
+        <cpu>
+          <name>Apple M1 Max</name>
+          <cores>10</cores>
+        </cpu>
+      </computeOptions>
+      <memoryOptions>
+        <memory>16 GB</memory>
+      </memoryOptions>
+      <storageOptions>
+        <storage>1TB SSD</storage>
+      </storageOptions>
+    </specifications>
+  </macBook>
+  <macBook>
+    <info>
+      <modelNumber>awdasd23123</modelNumber>
+      <variant>
+        <variantName>asdawasdawd</variantName>
+      </variant>
+      <img>woggy_boi.gif</img>
+    </info>
+    <specifications>
+      <computeOptions>
+        <cpu>
+          <name>Apple M1 Pro</name>
+          <cores>10</cores>
+        </cpu>
+      </computeOptions>
+      <memoryOptions>
+        <memory>16 GB</memory>
+      </memoryOptions>
+      <storageOptions>
+        <storage>1TB SSD</storage>
+      </storageOptions>
+    </specifications>
+  </macBook>
+  <macBook>
+    <info>
+      <modelNumber>test1</modelNumber>
+      <variant>
+        <variantName>tesla model segss</variantName>
+      </variant>
+      <img>woggy_gold.gif</img>
+    </info>
+    <specifications>
+      <computeOptions>
+        <cpu>
+          <name>Apple M1 Pro</name>
+          <cores>10</cores>
+        </cpu>
+        <cpu>
+          <name>Apple M1</name>
+          <cores>8</cores>
+        </cpu>
+        <cpu>
+          <name>Intel Core i5</name>
+          <cores>2</cores>
+        </cpu>
+      </computeOptions>
+      <memoryOptions>
+        <memory>8 GB</memory>
+        <memory>4 GB</memory>
+      </memoryOptions>
+      <storageOptions>
+        <storage>256GB SSD</storage>
+        <storage>256GB SSD</storage>
+      </storageOptions>
+    </specifications>
+  </macBook>
+  <macBook>
+    <info>
+      <modelNumber>dcccc</modelNumber>
+      <variant>
+        <variantName>aw213123</variantName>
+      </variant>
+      <img>woggy_boi.gif</img>
+    </info>
+    <specifications>
+      <computeOptions>
+        <cpu>
+          <name>Apple M1 Pro</name>
+          <cores>10</cores>
+        </cpu>
+      </computeOptions>
+      <memoryOptions>
+        <memory>16 GB</memory>
+      </memoryOptions>
+      <storageOptions>
+        <storage>512GB SSD</storage>
+      </storageOptions>
+    </specifications>
+  </macBook>
+  <macBook>
+    <info>
+      <modelNumber>3123dd</modelNumber>
+      <variant>
+        <variantName>ad23123</variantName>
+      </variant>
+      <img>bicc_bren.png</img>
+    </info>
+    <specifications>
+      <computeOptions>
+        <cpu>
+          <name>Apple M1</name>
+          <cores>8</cores>
+        </cpu>
+        <cpu>
+          <name>Apple M1</name>
+          <cores>8</cores>
+        </cpu>
+      </computeOptions>
+      <memoryOptions>
+        <memory>16 GB</memory>
+        <memory>4 GB</memory>
+      </memoryOptions>
+      <storageOptions>
+        <storage>1TB SSD</storage>
+        <storage>1TB SSD</storage>
+        <storage>1TB SSD</storage>
+      </storageOptions>
+    </specifications>
+  </macBook>
+  <macBook>
+    <info>
+      <modelNumber>dawd2312</modelNumber>
+      <variant>
+        <variantName>adawe123</variantName>
+      </variant>
+      <img>woggy_blind.png</img>
+    </info>
+    <specifications>
+      <computeOptions>
+        <cpu>
+          <name>Apple M1 Pro</name>
+          <cores>10</cores>
+        </cpu>
+      </computeOptions>
+      <memoryOptions>
+        <memory>4 GB</memory>
+      </memoryOptions>
+      <storageOptions>
+        <storage>512GB SSD</storage>
+      </storageOptions>
+    </specifications>
+  </macBook>
+  <macBook>
+    <info>
+      <modelNumber>tcc131</modelNumber>
+      <variant>
+        <variantName>ca31c</variantName>
+      </variant>
+      <img>woggy_debil.png</img>
+    </info>
+    <specifications>
+      <computeOptions>
+        <cpu>
+          <name>Apple M1</name>
+          <cores>8</cores>
+        </cpu>
+        <cpu>
+          <name>Intel Core i5</name>
+          <cores>4</cores>
+        </cpu>
+      </computeOptions>
+      <memoryOptions>
+        <memory>16 GB</memory>
+        <memory>32 GB</memory>
+      </memoryOptions>
+      <storageOptions>
+        <storage>256GB SSD</storage>
+        <storage>1TB SSD</storage>
+      </storageOptions>
+    </specifications>
+  </macBook>
+</macBooks>
