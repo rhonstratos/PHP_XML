@@ -1,5 +1,14 @@
 //import $ from 'jquery'
 //import 'bootstrap/dist/js/bootstrap.esm.min'
+function viewEdit(modelNumber){
+    let params = `?viewCard=true`
+    params += `&modelNumber=${modelNumber}`
+    const _url = `./include/request.php${params}`
+    $.get(_url, (data, status) => {
+    }).done((data) => {
+        
+    })
+}
 function viewCard(modelNumber) {
     let params = `?viewCard=true`
     params += `&modelNumber=${modelNumber}`

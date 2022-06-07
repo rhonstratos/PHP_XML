@@ -1,4 +1,11 @@
-<?php require_once("./include/config.php"); ?>
+<?php
+require_once("./include/config.php");
+
+use Config\{Index,Update};
+
+$index = new Index();
+$update = new Update();
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -34,8 +41,6 @@
                 </div>
                 <div class="d-flex justify-content-evenly flex-wrap text-black gap-5">
                     <?php
-                    use Config\Index;
-                    $index = new Index();
                     if (isset($_GET["search"]) && !empty($_GET["search"]))
                         $index->search($_GET["search"]);
                     else
@@ -49,6 +54,7 @@
     require_once "include/modals/registerModal.php";
     require_once "include/modals/viewModal.php";
     require_once "include/modals/updateModal.php";
+    require_once "include/modals/editModal.php";
     #require_once "include/footScript.php"
     ?>
 </body>

@@ -20,10 +20,11 @@ class Index extends XMLHandler
     public function search($searchValue)
     {
         $flag = 0;
-        foreach ($this->xml->getelementsByTagName("macBook") as $macBooks) {
-            $modelNumber = $macBooks->getelementsByTagName("modelNumber")[0]->nodeValue;
-            $variantName = $macBooks->getelementsByTagName("variantName")[0]->nodeValue;
-            $img = $macBooks->getelementsByTagName("img")[0]->nodeValue;
+        $node = $this->xml->getelementsByTagName("macBook");
+        foreach ($node as $targetNode) {
+            $modelNumber = $targetNode->getelementsByTagName("modelNumber")[0]->nodeValue;
+            $variantName = $targetNode->getelementsByTagName("variantName")[0]->nodeValue;
+            $img = $targetNode->getelementsByTagName("img")[0]->nodeValue;
 
             if (
                 str_contains(strtolower($variantName), strtolower($searchValue)) ||
@@ -39,7 +40,7 @@ class Index extends XMLHandler
                 <div class="container text-center text-light">
                     <h2 class="display-1 my-5 py-5">No Results Found</h2>
                 </div>
-<?php
+            <?php
                 break;
 
             default:
@@ -48,11 +49,38 @@ class Index extends XMLHandler
     }
     public function plain()
     {
-        foreach ($this->xml->getelementsByTagName("macBook") as $macBooks) {
-            $modelNumber = $macBooks->getelementsByTagName("modelNumber")[0]->nodeValue;
-            $variantName = $macBooks->getelementsByTagName("variantName")[0]->nodeValue;
-            $img = $macBooks->getelementsByTagName("img")[0]->nodeValue;
+        $node = $this->xml->getelementsByTagName("macBook");
+        foreach ($node as $targetNode) {
+            $modelNumber = $targetNode->getelementsByTagName("modelNumber")[0]->nodeValue;
+            $variantName = $targetNode->getelementsByTagName("variantName")[0]->nodeValue;
+            $img = $targetNode->getelementsByTagName("img")[0]->nodeValue;
             require('cards/indexCard.php');
+        }
+    }
+}
+class Update extends XMLHandler
+{
+    private $xml;
+    public function __construct()
+    {
+        $this->setXML();
+        $this->setPath("include/xml/index.xml");
+        $this->loadXML();
+        $this->xml = $this->getXML();
+    }
+    public function load()
+    {
+        $node = $this->xml->getElementsByTagName('macBook');
+        foreach ($node as $targetNode) {
+            $modelNumber = $targetNode->getelementsByTagName("modelNumber")[0]->nodeValue;
+            $variantName = $targetNode->getelementsByTagName("variantName")[0]->nodeValue;
+            ?>
+            <tr>
+                <td><?php echo $modelNumber; ?></td>
+                <th><?php echo $variantName; ?></th>
+                <td><button type="button" class="btn btn-primary" onclick="/* updateModal('<?php echo $modelNumber; ?>'); */$('#editMODAL').modal('show');">Edit</button></td>
+            </tr>
+<?php
         }
     }
 }
