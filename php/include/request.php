@@ -261,12 +261,12 @@ if (isset($_POST['editModelNumber']) && isset($_POST['editVariantName'])) {
     #print_r($_POST);
     #print_r($_GET);
     $updt = new FormPOSTHander();
-    $modelNumber = $_POST['registerModelNumber'];
-    $variantName = $_POST['registerVariantName'];
+    $modelNumber = $_POST['editModelNumber'];
+    $variantName = $_POST['editVariantName'];
     $processor = $_POST['processor'];
     $memory = $_POST['memoryCapacity'];
     $storage = $_POST['storageCapacity'];
-    $file = $_FILES['RegisterIMG'];
+    $file = $_FILES['EditIMG'];
     echo $updt->update($modelNumber, $variantName, $processor, $memory, $storage, $file);
 }
 
