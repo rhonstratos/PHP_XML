@@ -6,8 +6,33 @@ function viewCard(modelNumber) {
     params += `&modelNumber=${modelNumber}`
     const _url = `./include/request.php${params}`
     $.get(_url, (data, status) => {
-        //console.log(data + " + " + status)
+        $('#viewCardMODAL').modal('show')
     })
 }
-export { setURL, viewCard }
+function register(event) {
+    event.preventDefault();
+    const file_data = $('#RegisterIMG').prop('files')[0];
+    const form = new FormData(document.getElementById("REGISTERFORM"))
+    form.append('file', file_data)
+    //let form = $("#REGISTERFORM").serialize()
+    /*const req = $.post("./include/request.php",
+        form)
+        .done((data) => {
+            console.log(data)
+        })*/
+    $.ajax({
+        url: './include/request.php', // <-- point to server-side PHP script 
+        dataType: 'text',  // <-- what to expect back from the PHP script, if anything
+        cache: false,
+        contentType: false,
+        processData: false,
+        data: form,
+        type: 'post'
+    })
+        .done((data) => {
+            //console.log(data)
+            location.reload()
+        })
+}
+export { setURL, viewCard, register }
 
