@@ -1,12 +1,19 @@
 //import $ from 'jquery'
 //import 'bootstrap/dist/js/bootstrap.esm.min'
-function viewEdit(modelNumber){
+function viewEdit(modelNumber) {
     let params = `?viewCard=true`
     params += `&modelNumber=${modelNumber}`
     const _url = `./include/request.php${params}`
     $.get(_url, (data, status) => {
     }).done((data) => {
-        
+        const json = JSON.parse(data)
+        const macBook = json.macBook
+        $("#editModelNumber").val(macBook.modelNumber)
+        $("#editVariantName").val(macBook.variantName)
+        $('#EditProcessor').html('')
+        $('#EditMemory').html('')
+        $('#EditStorage').html('')
+        $('#EditIMG-label').html('')
     })
 }
 function viewCard(modelNumber) {
@@ -68,4 +75,4 @@ function register(event) {
         location.reload()
     })
 }
-export { viewCard, register }
+export { viewCard, viewEdit, register }
