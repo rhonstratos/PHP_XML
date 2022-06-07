@@ -22,20 +22,20 @@ function viewCard(modelNumber) {
             console.log(element.name)
             console.log(element.cores) 
             */
-           $('#ViewProcessor')
-           .append(`
+            $('#ViewProcessor')
+                .append(`
            <input value="${e.name} (${e.cores} Cores)" readonly="readonly" class="text-center form-control input-secondary rounded-10 border-none">
            `)
         });
-        macBook.memory.forEach(e =>{
+        macBook.memory.forEach(e => {
             $('#ViewMemory')
-            .append(`
+                .append(`
            <input value="${e.value}" readonly="readonly" class="text-center form-control input-secondary rounded-10 border-none">
            `)
         })
-        macBook.storage.forEach(e =>{
+        macBook.storage.forEach(e => {
             $('#ViewStorage')
-            .append(`
+                .append(`
            <input value="${e.value}" readonly="readonly" class="text-center form-control input-secondary rounded-10 border-none">
            `)
         })
@@ -54,10 +54,9 @@ function register(event) {
         processData: false,
         data: form,
         type: 'post'
+    }).done((data) => {
+        //console.log(data)
+        location.reload()
     })
-        .done((data) => {
-            //console.log(data)
-            location.reload()
-        })
 }
 export { viewCard, register }
