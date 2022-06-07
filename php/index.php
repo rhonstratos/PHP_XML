@@ -47,7 +47,8 @@
     </div>
     <?php
     require_once "include/modals/registerModal.php";
-    require_once "include/modals/viewCardModal.php";
+    require_once "include/modals/viewModal.php";
+    require_once "include/modals/updateModal.php";
     #require_once "include/footScript.php"
     ?>
 </body>
