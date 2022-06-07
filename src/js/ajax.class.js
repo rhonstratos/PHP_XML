@@ -14,12 +14,6 @@ function register(event) {
     const file_data = $('#RegisterIMG').prop('files')[0];
     const form = new FormData(document.getElementById("REGISTERFORM"))
     form.append('file', file_data)
-    //let form = $("#REGISTERFORM").serialize()
-    /*const req = $.post("./include/request.php",
-        form)
-        .done((data) => {
-            console.log(data)
-        })*/
     $.ajax({
         url: './include/request.php', // <-- point to server-side PHP script 
         dataType: 'text',  // <-- what to expect back from the PHP script, if anything
@@ -29,10 +23,10 @@ function register(event) {
         data: form,
         type: 'post'
     })
-        .done((data) => {
-            //console.log(data)
-            location.reload()
-        })
+    .done((data) => {
+        //console.log(data)
+        location.reload()
+    })
 }
 export { setURL, viewCard, register }
 

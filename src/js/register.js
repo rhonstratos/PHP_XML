@@ -48,4 +48,9 @@ function newStorage() {
         <button class="btn btn-success rounded-10-end" type="button" onclick="newStorage();">+</button>
     </div>`)
 }
-export { newProcessor, newMemory, newStorage }
+function replaceIMG() {
+    $('#RegisterIMG-label').html(`
+        <img src="${URL.createObjectURL(event.target.files[0])}" alt="..." style="object-fit: cover;" class="w-100 h-100">
+    `)
+}
+export { newProcessor, newMemory, newStorage, replaceIMG }
