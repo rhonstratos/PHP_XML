@@ -485,4 +485,33 @@
       </storageOptions>
     </specifications>
   </macBook>
+  <macBook>
+    <info>
+      <modelNumber>tcc131</modelNumber>
+      <variant>
+        <variantName>ca31c</variantName>
+      </variant>
+      <img>woggy_debil.png</img>
+    </info>
+    <specifications>
+      <computeOptions>
+        <cpu>
+          <name>Apple M1</name>
+          <cores>8</cores>
+        </cpu>
+        <cpu>
+          <name>Intel Core i5</name>
+          <cores>4</cores>
+        </cpu>
+      </computeOptions>
+      <memoryOptions>
+        <memory>16 GB</memory>
+        <memory>32 GB</memory>
+      </memoryOptions>
+      <storageOptions>
+        <storage>256GB SSD</storage>
+        <storage>1TB SSD</storage>
+      </storageOptions>
+    </specifications>
+  </macBook>
 </macBooks>
