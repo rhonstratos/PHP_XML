@@ -38,6 +38,7 @@ module.exports = {
                     { loader: 'sass-loader' }
                 ]
             },
+            /*
             {
                 test: /\.(woff|woff2|eot|ttf|otf)$/,
                 use: [{
@@ -46,7 +47,7 @@ module.exports = {
                         outputPath: 'fonts'
                     }
                 }]
-            },
+            },*/
             {
                 test: /\.(png|jpg|gif)$/,
                 use: [{

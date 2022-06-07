@@ -4,16 +4,16 @@
 @charset "UTF-8";
 @font-face {
 	font-family: "SF Display Regular";
-	src: url(../b59d713e5ed6a6e295cc.otf) format("opentype");
+	src: url(../696eab3309b55104976e.otf) format("opentype");
 }
 @font-face {
     font-family: 'Plus Jakarta Sans';
-    src: url(../631e625dff5b883040f7.eot);
-    src: url(../631e625dff5b883040f7.eot?#iefix) format('embedded-opentype'),
-        url(../58cb2fd1909e69bc6c92.woff2) format('woff2'),
-        url(../dbbdbfb8cec9912b199d.woff) format('woff'),
-        url(../dedeea4103c2f75c1404.ttf) format('truetype'),
-        url(../6f3a51a3a25065c944d1.svg#PlusJakartaSans-Regular) format('svg');
+    src: url(../841c08ba2f034be9fbc3.eot);
+    src: url(../841c08ba2f034be9fbc3.eot?#iefix) format('embedded-opentype'),
+        url(../f07740e18e6f04dafac7.woff2) format('woff2'),
+        url(../57b2a627fa8ac4cb42ef.woff) format('woff'),
+        url(../da38c6507e8bf6c193e9.ttf) format('truetype'),
+        url(../3581d43d3de4cf14e3e3.svg#PlusJakartaSans-Regular) format('svg');
     font-weight: normal;
     font-style: normal;
 }
