@@ -1,12 +1,13 @@
-var _url
-function setURL(url) { _url = url }
-
+//import $ from 'jquery'
+//import 'bootstrap/dist/js/bootstrap.esm.min'
 function viewCard(modelNumber) {
     let params = `?viewCard=true`
     params += `&modelNumber=${modelNumber}`
     const _url = `./include/request.php${params}`
     $.get(_url, (data, status) => {
-        $('#viewCardMODAL').modal('show')
+        
+    }).done((data)=>{
+        
     })
 }
 function register(event) {
@@ -28,5 +29,4 @@ function register(event) {
         location.reload()
     })
 }
-export { setURL, viewCard, register }
-
+export { viewCard, register }

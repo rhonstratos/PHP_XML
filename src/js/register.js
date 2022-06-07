@@ -1,3 +1,4 @@
+//import $ from 'jquery'
 function newProcessor() {
     const node = $("#RegisterProcessor")
     node.append(`
