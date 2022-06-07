@@ -148,7 +148,7 @@ class Search extends XMLHandler
                 "storage"=>$storage
             )
         );
-        echo json_encode($packJSON);
+        return json_encode($packJSON);
     }
 }
 

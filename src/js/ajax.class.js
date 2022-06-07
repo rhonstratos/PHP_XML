@@ -6,7 +6,7 @@ function viewCard(modelNumber) {
     params += `&modelNumber=${modelNumber}`
     const _url = `./include/request.php${params}`
     $.get(_url, (data, status) => {
-        console.log(data + " + " + status)
+        //console.log(data + " + " + status)
     })
 }
 export { setURL, viewCard }
