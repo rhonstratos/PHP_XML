@@ -38,6 +38,10 @@ module.exports = {
                     { loader: 'sass-loader' }
                 ]
             },
+            {
+                test: /\.(woff|woff2|eot|ttf|otf)$/,
+                type: 'asset/resource',
+            },
             /*
             {
                 test: /\.(woff|woff2|eot|ttf|otf)$/,
@@ -50,6 +54,7 @@ module.exports = {
             },*/
             {
                 test: /\.(png|jpg|gif)$/,
+                type: 'asset/resource',
                 use: [{
                     loader: 'file-loader',
                     options: {
