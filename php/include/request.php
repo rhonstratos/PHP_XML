@@ -195,7 +195,7 @@ class FormPOSTHander extends XMLHandler
             foreach ($processor as $value) {
                 #echo $value;
                 $split = explode("|", $value);
-                print_r($split);
+                #print_r($split);
                 $name = $node->createElement("name", $split[0]);
                 $cores = $node->createElement("cores", $split[1]);
                 $cpu = $node->createElement("cpu");
@@ -230,7 +230,7 @@ class FormPOSTHander extends XMLHandler
             $childNode->appendChild($info);
             $childNode->appendChild($specifications);
 
-            move_uploaded_file($tmp_name, "../../assets/$file_name");
+            move_uploaded_file($tmp_name, "../../assets/img/$file_name");
 
             $this->xml->getElementsByTagName("macBooks")[0]->appendChild($childNode);
             $this->saveXML();
@@ -239,19 +239,106 @@ class FormPOSTHander extends XMLHandler
     }
     public function update($modelNumber, $variantName, $processor, $memory, $storage, $file)
     {
-        $this->saveXML();
         $dupe = new DuplicateChecker();
         $node = $this->xml;
         $file_name = $file['name'];
-        #$file_size = $file['size'];
+        $file_size = $file['size'];
         #$file_type = $file['type'];
         $tmp_name = $file['tmp_name'];
-        #$error = $file['error'];
-        if ($dupe->checkBoth($variantName, $modelNumber)) {
-            return "Item has a duplicate Model number or Variant name";
-        } else {
+        $error = $file['error'];
+        $childNode = $node->createElement("macBook");
+        $info = $node->createElement("info");
+        $modelNumberNode = $node->createElement(
+            "modelNumber",
+            $modelNumber
+        );
+        $variant = $node->createElement("variant");
+        $variant->appendChild($node->createElement(
+            "variantName",
+            $variantName
+        ));
+        $specifications = $node->createElement("specifications");
+        $computeOptions = $node->createElement("computeOptions");
+        $memoryOptions = $node->createElement("memoryOptions");
+        $storageOptions = $node->createElement("storageOptions");
+        foreach ($processor as $value) {
+            #echo $value;
+            $split = explode("|", $value);
+            #print_r($split);
+            $name = $node->createElement("name", $split[0]);
+            $cores = $node->createElement("cores", $split[1]);
+            $cpu = $node->createElement("cpu");
+            $cpu->appendChild($name);
+            $cpu->appendChild($cores);
+            $computeOptions->appendChild($cpu);
         }
-        return "Success";
+        foreach ($memory as $value) {
+            $memoryOptions->appendChild(
+                $node->createElement(
+                    "memory",
+                    $value
+                )
+            );
+        }
+        foreach ($storage as $value) {
+            $storageOptions->appendChild(
+                $node->createElement(
+                    "storage",
+                    $value
+                )
+            );
+        }
+        $specifications->appendChild($computeOptions);
+        $specifications->appendChild($memoryOptions);
+        $specifications->appendChild($storageOptions);
+        $oldNode = null;
+        foreach ($node->getElementsByTagName("macBook") as $targetNode) {
+            $key = $targetNode->getelementsByTagName("modelNumber")[0]->nodeValue;
+            if ($key == $modelNumber) {
+                $oldNode = $targetNode;
+                break;
+            }
+        }
+        $info->appendChild($modelNumberNode);
+        $info->appendChild($variant);
+
+        if ($file_size < 1 || $error == 4) {
+            $info->appendChild($node->createElement("img", ($oldNode ? $oldNode->getElementsByTagName('img')[0]->nodeValue : '')));
+        } else {
+            move_uploaded_file($tmp_name, "../../assets/img/$file_name");
+            $info->appendChild($node->createElement("img", $file_name));
+        }
+
+        $childNode->appendChild($info);
+        $childNode->appendChild($specifications);
+        if ($oldNode) {
+            $oldNode->replaceWith($childNode);
+            $this->saveXML();
+            return "Success";
+        }
+    }
+    public function delete($modelNumber)
+    {
+        $node = $this->xml;
+        foreach ($node->getElementsByTagName("macBook") as $targetNode) {
+            $key = $targetNode->getElementsByTagName("modelNumber")[0]->nodeValue;
+            if ($key == $modelNumber) {
+                $targetNode->parentNode->removeChild($targetNode);
+                $this->saveXML();
+                break;
+            }
+        }
+    }
+    public function getSuggestions(){
+        $node = $this->xml->getElementsByTagName('macBook');
+        $sug = array("val"=>[]);
+        foreach($node as $targetNode){
+            $modelNumber = $targetNode->getElementsByTagName('modelNumber')[0]->nodeValue;
+            $variantName = $targetNode->getElementsByTagName('variantName')[0]->nodeValue;
+            array_push($sug['val'],$modelNumber);
+            array_push($sug['val'],$variantName);
+        }
+        return json_encode(array("suggestions"=>$sug));
     }
 }
 
@@ -276,14 +363,26 @@ if (isset($_POST['editModelNumber']) && isset($_POST['editVariantName'])) {
     $updt = new FormPOSTHander();
     $modelNumber = $_POST['editModelNumber'];
     $variantName = $_POST['editVariantName'];
-    $processor = $_POST['processor'];
-    $memory = $_POST['memoryCapacity'];
-    $storage = $_POST['storageCapacity'];
+    $processor = $_POST['processorEdit'];
+    $memory = $_POST['memoryCapacityEdit'];
+    $storage = $_POST['storageCapacityEdit'];
     $file = $_FILES['EditIMG'];
+
+    echo print_r($_FILES['EditIMG']);
     echo $updt->update($modelNumber, $variantName, $processor, $memory, $storage, $file);
+}
+
+if (isset($_POST['delete'])) {
+    $del = new FormPOSTHander();
+    echo $del->delete($_POST['modelNumber']);
 }
 
 if (isset($_GET['requestNode'])) {
     $find = new Search();
     echo $find->getNode($_GET['modelNumber']);
+}
+
+if (isset($_GET['requestSuggestions'])) {
+    $find = new FormPOSTHander();
+    echo $find->getSuggestions();
 }

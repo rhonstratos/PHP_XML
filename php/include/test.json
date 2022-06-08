@@ -1,9 +1,0 @@
-{
-	"macBook": {
-		"modelNumber": "2131da",
-		"variantName": "awda",
-		"cpu": [{ "name": "Apple M1 Max", "cores": "10" }],
-		"memory": [{ "value": "16 GB" }],
-		"storage": [{ "value": "1TB SSD" }]
-	}
-}

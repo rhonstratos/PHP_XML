@@ -3,7 +3,14 @@
     <div class="modal fade" id="registerMODAL" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered w-75" style="max-width: 75% !important;">
             <div class="modal-content container-fluid bg-white rounded-25 p-4">
-                <h2 class="fw-bold">Register a MacBook</h2>
+                <div class="navbar">
+                    <h2 class="fw-bold">Register a MacBook</h2>
+                    <button type="button" class="border-none close-svg rounded-25 m-0 p-1" data-bs-dismiss="modal" aria-label="Close"><svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 0 24 24" width="24px" fill="white">
+                            <path d="M0 0h24v24H0V0z" fill="none" />
+                            <path d="M18.3 5.71c-.39-.39-1.02-.39-1.41 0L12 10.59 7.11 5.7c-.39-.39-1.02-.39-1.41 0-.39.39-.39 1.02 0 1.41L10.59 12 5.7 16.89c-.39.39-.39 1.02 0 1.41.39.39 1.02.39 1.41 0L12 13.41l4.89 4.89c.39.39 1.02.39 1.41 0 .39-.39.39-1.02 0-1.41L13.41 12l4.89-4.89c.38-.38.38-1.02 0-1.4z" />
+                        </svg>
+                    </button>
+                </div>
                 <div class="row mt-3">
                     <div class="col-6">
                         <h3>Model Information</h3>
@@ -69,11 +76,8 @@
                         <label for="RegisterIMG" class="text-center rounded-10 d-flex flex-column input-secondary w-100 h-100" style="max-height:300px;">
                             <div class="justify-content-center align-items-center align-self-center row h-100">
                                 <div class="row align-self-center justify-content-center align-items-center h-100" id="RegisterIMG-label" style="max-height: 250px !important;">
-                                    <div class="row">
-                                        <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 0 24 24" width="24px" fill="#000000">
-                                            <path d="M0 0h24v24H0V0z" fill="none" />
-                                            <path d="M21.02 5H19V2.98c0-.54-.44-.98-.98-.98h-.03c-.55 0-.99.44-.99.98V5h-2.01c-.54 0-.98.44-.99.98v.03c0 .55.44.99.99.99H17v2.01c0 .54.44.99.99.98h.03c.54 0 .98-.44.98-.98V7h2.02c.54 0 .98-.44.98-.98v-.04c0-.54-.44-.98-.98-.98zM16 9.01V8h-1.01c-.53 0-1.03-.21-1.41-.58-.37-.38-.58-.88-.58-1.44 0-.36.1-.69.27-.98H5c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2v-8.28c-.3.17-.64.28-1.02.28-1.09-.01-1.98-.9-1.98-1.99zM15.96 19H6c-.41 0-.65-.47-.4-.8l1.98-2.63c.21-.28.62-.26.82.02L10 18l2.61-3.48c.2-.26.59-.27.79-.01l2.95 3.68c.26.33.03.81-.39.81z" />
-                                        </svg>
+                                    <div class="row justify-content-center align-items-center align-self-center align-middle">
+                                        <img src="../assets/icons/addImg.png" alt="..." style="height: 50px !important; width: 75px !important;">
                                         <span>Click here to add image</span>
                                     </div>
                                 </div>
@@ -83,8 +87,8 @@
                     </div>
                 </div>
                 <div class="align-self-end">
-                    <button type="button" class="mt-3 btn btn-secondary fit align-self-end rounded-10 border-none" data-bs-dismiss="modal" aria-label="Close">Discard</button>
-                    <button type="submit" class="mt-3 btn btn-primary fit align-self-end rounded-10 border-none">Save</button>
+                    <button type="button" class="mt-3 btn btn-secondary fit align-self-end rounded-10 border-none" data-bs-dismiss="modal" aria-label="Close"><img src="../assets/icons/delete.png" alt="..." style="max-height: 25px; max-width: 25px; margin-bottom: 2.5px;">Discard</button>
+                    <button type="submit" class="mt-3 btn btn-primary fit align-self-end rounded-10 border-none"><img class="mb-1 me-1" src="../assets/icons/save.png" alt="..." style="max-height: 20px; max-width: 20px;">Save</button>
                 </div>
             </div>
         </div>

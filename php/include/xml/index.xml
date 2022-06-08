@@ -382,7 +382,7 @@
       <variant>
         <variantName>tesla model segss</variantName>
       </variant>
-      <img>woggy_gold.gif</img>
+      <img>woggy_pride.gif</img>
     </info>
     <specifications>
       <computeOptions>
@@ -411,106 +411,28 @@
   </macBook>
   <macBook>
     <info>
-      <modelNumber>dcccc</modelNumber>
+      <modelNumber>finalID</modelNumber>
       <variant>
-        <variantName>aw213123</variantName>
+        <variantName>final_TEST_YEET</variantName>
       </variant>
-      <img>woggy_boi.gif</img>
+      <img>woggy_woke.png</img>
     </info>
     <specifications>
       <computeOptions>
         <cpu>
-          <name>Apple M1 Pro</name>
+          <name>Apple M1</name>
+          <cores>8</cores>
+        </cpu>
+        <cpu>
+          <name>Apple M1 Max</name>
           <cores>10</cores>
         </cpu>
       </computeOptions>
       <memoryOptions>
-        <memory>16 GB</memory>
+        <memory>8 GB</memory>
       </memoryOptions>
       <storageOptions>
-        <storage>512GB SSD</storage>
-      </storageOptions>
-    </specifications>
-  </macBook>
-  <macBook>
-    <info>
-      <modelNumber>3123dd</modelNumber>
-      <variant>
-        <variantName>ad23123</variantName>
-      </variant>
-      <img>bicc_bren.png</img>
-    </info>
-    <specifications>
-      <computeOptions>
-        <cpu>
-          <name>Apple M1</name>
-          <cores>8</cores>
-        </cpu>
-        <cpu>
-          <name>Apple M1</name>
-          <cores>8</cores>
-        </cpu>
-      </computeOptions>
-      <memoryOptions>
-        <memory>16 GB</memory>
-        <memory>4 GB</memory>
-      </memoryOptions>
-      <storageOptions>
-        <storage>1TB SSD</storage>
-        <storage>1TB SSD</storage>
-        <storage>1TB SSD</storage>
-      </storageOptions>
-    </specifications>
-  </macBook>
-  <macBook>
-    <info>
-      <modelNumber>dawd2312</modelNumber>
-      <variant>
-        <variantName>adawe123</variantName>
-      </variant>
-      <img>woggy_blind.png</img>
-    </info>
-    <specifications>
-      <computeOptions>
-        <cpu>
-          <name>Apple M1 Pro</name>
-          <cores>10</cores>
-        </cpu>
-      </computeOptions>
-      <memoryOptions>
-        <memory>4 GB</memory>
-      </memoryOptions>
-      <storageOptions>
-        <storage>512GB SSD</storage>
-      </storageOptions>
-    </specifications>
-  </macBook>
-  <macBook>
-    <info>
-      <modelNumber>tcc131</modelNumber>
-      <variant>
-        <variantName>ca31c</variantName>
-      </variant>
-      <img>woggy_debil.png</img>
-    </info>
-    <specifications>
-      <computeOptions>
-        <cpu>
-          <name>Apple M1</name>
-          <cores>8</cores>
-        </cpu>
-        <cpu>
-          <name>Intel Core i5</name>
-          <cores>4</cores>
-        </cpu>
-      </computeOptions>
-      <memoryOptions>
-        <memory>16 GB</memory>
-        <memory>32 GB</memory>
-      </memoryOptions>
-      <storageOptions>
-        <storage>256GB SSD</storage>
-        <storage>1TB SSD</storage>
+        <storage>2TB SSD</storage>
       </storageOptions>
     </specifications>
   </macBook>
