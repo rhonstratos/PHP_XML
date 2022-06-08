@@ -195,7 +195,7 @@ class FormPOSTHander extends XMLHandler
             foreach ($processor as $value) {
                 #echo $value;
                 $split = explode("|", $value);
-                print_r($split);
+                #print_r($split);
                 $name = $node->createElement("name", $split[0]);
                 $cores = $node->createElement("cores", $split[1]);
                 $cpu = $node->createElement("cpu");
@@ -239,7 +239,6 @@ class FormPOSTHander extends XMLHandler
     }
     public function update($modelNumber, $variantName, $processor, $memory, $storage, $file)
     {
-        $this->saveXML();
         $dupe = new DuplicateChecker();
         $node = $this->xml;
         $file_name = $file['name'];
@@ -247,11 +246,73 @@ class FormPOSTHander extends XMLHandler
         #$file_type = $file['type'];
         $tmp_name = $file['tmp_name'];
         #$error = $file['error'];
-        if ($dupe->checkBoth($variantName, $modelNumber)) {
+        if ($dupe->checkVariant($variantName)) {
             return "Item has a duplicate Model number or Variant name";
         } else {
+            $childNode = $node->createElement("macBook");
+            $info = $node->createElement("info");
+            $modelNumberNode = $node->createElement(
+                "modelNumber",
+                $modelNumber
+            );
+            $variant = $node->createElement("variant");
+            $variant->appendChild($node->createElement(
+                "variantName",
+                $variantName
+            ));
+            $specifications = $node->createElement("specifications");
+            $computeOptions = $node->createElement("computeOptions");
+            $memoryOptions = $node->createElement("memoryOptions");
+            $storageOptions = $node->createElement("storageOptions");
+            foreach ($processor as $value) {
+                #echo $value;
+                $split = explode("|", $value);
+                #print_r($split);
+                $name = $node->createElement("name", $split[0]);
+                $cores = $node->createElement("cores", $split[1]);
+                $cpu = $node->createElement("cpu");
+                $cpu->appendChild($name);
+                $cpu->appendChild($cores);
+                $computeOptions->appendChild($cpu);
+            }
+            foreach ($memory as $value) {
+                $memoryOptions->appendChild(
+                    $node->createElement(
+                        "memory",
+                        $value
+                    )
+                );
+            }
+            foreach ($storage as $value) {
+                $storageOptions->appendChild(
+                    $node->createElement(
+                        "storage",
+                        $value
+                    )
+                );
+            }
+            $specifications->appendChild($computeOptions);
+            $specifications->appendChild($memoryOptions);
+            $specifications->appendChild($storageOptions);
+
+            $info->appendChild($modelNumberNode);
+            $info->appendChild($variant);
+            $info->appendChild($node->createElement("img", $file_name));
+
+            $childNode->appendChild($info);
+            $childNode->appendChild($specifications);
+
+            foreach ($node->getElementsByTagName("macBook") as $targetNode) {
+                $key = $targetNode->getelementsByTagName("modelNumber")[0]->nodeValue;
+                if ($key == $modelNumber) {
+                    $targetNode->replaceWith($childNode);
+                    move_uploaded_file($tmp_name, "../../assets/$file_name");
+                    $this->saveXML();
+                    return "Success";
+                    break;
+                }
+            }
         }
-        return "Success";
     }
 }
 
@@ -271,14 +332,14 @@ if (isset($_POST['registerModelNumber']) && isset($_POST['registerVariantName'])
 
 if (isset($_POST['editModelNumber']) && isset($_POST['editVariantName'])) {
     #echo json_encode($_POST);
-    #print_r($_POST);
+    print_r($_POST);
     #print_r($_GET);
     $updt = new FormPOSTHander();
     $modelNumber = $_POST['editModelNumber'];
     $variantName = $_POST['editVariantName'];
-    $processor = $_POST['processor'];
-    $memory = $_POST['memoryCapacity'];
-    $storage = $_POST['storageCapacity'];
+    $processor = $_POST['processorEdit'];
+    $memory = $_POST['memoryCapacityEdit'];
+    $storage = $_POST['storageCapacityEdit'];
     $file = $_FILES['EditIMG'];
     echo $updt->update($modelNumber, $variantName, $processor, $memory, $storage, $file);
 }

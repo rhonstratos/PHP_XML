@@ -466,51 +466,22 @@
     <info>
       <modelNumber>dawd2312</modelNumber>
       <variant>
-        <variantName>adawe123</variantName>
+        <variantName>!!!!321231vvvvvvv</variantName>
       </variant>
-      <img>woggy_blind.png</img>
+      <img/>
     </info>
     <specifications>
       <computeOptions>
         <cpu>
-          <name>Apple M1 Pro</name>
-          <cores>10</cores>
-        </cpu>
-      </computeOptions>
-      <memoryOptions>
-        <memory>4 GB</memory>
-      </memoryOptions>
-      <storageOptions>
-        <storage>512GB SSD</storage>
-      </storageOptions>
-    </specifications>
-  </macBook>
-  <macBook>
-    <info>
-      <modelNumber>tcc131</modelNumber>
-      <variant>
-        <variantName>ca31c</variantName>
-      </variant>
-      <img>woggy_debil.png</img>
-    </info>
-    <specifications>
-      <computeOptions>
-        <cpu>
-          <name>Apple M1</name>
+          <name>Intel Core i9</name>
           <cores>8</cores>
         </cpu>
-        <cpu>
-          <name>Intel Core i5</name>
-          <cores>4</cores>
-        </cpu>
       </computeOptions>
       <memoryOptions>
-        <memory>16 GB</memory>
-        <memory>32 GB</memory>
+        <memory>64 GB</memory>
       </memoryOptions>
       <storageOptions>
-        <storage>256GB SSD</storage>
-        <storage>1TB SSD</storage>
+        <storage>8TB SSD</storage>
       </storageOptions>
     </specifications>
   </macBook>

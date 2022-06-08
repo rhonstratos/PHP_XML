@@ -1,5 +1,7 @@
 //import $ from 'jquery'
 //import 'bootstrap/dist/js/bootstrap.esm.min'
+import { newProcessorWithKey, newMemoryWithKey, newStorageWithKey } from './register.js'
+
 function viewEdit(modelNumber) {
     let params = `?requestNode=true`
     params += `&modelNumber=${modelNumber}`
@@ -18,59 +20,23 @@ function viewEdit(modelNumber) {
         $('#EditIMG-label').append(`
         <img src="../assets/${macBook.img}" alt="..." style="object-fit: cover;" class="w-100 h-100">
         `)
+        let count = 0
+
         macBook.cpu.forEach(e => {
-            $('#EditProcessor')
-                .append(`
-            <div class="input-group">
-                <select class="form-control input-secondary border-none text-center" required="required" name="processor[]" id="processor">
-                    <option value="${e.name}|${e.cores}" disabled selected>${e.name} (${e.cores} Cores)</option>
-                    <option value="Apple M1|8">Apple M1 (8 Cores)</option>
-                    <option value="Apple M1 Pro|10">Apple M1 Pro (10 Cores)</option>
-                    <option value="Apple M1 Max|10">Apple M1 Max (10 Cores)</option>
-                    <option value="Intel Core i5|2">Intel Core i5 (2 Cores)</option>
-                    <option value="Intel Core i5|4">Intel Core i5 (4 Cores)</option>
-                    <option value="Intel Core i7|2">Intel Core i7 (2 Cores)</option>
-                    <option value="Intel Core i7|4">Intel Core i7 (4 Cores)</option>
-                    <option value="Intel Core i7|6">Intel Core i7 (6 Cores)</option>
-                    <option value="Intel Core i9|8">Intel Core i9 (8 Cores)</option>
-                </select>
-                <button class="btn btn-success rounded-10-end" type="button" onclick="newCPU()">+</button>
-            </div>
-            `)
+            newProcessorWithKey('EditProcessor', `${e.name}|${e.cores}`, `${e.name} (${e.cores} Cores)`, `${count != 0 ? count : ''}`)
+            count++
         })
+        count = 0
         macBook.memory.forEach(e => {
-            $('#EditMemory')
-                .append(`
-            <div class="input-group">
-                <select class="form-control input-secondary border-none text-center" required="required" name="memoryCapacity[]" id="memoryCapacity">
-                    <option value="${e.value}" disabled selected>${e.value}</option>
-                    <option value="4 GB">4 GB</option>
-                    <option value="8 GB">8 GB</option>
-                    <option value="16 GB">16 GB</option>
-                    <option value="32 GB">32 GB</option>
-                    <option value="64 GB">64 GB</option>
-                </select>
-                <button class="btn btn-success rounded-10-end" type="button" onclick="newMemory();">+</button>
-            </div>
-            `)
+            newMemoryWithKey('EditMemory', `${e.value}`, `${e.value}`, `${count != 0 ? count : ''}`)
+            count++
         })
+        count = 0
         macBook.storage.forEach(e => {
-            $('#EditStorage')
-                .append(`
-            <div class="input-group">
-                <select class="form-control input-secondary border-none text-center" required="required" name="storageCapacity[]" id="storageCapacity">
-                    <option value="${e.value}" disabled selected>${e.value}</option>
-                    <option value="256GB SSD">256GB SSD</option>
-                    <option value="512GB SSD">512GB SSD</option>
-                    <option value="1TB SSD">1TB SSD</option>
-                    <option value="2TB SSD">2TB SSD</option>
-                    <option value="4TB SSD">4TB SSD</option>
-                    <option value="8TB SSD">8TB SSD</option>
-                </select>
-                <button class="btn btn-success rounded-10-end" type="button" onclick="newStorage();">+</button>
-            </div>
-            `)
+            newStorageWithKey('EditStorage', `${e.value}`, `${e.value}`, `${count != 0 ? count : ''}`)
+            count++
         })
+        count = 0
     })
 }
 function viewCard(modelNumber) {
@@ -152,14 +118,14 @@ function update(event) {
     }).done((data) => {
         //console.log(data)
         alert(data)
-        location.href = './?updated=true'
+        //location.href = './?updated=true'
     }).fail((data) => {
-        location.href = './?updated=false'
+        //location.href = './?updated=false'
     })
 }
-function deleteNode(event,id) {
+function deleteNode(event, id) {
     event.preventDefault();
-    const form = {modelNumber:id}
+    const form = { modelNumber: id }
     form.append('file', file_data)
     $.ajax({
         url: './include/request.php', // <-- point to server-side PHP script 
