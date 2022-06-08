@@ -24,7 +24,7 @@ $update = new Update();
                 <div class="d-flex justify-content-between mb-4">
                     <h1 class="fw-bold h1index">Browse for MacBooks</h1>
                     <form action="./" method="get" class="flex-row d-flex">
-                        <input class="form-control form-control-lg search" type="text" name="search" placeholder="Search" id="" <?php if (isset($_GET["search"]) && !empty($_GET["search"])) echo 'value="' . $_GET["search"] . '"'; ?>>
+                        <input class="form-control form-control-lg search" type="text" name="search" placeholder="Search" id="" <?php if (isset($_GET["search"]) && !empty($_GET["search"])){ $val =$_GET["search"];  echo "value='$val'";}?>>
                         <button type="submit" class="search-button"><img src="../assets/search.png" alt="..." width="20"></button>
                     </form>
                 </div>
@@ -57,7 +57,7 @@ $update = new Update();
             ?>
         </div>
     </div>
-    <?php #require_once "include/footScript.php" 
+    <?php #require_once "include/footScript.php"; 
     ?>
 </body>
 
