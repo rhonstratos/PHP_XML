@@ -82,12 +82,14 @@ class Update extends XMLHandler
                     <?php
                     if ($var == 'update') {
                     ?>
-                        <button type="button" class="btn btn-primary" onclick="viewEdit('<?php echo $modelNumber; ?>');$('#updateMODAL').modal('show');">Edit</button>
+                        <button type="button" class="btn btn-primary" onclick="viewEdit('<?php echo $modelNumber; ?>');$('#updateMODAL').modal('show');">
+                        <img class="" src="../assets/icons/edit.png" alt="..." style="max-height: 20px; max-width: 20px; margin-bottom: 2.5px;"></button>
                     <?php
                     }
                     if ($var == 'delete') {
                     ?>
-                        <button type="button" class="btn btn-danger" onclick="viewDelete('<?php echo $modelNumber; ?>');$('#deleteMODAL').modal('show');">Delete</button>
+                        <button type="button" class="btn btn-danger" onclick="viewDelete('<?php echo $modelNumber; ?>');$('#deleteMODAL').modal('show');">
+                        <img src="../assets/icons/delete.png" alt="..." style="max-height: 25px; max-width: 25px; margin-bottom: 2.5px;"></button>
                     <?php
                     }
                     ?>
