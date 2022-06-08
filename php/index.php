@@ -1,7 +1,7 @@
 <?php
 require_once("./include/config.php");
 
-use Config\{Index,Update};
+use Config\{Index, Update};
 
 $index = new Index();
 $update = new Update();
@@ -14,20 +14,9 @@ $update = new Update();
     <title>Activity 2 | MacBooks</title>
 </head>
 
-<body class="bg-main" <?php
-                        if (isset($_GET['registered']) && !empty($_GET['registered']))
-                            echo "onLoad=\"callToast()\"";
-                        ?>>
+<body class="bg-main">
     <!-- navbar -->
     <?php require_once("./include/navbar.php"); ?>
-    <div aria-live="polite" aria-atomic="true" class="position-relative">
-        <div class="toast-container position-fixed bottom-0 end-0 p-3" id="toast">
-            <?php
-            if (isset($_GET['registered']))
-                include("./include/prompts/PromptRegistration.php");
-            ?>
-        </div>
-    </div>
     <!-- main body -->
     <div class="bg-white">
         <div class="row mx-0 indexBody" style="height: fit-content !important;">
@@ -50,12 +39,25 @@ $update = new Update();
             </div>
         </div>
     </div>
+    <!-- Modals -->
     <?php
     require_once "include/modals/registerModal.php";
     require_once "include/modals/viewModal.php";
     require_once "include/modals/updateModal.php";
     require_once "include/modals/editModal.php";
-    #require_once "include/footScript.php"
+    ?>
+    <!-- Toasts -->
+    <div aria-live="polite" aria-atomic="true" class="position-relative">
+        <div class="toast-container position-fixed bottom-0 end-0 p-3" id="toast">
+            <?php
+            require_once "./include/toasts/delete.php";
+            require_once "./include/toasts/duplicate.php";
+            require_once "./include/toasts/register.php";
+            require_once "./include/toasts/update.php";
+            ?>
+        </div>
+    </div>
+    <?php #require_once "include/footScript.php" 
     ?>
 </body>
 
