@@ -130,8 +130,10 @@ function register(event) {
         type: 'post'
     }).done((data) => {
         //console.log(data)
-        alert(data)
-        location.reload()
+        //alert(data)
+        location.href = './?registered=true'
+    }).fail((data)=>{
+        location.href = './?registered=false'
     })
 }
 function update(event) {
@@ -150,7 +152,9 @@ function update(event) {
     }).done((data) => {
         //console.log(data)
         alert(data)
-        location.reload()
+        location.href = './?updated=true'
+    }).fail((data)=>{
+        location.href = './?updated=false'
     })
 }
 export { viewCard, viewEdit, register, update }
