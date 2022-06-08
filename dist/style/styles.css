@@ -42,7 +42,7 @@ img.cards-index {
 .close-svg {
 	background-color: hsl(0deg 91% 72%) !important;
 }
-.close-svg > svg {
+svg {
 	fill: white !important;
 }
 .border-none {
