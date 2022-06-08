@@ -41,10 +41,10 @@ $update = new Update();
     </div>
     <!-- Modals -->
     <?php
-    require_once "include/modals/registerModal.php";
-    require_once "include/modals/viewModal.php";
-    require_once "include/modals/updateModal.php";
-    require_once "include/modals/editModal.php";
+    require_once "include/modals/register.php";
+    require_once "include/modals/view.php";
+    require_once "include/modals/update.php";
+    require_once "include/modals/edit.php";
     ?>
     <!-- Toasts -->
     <div aria-live="polite" aria-atomic="true" class="position-relative">
