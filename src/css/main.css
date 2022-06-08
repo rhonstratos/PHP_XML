@@ -4,20 +4,21 @@
 	src: url("fonts/SF-UI-Display-Regular.otf") format("opentype");
 }
 @font-face {
-    font-family: 'Plus Jakarta Sans';
-    src: url('fonts/PlusJakartaSans-Regular.eot');
-    src: url('fonts/PlusJakartaSans-Regular.eot?#iefix') format('embedded-opentype'),
-        url('fonts/PlusJakartaSans-Regular.woff2') format('woff2'),
-        url('fonts/PlusJakartaSans-Regular.woff') format('woff'),
-        url('fonts/PlusJakartaSans-Regular.ttf') format('truetype'),
-        url('fonts/PlusJakartaSans-Regular.svg#PlusJakartaSans-Regular') format('svg');
-    font-weight: normal;
-    font-style: normal;
+	font-family: "Plus Jakarta Sans";
+	src: url("fonts/PlusJakartaSans-Regular.eot");
+	src: url("fonts/PlusJakartaSans-Regular.eot?#iefix")
+			format("embedded-opentype"),
+		url("fonts/PlusJakartaSans-Regular.woff2") format("woff2"),
+		url("fonts/PlusJakartaSans-Regular.woff") format("woff"),
+		url("fonts/PlusJakartaSans-Regular.ttf") format("truetype"),
+		url("fonts/PlusJakartaSans-Regular.svg#PlusJakartaSans-Regular") format("svg");
+	font-weight: normal;
+	font-style: normal;
 }
-body.bg-main{
+body.bg-main {
 	background-color: rgb(49 49 50) !important;
 }
-img.cards-index{
+img.cards-index {
 	min-width: 270px !important;
 	min-height: 250px !important;
 	max-width: 400px !important;
@@ -30,10 +31,16 @@ img.cards-index{
 	width: fit-content;
 	height: fit-content;
 }
-.container-register{
+.container-register {
 	display: flex;
-    flex-direction: column;
-    row-gap: 5px;
+	flex-direction: column;
+	row-gap: 5px;
+}
+.close-svg {
+	background-color: hsl(0deg 91% 72%) !important;
+}
+.close-svg > svg {
+	fill: white !important;
 }
 .border-none {
 	border: none !important;

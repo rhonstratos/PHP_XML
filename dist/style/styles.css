@@ -7,20 +7,21 @@
 	src: url(../696eab3309b55104976e.otf) format("opentype");
 }
 @font-face {
-    font-family: 'Plus Jakarta Sans';
-    src: url(../841c08ba2f034be9fbc3.eot);
-    src: url(../841c08ba2f034be9fbc3.eot?#iefix) format('embedded-opentype'),
-        url(../f07740e18e6f04dafac7.woff2) format('woff2'),
-        url(../57b2a627fa8ac4cb42ef.woff) format('woff'),
-        url(../da38c6507e8bf6c193e9.ttf) format('truetype'),
-        url(../3581d43d3de4cf14e3e3.svg#PlusJakartaSans-Regular) format('svg');
-    font-weight: normal;
-    font-style: normal;
+	font-family: "Plus Jakarta Sans";
+	src: url(../841c08ba2f034be9fbc3.eot);
+	src: url(../841c08ba2f034be9fbc3.eot?#iefix)
+			format("embedded-opentype"),
+		url(../f07740e18e6f04dafac7.woff2) format("woff2"),
+		url(../57b2a627fa8ac4cb42ef.woff) format("woff"),
+		url(../da38c6507e8bf6c193e9.ttf) format("truetype"),
+		url(../3581d43d3de4cf14e3e3.svg#PlusJakartaSans-Regular) format("svg");
+	font-weight: normal;
+	font-style: normal;
 }
-body.bg-main{
+body.bg-main {
 	background-color: rgb(49 49 50) !important;
 }
-img.cards-index{
+img.cards-index {
 	min-width: 270px !important;
 	min-height: 250px !important;
 	max-width: 400px !important;
@@ -33,10 +34,16 @@ img.cards-index{
 	width: fit-content;
 	height: fit-content;
 }
-.container-register{
+.container-register {
 	display: flex;
-    flex-direction: column;
-    row-gap: 5px;
+	flex-direction: column;
+	row-gap: 5px;
+}
+.close-svg {
+	background-color: hsl(0deg 91% 72%) !important;
+}
+.close-svg > svg {
+	fill: white !important;
 }
 .border-none {
 	border: none !important;
