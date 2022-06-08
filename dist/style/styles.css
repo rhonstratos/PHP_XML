@@ -92,8 +92,8 @@ svg {
 .indexBody {
 	height: 100% !important;
 	background-color: rgb(49 49 50) !important;
-	border-top-left-radius: 50px !important;
-	border-top-right-radius: 50px !important;
+	border-top-left-radius: 40px !important;
+	border-top-right-radius: 40px !important;
 }
 .card {
 	border: 1px solid black;
