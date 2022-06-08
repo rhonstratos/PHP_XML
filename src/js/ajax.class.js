@@ -132,7 +132,7 @@ function register(event) {
         //console.log(data)
         //alert(data)
         location.href = './?registered=true'
-    }).fail((data)=>{
+    }).fail((data) => {
         location.href = './?registered=false'
     })
 }
@@ -153,8 +153,28 @@ function update(event) {
         //console.log(data)
         alert(data)
         location.href = './?updated=true'
-    }).fail((data)=>{
+    }).fail((data) => {
         location.href = './?updated=false'
     })
 }
-export { viewCard, viewEdit, register, update }
+function deleteNode(event,id) {
+    event.preventDefault();
+    const form = {modelNumber:id}
+    form.append('file', file_data)
+    $.ajax({
+        url: './include/request.php', // <-- point to server-side PHP script 
+        dataType: 'text',  // <-- what to expect back from the PHP script, if anything
+        cache: false,
+        contentType: false,
+        processData: false,
+        data: form,
+        type: 'post'
+    }).done((data) => {
+        //console.log(data)
+        alert(data)
+        location.href = './?updated=true'
+    }).fail((data) => {
+        location.href = './?updated=false'
+    })
+}
+export { viewCard, viewEdit, register, update, deleteNode }
