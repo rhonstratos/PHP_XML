@@ -304,21 +304,32 @@ class FormPOSTHander extends XMLHandler
             }
             $info->appendChild($modelNumberNode);
             $info->appendChild($variant);
-            
-            if($file_size <1 || $error == 4){
-                $info->appendChild($node->createElement("img", ($oldNode ? $oldNode->getElementsByTagName('img')[0]->nodeValue:'')));
-            }
-            else{
+
+            if ($file_size < 1 || $error == 4) {
+                $info->appendChild($node->createElement("img", ($oldNode ? $oldNode->getElementsByTagName('img')[0]->nodeValue : '')));
+            } else {
                 move_uploaded_file($tmp_name, "../../assets/$file_name");
                 $info->appendChild($node->createElement("img", $file_name));
             }
 
             $childNode->appendChild($info);
             $childNode->appendChild($specifications);
-            if($oldNode){
+            if ($oldNode) {
                 $oldNode->replaceWith($childNode);
                 $this->saveXML();
                 return "Success";
+            }
+        }
+    }
+    public function delete($modelNumber)
+    {
+        $node = $this->xml;
+        foreach ($node->getElementsByTagName("macBook") as $targetNode) {
+            $key = $targetNode->getElementsByTagName("modelNumber")[0]->nodeValue;
+            if ($key == $modelNumber) {
+                $targetNode->parentNode->removeChild($targetNode);
+                $this->saveXML();
+                break;
             }
         }
     }
@@ -352,6 +363,11 @@ if (isset($_POST['editModelNumber']) && isset($_POST['editVariantName'])) {
 
     echo print_r($_FILES['EditIMG']);
     echo $updt->update($modelNumber, $variantName, $processor, $memory, $storage, $file);
+}
+
+if (isset($_POST['delete'])) {
+    $del = new FormPOSTHander();
+    echo $del->delete($_POST['modelNumber']);
 }
 
 if (isset($_GET['requestNode'])) {

@@ -81,6 +81,44 @@ function viewCard(modelNumber) {
         })
     })
 }
+function viewDelete(modelNumber) {
+    let params = `?requestNode=true`
+    params += `&modelNumber=${modelNumber}`
+    const _url = `./include/request.php${params}`
+    $.get(_url, (data, status) => {
+    }).done((data) => {
+        const json = JSON.parse(data)
+        const macBook = json.macBook
+        //console.log(macBook)
+        $("#DeleteModelNumber").val(macBook.modelNumber)
+        $("#DeleteVariantName").val(macBook.variantName)
+        $('#DeleteProcessor').html('')
+        $('#DeleteMemory').html('')
+        $('#DeleteStorage').html('')
+        $('#DeleteIMG-label').html('')
+        $('#DeleteIMG-label').append(`
+        <img src="../assets/${macBook.img}" alt="..." style="object-fit: cover;" class="w-100 h-100">
+        `)
+        macBook.cpu.forEach(e => {
+            $('#DeleteProcessor')
+                .append(`
+           <input value="${e.name} (${e.cores} Cores)" readonly="readonly" class="text-center form-control input-secondary rounded-10 border-none">
+           `)
+        })
+        macBook.memory.forEach(e => {
+            $('#DeleteMemory')
+                .append(`
+           <input value="${e.value}" readonly="readonly" class="text-center form-control input-secondary rounded-10 border-none">
+           `)
+        })
+        macBook.storage.forEach(e => {
+            $('#DeleteStorage')
+                .append(`
+           <input value="${e.value}" readonly="readonly" class="text-center form-control input-secondary rounded-10 border-none">
+           `)
+        })
+    })
+}
 function register(event) {
     event.preventDefault();
     const file_data = $('#RegisterIMG').prop('files')[0];
@@ -123,24 +161,21 @@ function update(event) {
         location.href = './?updated=false'
     })
 }
-function deleteNode(event, id) {
-    event.preventDefault();
-    const form = { modelNumber: id }
-    form.append('file', file_data)
-    $.ajax({
-        url: './include/request.php', // <-- point to server-side PHP script 
-        dataType: 'text',  // <-- what to expect back from the PHP script, if anything
-        cache: false,
-        contentType: false,
-        processData: false,
-        data: form,
-        type: 'post'
-    }).done((data) => {
-        //console.log(data)
-        alert(data)
-        location.href = './?updated=true'
-    }).fail((data) => {
-        location.href = './?updated=false'
-    })
+function deleteNode(event) {
+    event.preventDefault()
+    const val = $('#DeleteModelNumber').val()
+    $.post("./include/request.php",
+        {
+            delete: true,
+            modelNumber: val
+        }, () => {
+
+        }).done((data) => {
+            //console.log(data)
+            alert(data)
+            location.href = './?deleted=true'
+        }).fail((data) => {
+            location.href = './?deleted=false'
+        })
 }
-export { viewCard, viewEdit, register, update, deleteNode }
+export { viewCard, viewDelete, viewEdit, register, update, deleteNode }

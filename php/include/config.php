@@ -68,7 +68,7 @@ class Update extends XMLHandler
         $this->loadXML();
         $this->xml = $this->getXML();
     }
-    public function load()
+    public function load($var)
     {
         $node = $this->xml->getElementsByTagName('macBook');
         foreach ($node as $targetNode) {
@@ -78,7 +78,20 @@ class Update extends XMLHandler
             <tr>
                 <td><?php echo $modelNumber; ?></td>
                 <th><?php echo $variantName; ?></th>
-                <td><button type="button" class="btn btn-primary" onclick="viewEdit('<?php echo $modelNumber; ?>');$('#updateMODAL').modal('show');">Edit</button></td>
+                <td>
+                    <?php
+                    if ($var == 'update') {
+                    ?>
+                        <button type="button" class="btn btn-primary" onclick="viewEdit('<?php echo $modelNumber; ?>');$('#updateMODAL').modal('show');">Edit</button>
+                    <?php
+                    }
+                    if ($var == 'delete') {
+                    ?>
+                        <button type="button" class="btn btn-danger" onclick="viewDelete('<?php echo $modelNumber; ?>');$('#deleteMODAL').modal('show');">Delete</button>
+                    <?php
+                    }
+                    ?>
+                </td>
             </tr>
 <?php
         }
