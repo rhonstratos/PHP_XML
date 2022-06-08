@@ -329,6 +329,17 @@ class FormPOSTHander extends XMLHandler
             }
         }
     }
+    public function getSuggestions(){
+        $node = $this->xml->getElementsByTagName('macBook');
+        $sug = array("val"=>[]);
+        foreach($node as $targetNode){
+            $modelNumber = $targetNode->getElementsByTagName('modelNumber')[0]->nodeValue;
+            $variantName = $targetNode->getElementsByTagName('variantName')[0]->nodeValue;
+            array_push($sug['val'],$modelNumber);
+            array_push($sug['val'],$variantName);
+        }
+        return json_encode(array("suggestions"=>$sug));
+    }
 }
 
 if (isset($_POST['registerModelNumber']) && isset($_POST['registerVariantName'])) {
@@ -369,4 +380,9 @@ if (isset($_POST['delete'])) {
 if (isset($_GET['requestNode'])) {
     $find = new Search();
     echo $find->getNode($_GET['modelNumber']);
+}
+
+if (isset($_GET['requestSuggestions'])) {
+    $find = new FormPOSTHander();
+    echo $find->getSuggestions();
 }

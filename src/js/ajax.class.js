@@ -1,7 +1,24 @@
 //import $ from 'jquery'
 //import 'bootstrap/dist/js/bootstrap.esm.min'
 import { newProcessorWithKey, newMemoryWithKey, newStorageWithKey } from './register.js'
+function loadSuggestion() {
+    let params = `?requestSuggestions=true`
+    const _url = `./include/request.php${params}`
+    $.get(_url, (data, status) => {
 
+    }).done((data) => {
+        console.log(data)
+        const json = JSON.parse(data)
+        console.log(json)
+        let suggestionArray = []
+        $.each(json.suggestions.val, (key,value)=>{
+            suggestionArray.push(value)
+        })
+        $('#searchSuggest').autocomplete({
+            source: suggestionArray
+        })
+    })
+}
 function viewEdit(modelNumber) {
     let params = `?requestNode=true`
     params += `&modelNumber=${modelNumber}`
@@ -178,4 +195,4 @@ function deleteNode(event) {
             location.href = './?deleted=false'
         })
 }
-export { viewCard, viewDelete, viewEdit, register, update, deleteNode }
+export { loadSuggestion, viewCard, viewDelete, viewEdit, register, update, deleteNode }
