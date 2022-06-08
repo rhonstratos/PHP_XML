@@ -242,10 +242,10 @@ class FormPOSTHander extends XMLHandler
         $dupe = new DuplicateChecker();
         $node = $this->xml;
         $file_name = $file['name'];
-        #$file_size = $file['size'];
+        $file_size = $file['size'];
         #$file_type = $file['type'];
         $tmp_name = $file['tmp_name'];
-        #$error = $file['error'];
+        $error = $file['error'];
         if ($dupe->checkVariant($variantName)) {
             return "Item has a duplicate Model number or Variant name";
         } else {
@@ -294,23 +294,31 @@ class FormPOSTHander extends XMLHandler
             $specifications->appendChild($computeOptions);
             $specifications->appendChild($memoryOptions);
             $specifications->appendChild($storageOptions);
-
-            $info->appendChild($modelNumberNode);
-            $info->appendChild($variant);
-            $info->appendChild($node->createElement("img", $file_name));
-
-            $childNode->appendChild($info);
-            $childNode->appendChild($specifications);
-
+            $oldNode = null;
             foreach ($node->getElementsByTagName("macBook") as $targetNode) {
                 $key = $targetNode->getelementsByTagName("modelNumber")[0]->nodeValue;
                 if ($key == $modelNumber) {
-                    $targetNode->replaceWith($childNode);
-                    move_uploaded_file($tmp_name, "../../assets/$file_name");
-                    $this->saveXML();
-                    return "Success";
+                    $oldNode = $targetNode;
                     break;
                 }
+            }
+            $info->appendChild($modelNumberNode);
+            $info->appendChild($variant);
+            
+            if($file_size <1 || $error == 4){
+                $info->appendChild($node->createElement("img", ($oldNode ? $oldNode->getElementsByTagName('img')[0]->nodeValue:'')));
+            }
+            else{
+                move_uploaded_file($tmp_name, "../../assets/$file_name");
+                $info->appendChild($node->createElement("img", $file_name));
+            }
+
+            $childNode->appendChild($info);
+            $childNode->appendChild($specifications);
+            if($oldNode){
+                $oldNode->replaceWith($childNode);
+                $this->saveXML();
+                return "Success";
             }
         }
     }
@@ -332,7 +340,7 @@ if (isset($_POST['registerModelNumber']) && isset($_POST['registerVariantName'])
 
 if (isset($_POST['editModelNumber']) && isset($_POST['editVariantName'])) {
     #echo json_encode($_POST);
-    print_r($_POST);
+    #print_r($_POST);
     #print_r($_GET);
     $updt = new FormPOSTHander();
     $modelNumber = $_POST['editModelNumber'];
@@ -341,6 +349,8 @@ if (isset($_POST['editModelNumber']) && isset($_POST['editVariantName'])) {
     $memory = $_POST['memoryCapacityEdit'];
     $storage = $_POST['storageCapacityEdit'];
     $file = $_FILES['EditIMG'];
+
+    echo print_r($_FILES['EditIMG']);
     echo $updt->update($modelNumber, $variantName, $processor, $memory, $storage, $file);
 }
 

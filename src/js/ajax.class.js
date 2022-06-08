@@ -118,9 +118,9 @@ function update(event) {
     }).done((data) => {
         //console.log(data)
         alert(data)
-        //location.href = './?updated=true'
+        location.href = './?updated=true'
     }).fail((data) => {
-        //location.href = './?updated=false'
+        location.href = './?updated=false'
     })
 }
 function deleteNode(event, id) {

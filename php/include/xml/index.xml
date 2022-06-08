@@ -436,14 +436,14 @@
     <info>
       <modelNumber>3123dd</modelNumber>
       <variant>
-        <variantName>ad23123</variantName>
+        <variantName>1cttqsccaw3</variantName>
       </variant>
       <img>bicc_bren.png</img>
     </info>
     <specifications>
       <computeOptions>
         <cpu>
-          <name>Apple M1</name>
+          <name>Intel Core i9</name>
           <cores>8</cores>
         </cpu>
         <cpu>
@@ -466,22 +466,22 @@
     <info>
       <modelNumber>dawd2312</modelNumber>
       <variant>
-        <variantName>!!!!321231vvvvvvv</variantName>
+        <variantName>1@122</variantName>
       </variant>
       <img/>
     </info>
     <specifications>
       <computeOptions>
         <cpu>
-          <name>Intel Core i9</name>
+          <name>Apple M1</name>
           <cores>8</cores>
         </cpu>
       </computeOptions>
       <memoryOptions>
-        <memory>64 GB</memory>
+        <memory>4 GB</memory>
       </memoryOptions>
       <storageOptions>
-        <storage>8TB SSD</storage>
+        <storage>256GB SSD</storage>
       </storageOptions>
     </specifications>
   </macBook>
