@@ -117,7 +117,7 @@ function update(event) {
         type: 'post'
     }).done((data) => {
         //console.log(data)
-        alert(data)
+        //alert(data)
         location.href = './?updated=true'
     }).fail((data) => {
         location.href = './?updated=false'

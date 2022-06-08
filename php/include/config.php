@@ -78,7 +78,7 @@ class Update extends XMLHandler
             <tr>
                 <td><?php echo $modelNumber; ?></td>
                 <th><?php echo $variantName; ?></th>
-                <td><button type="button" class="btn btn-primary" onclick="viewEdit('<?php echo $modelNumber; ?>');$('#editMODAL').modal('show');">Edit</button></td>
+                <td><button type="button" class="btn btn-primary" onclick="viewEdit('<?php echo $modelNumber; ?>');$('#updateMODAL').modal('show');">Edit</button></td>
             </tr>
 <?php
         }

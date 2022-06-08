@@ -90,10 +90,11 @@ $update = new Update();
     </div>
     <!-- Modals -->
     <?php
+    require_once "include/modals/delete.php";
     require_once "include/modals/register.php";
-    require_once "include/modals/view.php";
+    require_once "include/modals/update_list.php";
     require_once "include/modals/update.php";
-    require_once "include/modals/edit.php";
+    require_once "include/modals/view.php";
     ?>
 </body>
 
