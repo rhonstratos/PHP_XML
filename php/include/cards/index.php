@@ -1,5 +1,5 @@
 <div class="card cardIndex">
-    <img src="../assets/<?php echo $img;?>" alt="..." class="p-3 cards-index">
+    <img src="../assets/img/<?php echo $img;?>" alt="..." class="p-3 cards-index">
     <div class="card-body">
         <?php echo "$modelNumber<br>$variantName"; ?>
         <a href="#viewCard" class="text-decoration-none float-end" onclick="viewCard('<?php echo $modelNumber; ?>');$('#viewCardMODAL').modal('show')">

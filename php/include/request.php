@@ -230,7 +230,7 @@ class FormPOSTHander extends XMLHandler
             $childNode->appendChild($info);
             $childNode->appendChild($specifications);
 
-            move_uploaded_file($tmp_name, "../../assets/$file_name");
+            move_uploaded_file($tmp_name, "../../assets/img/$file_name");
 
             $this->xml->getElementsByTagName("macBooks")[0]->appendChild($childNode);
             $this->saveXML();
@@ -246,79 +246,75 @@ class FormPOSTHander extends XMLHandler
         #$file_type = $file['type'];
         $tmp_name = $file['tmp_name'];
         $error = $file['error'];
-        if ($dupe->checkVariant($variantName)) {
-            return "Item has a duplicate Model number or Variant name";
-        } else {
-            $childNode = $node->createElement("macBook");
-            $info = $node->createElement("info");
-            $modelNumberNode = $node->createElement(
-                "modelNumber",
-                $modelNumber
+        $childNode = $node->createElement("macBook");
+        $info = $node->createElement("info");
+        $modelNumberNode = $node->createElement(
+            "modelNumber",
+            $modelNumber
+        );
+        $variant = $node->createElement("variant");
+        $variant->appendChild($node->createElement(
+            "variantName",
+            $variantName
+        ));
+        $specifications = $node->createElement("specifications");
+        $computeOptions = $node->createElement("computeOptions");
+        $memoryOptions = $node->createElement("memoryOptions");
+        $storageOptions = $node->createElement("storageOptions");
+        foreach ($processor as $value) {
+            #echo $value;
+            $split = explode("|", $value);
+            #print_r($split);
+            $name = $node->createElement("name", $split[0]);
+            $cores = $node->createElement("cores", $split[1]);
+            $cpu = $node->createElement("cpu");
+            $cpu->appendChild($name);
+            $cpu->appendChild($cores);
+            $computeOptions->appendChild($cpu);
+        }
+        foreach ($memory as $value) {
+            $memoryOptions->appendChild(
+                $node->createElement(
+                    "memory",
+                    $value
+                )
             );
-            $variant = $node->createElement("variant");
-            $variant->appendChild($node->createElement(
-                "variantName",
-                $variantName
-            ));
-            $specifications = $node->createElement("specifications");
-            $computeOptions = $node->createElement("computeOptions");
-            $memoryOptions = $node->createElement("memoryOptions");
-            $storageOptions = $node->createElement("storageOptions");
-            foreach ($processor as $value) {
-                #echo $value;
-                $split = explode("|", $value);
-                #print_r($split);
-                $name = $node->createElement("name", $split[0]);
-                $cores = $node->createElement("cores", $split[1]);
-                $cpu = $node->createElement("cpu");
-                $cpu->appendChild($name);
-                $cpu->appendChild($cores);
-                $computeOptions->appendChild($cpu);
+        }
+        foreach ($storage as $value) {
+            $storageOptions->appendChild(
+                $node->createElement(
+                    "storage",
+                    $value
+                )
+            );
+        }
+        $specifications->appendChild($computeOptions);
+        $specifications->appendChild($memoryOptions);
+        $specifications->appendChild($storageOptions);
+        $oldNode = null;
+        foreach ($node->getElementsByTagName("macBook") as $targetNode) {
+            $key = $targetNode->getelementsByTagName("modelNumber")[0]->nodeValue;
+            if ($key == $modelNumber) {
+                $oldNode = $targetNode;
+                break;
             }
-            foreach ($memory as $value) {
-                $memoryOptions->appendChild(
-                    $node->createElement(
-                        "memory",
-                        $value
-                    )
-                );
-            }
-            foreach ($storage as $value) {
-                $storageOptions->appendChild(
-                    $node->createElement(
-                        "storage",
-                        $value
-                    )
-                );
-            }
-            $specifications->appendChild($computeOptions);
-            $specifications->appendChild($memoryOptions);
-            $specifications->appendChild($storageOptions);
-            $oldNode = null;
-            foreach ($node->getElementsByTagName("macBook") as $targetNode) {
-                $key = $targetNode->getelementsByTagName("modelNumber")[0]->nodeValue;
-                if ($key == $modelNumber) {
-                    $oldNode = $targetNode;
-                    break;
-                }
-            }
-            $info->appendChild($modelNumberNode);
-            $info->appendChild($variant);
+        }
+        $info->appendChild($modelNumberNode);
+        $info->appendChild($variant);
 
-            if ($file_size < 1 || $error == 4) {
-                $info->appendChild($node->createElement("img", ($oldNode ? $oldNode->getElementsByTagName('img')[0]->nodeValue : '')));
-            } else {
-                move_uploaded_file($tmp_name, "../../assets/$file_name");
-                $info->appendChild($node->createElement("img", $file_name));
-            }
+        if ($file_size < 1 || $error == 4) {
+            $info->appendChild($node->createElement("img", ($oldNode ? $oldNode->getElementsByTagName('img')[0]->nodeValue : '')));
+        } else {
+            move_uploaded_file($tmp_name, "../../assets/img/$file_name");
+            $info->appendChild($node->createElement("img", $file_name));
+        }
 
-            $childNode->appendChild($info);
-            $childNode->appendChild($specifications);
-            if ($oldNode) {
-                $oldNode->replaceWith($childNode);
-                $this->saveXML();
-                return "Success";
-            }
+        $childNode->appendChild($info);
+        $childNode->appendChild($specifications);
+        if ($oldNode) {
+            $oldNode->replaceWith($childNode);
+            $this->saveXML();
+            return "Success";
         }
     }
     public function delete($modelNumber)

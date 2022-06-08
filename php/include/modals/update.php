@@ -19,7 +19,7 @@
                             <span>Model Number:</span>
                             <input readonly="readonly" type="text" name="editModelNumber" id="editModelNumber" class="text-center form-control input-secondary rounded-10 border-none">
                             <span>Variant Name:</span>
-                            <input type="text" name="editVariantName" id="editVariantName" class="text-center form-control input-secondary rounded-10 border-none">
+                            <input readonly="readonly" type="text" name="editVariantName" id="editVariantName" class="text-center form-control input-secondary rounded-10 border-none">
                         </div>
                         <h3>Specifications</h3>
                         <div class="overflow-auto" style="max-height: 250px !important;">

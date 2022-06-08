@@ -18,7 +18,7 @@ function viewEdit(modelNumber) {
         $('#EditIMG-label').html('')
         //console.log(macBook)
         $('#EditIMG-label').append(`
-        <img src="../assets/${macBook.img}" alt="..." style="object-fit: cover;" class="w-100 h-100">
+        <img src="../assets/img/${macBook.img}" alt="..." style="object-fit: cover;" class="w-100 h-100">
         `)
         let count = 0
 
@@ -55,7 +55,7 @@ function viewCard(modelNumber) {
         $('#ViewStorage').html('')
         $('#ViewIMG-label').html('')
         $('#ViewIMG-label').append(`
-        <img src="../assets/${macBook.img}" alt="..." style="object-fit: cover;" class="w-100 h-100">
+        <img src="../assets/img/${macBook.img}" alt="..." style="object-fit: cover;" class="w-100 h-100">
         `)
         macBook.cpu.forEach(e => {
             /* 
@@ -97,7 +97,7 @@ function viewDelete(modelNumber) {
         $('#DeleteStorage').html('')
         $('#DeleteIMG-label').html('')
         $('#DeleteIMG-label').append(`
-        <img src="../assets/${macBook.img}" alt="..." style="object-fit: cover;" class="w-100 h-100">
+        <img src="../assets/img/${macBook.img}" alt="..." style="object-fit: cover;" class="w-100 h-100">
         `)
         macBook.cpu.forEach(e => {
             $('#DeleteProcessor')
