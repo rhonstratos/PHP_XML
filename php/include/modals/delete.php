@@ -3,7 +3,7 @@
     <div class="modal-dialog modal-dialog-centered w-75" style="max-width: 75% !important;">
         <div class="modal-content container-fluid bg-white rounded-25 p-4 d-flex">
             <div class="navbar">
-                <h2 class="fw-bold">Delete MacBook?</h2>
+                <h2 class="fw-bold">Delete MacBook</h2>
                 <button type="button" class="border-none close-svg rounded-25 m-0 p-1" data-bs-dismiss="modal" aria-label="Close">
                     <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 0 24 24" width="24px" fill="white">
                         <path d="M0 0h24v24H0V0z" fill="none" />

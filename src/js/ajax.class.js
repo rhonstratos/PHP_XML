@@ -189,7 +189,7 @@ function deleteNode(event) {
 
         }).done((data) => {
             //console.log(data)
-            alert(data)
+            //alert(data)
             location.href = './?deleted=true'
         }).fail((data) => {
             location.href = './?deleted=false'
