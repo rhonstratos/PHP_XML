@@ -142,7 +142,7 @@ function register(event) {
     const form = new FormData(document.getElementById("REGISTERFORM"))
     form.append('file', file_data)
     console.log(form)
-    /* $.ajax({
+    $.ajax({
         url: './include/request.php', // <-- point to server-side PHP script 
         dataType: 'text',  // <-- what to expect back from the PHP script, if anything
         cache: false,
@@ -156,7 +156,7 @@ function register(event) {
         location.href = './?registered=true'
     }).fail((data) => {
         location.href = './?registered=false'
-    }) */
+    })
 }
 function update(event) {
     event.preventDefault();
