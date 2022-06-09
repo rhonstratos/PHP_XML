@@ -7,9 +7,9 @@ function loadSuggestion() {
     $.get(_url, (data, status) => {
 
     }).done((data) => {
-        console.log(data)
+        //console.log(data)
         const json = JSON.parse(data)
-        console.log(json)
+        //console.log(json)
         let suggestionArray = []
         $.each(json.suggestions.val, (key,value)=>{
             suggestionArray.push(value)
