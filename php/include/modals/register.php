@@ -16,9 +16,9 @@
                         <h3>Model Information</h3>
                         <div class="mb-3">
                             <span>Model Number:</span>
-                            <input type="text" name="registerModelNumber" id="registerModelNumber" class="text-center form-control input-secondary rounded-10 border-none">
+                            <input required="required" type="text" name="registerModelNumber" id="registerModelNumber" class="text-center form-control input-secondary rounded-10 border-none">
                             <span>Variant Name:</span>
-                            <input type="text" name="registerVariantName" id="registerVariantName" class="text-center form-control input-secondary rounded-10 border-none">
+                            <input required="required" type="text" name="registerVariantName" id="registerVariantName" class="text-center form-control input-secondary rounded-10 border-none">
                         </div>
                         <h3>Specifications</h3>
                         <div class="overflow-auto" style="max-height: 250px !important;">
@@ -83,7 +83,7 @@
                                 </div>
                             </div>
                         </label>
-                        <input onchange="replaceIMG('RegisterIMG')" type="file" accept="image/*" name="RegisterIMG" id="RegisterIMG" class="form-control" hidden>
+                        <input required="required" onchange="replaceIMG('RegisterIMG')" type="file" accept="image/*" name="RegisterIMG" id="RegisterIMG" class="form-control" hidden>
                     </div>
                 </div>
                 <div class="align-self-end">
