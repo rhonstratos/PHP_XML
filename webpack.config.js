@@ -6,7 +6,7 @@ const ENTRY = {
     main: "./src/js/index.js"
 };
 module.exports = {
-    watch: true,
+    //watch: true,
     entry: ENTRY,
     output: {
         filename: "js/[name].js",
