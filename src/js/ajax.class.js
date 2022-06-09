@@ -7,9 +7,9 @@ function loadSuggestion() {
     $.get(_url, (data, status) => {
 
     }).done((data) => {
-        console.log(data)
+        //console.log(data)
         const json = JSON.parse(data)
-        console.log(json)
+        //console.log(json)
         let suggestionArray = []
         $.each(json.suggestions.val, (key,value)=>{
             suggestionArray.push(value)
@@ -141,6 +141,7 @@ function register(event) {
     const file_data = $('#RegisterIMG').prop('files')[0];
     const form = new FormData(document.getElementById("REGISTERFORM"))
     form.append('file', file_data)
+    console.log(form)
     $.ajax({
         url: './include/request.php', // <-- point to server-side PHP script 
         dataType: 'text',  // <-- what to expect back from the PHP script, if anything
@@ -189,7 +190,7 @@ function deleteNode(event) {
 
         }).done((data) => {
             //console.log(data)
-            alert(data)
+            //alert(data)
             location.href = './?deleted=true'
         }).fail((data) => {
             location.href = './?deleted=false'
