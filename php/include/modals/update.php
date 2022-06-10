@@ -42,7 +42,7 @@
                                 </div>
                             </div>
                         </label>
-                        <input required="required" onchange="replaceIMG('EditIMG')" type="file" accept="image/*" name="EditIMG" id="EditIMG" class="form-control" hidden>
+                        <input onchange="replaceIMG('EditIMG')" type="file" accept="image/*" name="EditIMG" id="EditIMG" class="form-control" hidden>
                     </div>
                 </div>
                 <div class="align-self-end">
